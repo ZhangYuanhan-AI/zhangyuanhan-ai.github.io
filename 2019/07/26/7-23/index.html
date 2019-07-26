@@ -79,13 +79,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="David_Zhang">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7.23">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/7-23/index.html">
 <meta property="og:site_name" content="David_Zhang">
+<meta property="og:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724113447852.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724134617778.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724135014277.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724135354590.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190723165703439.png">
+<meta property="og:updated_time" content="2019-07-26T06:06:37.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="David_Zhang">
+<meta name="twitter:title" content="7.23">
+<meta name="twitter:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
+<meta name="twitter:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724113447852.png">
 
 
 
@@ -115,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/26/7-23/">
 
 
 
 
 
-  <title>David_Zhang</title>
+  <title>7.23 | David_Zhang</title>
   
 
 
@@ -140,8 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +223,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/7-23/" itemprop="url">7.23</a></h1>
+          <h1 class="post-title" itemprop="name headline">7.23</h1>
         
 
         <div class="post-meta">
@@ -298,9 +305,7 @@
       
 
       
-        
-          
-            <h3 id="GAN的训练"><a href="#GAN的训练" class="headerlink" title="GAN的训练"></a>GAN的训练</h3><p>用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他</p>
+        <h3 id="GAN的训练"><a href="#GAN的训练" class="headerlink" title="GAN的训练"></a>GAN的训练</h3><p>用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他</p>
 <p>G，D一般是各种神经网络</p>
 <ul>
 <li><p>Generator的学习是一种structure learning(<strong>补充</strong>)</p>
@@ -353,8 +358,6 @@
 <li>鉴别器是N*N的，就是说，不是整张图出一个0/1，而是一个N * N一个patch就有一个0/1.</li>
 </ol>
 
-          
-        
       
     </div>
     
@@ -371,144 +374,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/22/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-22T16:40:15+08:00">
-                2019-07-22
-              </time>
+              <a href="/2019/07/22/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -518,10 +405,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -529,6 +417,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -549,8 +441,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -592,6 +493,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN的训练"><span class="nav-number">1.</span> <span class="nav-text">GAN的训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN-vanilla"><span class="nav-number">2.</span> <span class="nav-text">GAN vanilla</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-GAN"><span class="nav-number">3.</span> <span class="nav-text">Conditional GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pix2Pix"><span class="nav-number">4.</span> <span class="nav-text">Pix2Pix</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -725,6 +642,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
