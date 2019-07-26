@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GAN,Pix2Pix,">
+  <meta name="keywords" content="BeautyGAN,PairedGAN,CircleGAN,">
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
-<meta name="keywords" content="GAN,Pix2Pix">
+<meta name="description" content="Circle GANBeautyGAN AND PairedGAN共同特点 不需要成对的图片，只需要化妆图和素颜图 circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”  区别 网络结构  generator  B：仿妆图片和素颜图片使用同一个generator,不同的disc">
+<meta name="keywords" content="BeautyGAN,PairedGAN,CircleGAN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="7.23">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/7-23/index.html">
+<meta property="og:title" content="7.25">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/7-25/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
+<meta property="og:description" content="Circle GANBeautyGAN AND PairedGAN共同特点 不需要成对的图片，只需要化妆图和素颜图 circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”  区别 网络结构  generator  B：仿妆图片和素颜图片使用同一个generator,不同的disc">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png">
-<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa16b7ed6095205.png">
-<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1a7edab232297.png">
-<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1be8699960397.png">
-<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png">
-<meta property="og:updated_time" content="2019-07-26T06:46:55.979Z">
+<meta property="og:updated_time" content="2019-07-26T06:50:54.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="7.23">
-<meta name="twitter:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
-<meta name="twitter:image" content="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png">
+<meta name="twitter:title" content="7.25">
+<meta name="twitter:description" content="Circle GANBeautyGAN AND PairedGAN共同特点 不需要成对的图片，只需要化妆图和素颜图 circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”  区别 网络结构  generator  B：仿妆图片和素颜图片使用同一个generator,不同的disc">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/26/7-23/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/26/7-25/">
 
 
 
 
 
-  <title>7.23 | David_Zhang</title>
+  <title>7.25 | David_Zhang</title>
   
 
 
@@ -239,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/7-23/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/7-25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuanhan">
@@ -256,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">7.23</h1>
+          <h1 class="post-title" itemprop="name headline">7.25</h1>
         
 
         <div class="post-meta">
@@ -268,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T13:59:32+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T14:49:20+08:00">
                 2019-07-26
               </time>
             
@@ -328,57 +322,39 @@
       
 
       
-        <h3 id="GAN的训练"><a href="#GAN的训练" class="headerlink" title="GAN的训练"></a>GAN的训练</h3><p>用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他</p>
-<p>G，D一般是各种神经网络</p>
-<ul>
-<li><p>Generator的学习是一种structure learning(<strong>补充</strong>)</p>
-</li>
-<li><p>为什么不只训练一个生成器</p>
-<ul>
-<li><p>generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异</p>
-<p><a href="https://zhuanlan.zhihu.com/p/57174645" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57174645</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>  <img src="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png" alt="image-20190724113447852.png"></p>
-<ul>
-<li>图像pix与pix之间的关系很难掌握</li>
-</ul>
-<ul>
-<li><p>判别器为什么不自己产生image-其实是可以的但是有些条件</p>
-<ul>
-<li><p>对于discriminator的trainning需要借助非常好的negative example，不然稍微给一个好点的negative example就会以为是正样本。（我们不需要左边那个（fake）只需要右边这样好点的（fake））</p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa16b7ed6095205.png" alt="image-20190724134617778.png"></p>
-</li>
-<li><p>需要求解：<img src="https://i.loli.net/2019/07/26/5d3aa1a7edab232297.png" alt="image-20190724135014277.png"></p>
-<p>为什么呢？</p>
-<p>因为如果discriminators足够优秀的话，我们可以用这个discriminator得到使得这个discriminator的得到最大值的x，作为你的生成图片x。所以需要求解x。但是这个x通常不好解出来。</p>
-<p><strong>训练方法如下</strong></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa1be8699960397.png" alt="image-20190724135354590.png"></p>
-<p>第一排绿色部分是正样本，蓝色部分是生成的数据（这个时候没有引入generator,这个生成的数据可以只是噪声）。discriminator要做的就是给蓝色数据低分，绿色数据高分，然后得到一组argmax(D(X))(D(x)波峰的位置)，这些x的值作为下一轮迭代的生成数据，作为fake值，最后D(x)就会稳定到一个区间。</p>
-<p><strong>综上</strong>：</p>
-<p>那么怎么产生这些argmax(D(X)呢？-&gt;    我们就要用generator去生成这些argmax(D(X)。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="GAN-vanilla"><a href="#GAN-vanilla" class="headerlink" title="GAN vanilla"></a>GAN vanilla</h3><ol>
-<li>没有固定输入，输入是噪声；假设要训练形成MNIST就是一串噪声生成0-9的值，<strong>哪个值不确定</strong>。</li>
+        <h3 id="Circle-GAN"><a href="#Circle-GAN" class="headerlink" title="Circle GAN"></a>Circle GAN</h3><h3 id="BeautyGAN-AND-PairedGAN"><a href="#BeautyGAN-AND-PairedGAN" class="headerlink" title="BeautyGAN AND PairedGAN"></a>BeautyGAN AND PairedGAN</h3><h3 id="共同特点"><a href="#共同特点" class="headerlink" title="共同特点"></a>共同特点</h3><ol>
+<li>不需要成对的图片，只需要化妆图和素颜图</li>
+<li>circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”</li>
 </ol>
-<h3 id="Conditional-GAN"><a href="#Conditional-GAN" class="headerlink" title="Conditional GAN"></a>Conditional GAN</h3><p><a href="https://blog.csdn.net/taoyafan/article/details/81229466" target="_blank" rel="noopener">https://blog.csdn.net/taoyafan/article/details/81229466</a></p>
-<p>Sum: </p>
-<ol>
-<li>一个噪声加上一个condition作为输入；假设要训练形成MNIST就是一串噪声生成0-9的值，哪个值根据condition的独热码决定（可以理解为one-hot作为输入，通过one-shot的值，就可以生成图片，<strong>值确定</strong>）</li>
-<li>generator()的图片不仅要逼真而且要满足condition。</li>
-<li>训练的时候要加上condition和真实图片不同输出为0这种情况。</li>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+<li><p>网络结构</p>
+<ul>
+<li><p>generator</p>
+<ul>
+<li><p>B：仿妆图片和素颜图片使用同一个generator,不同的discrimilator</p>
+</li>
+<li><p>P：仿妆图片和素雅图片使用两个generator，仿妆到素颜的generator不结合素颜图片</p>
+<p>对于这两个模型，素颜到仿妆的generator都需要结合两个图片，都是分别卷积之后再cancat，但是B用的是VGG，P用的是空洞卷积。</p>
+</li>
+</ul>
+</li>
+<li><p>discrimilator</p>
+<ul>
+<li>由于generator的不同，两个loss有点差异</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>loss：</p>
+<ul>
+<li>BeautyGAN多了一个Histogram loss</li>
+</ul>
+</li>
 </ol>
-<h3 id="Pix2Pix"><a href="#Pix2Pix" class="headerlink" title="Pix2Pix"></a>Pix2Pix</h3><p><a href="https://blog.csdn.net/Teeyohuang/article/details/82699781" target="_blank" rel="noopener">https://blog.csdn.net/Teeyohuang/article/details/82699781</a></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png" alt="image-20190723165703439.png"></p>
-<p>Sum:</p>
-<ol>
-<li>训练一个生成网络，这个网络的目的是让输入图片符合一种映射，比如把语义的图像补齐。</li>
-<li>鉴别器是N*N的，就是说，不是整张图出一个0/1，而是一个N * N一个patch就有一个0/1.</li>
+<ol start="3">
+<li><p>trainnig</p>
+<p>P的generator对于每个仿妆区域分别得到</p>
+</li>
 </ol>
 
       
@@ -397,9 +373,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GAN/" rel="tag"># GAN</a>
+            <a href="/tags/BeautyGAN/" rel="tag"># BeautyGAN</a>
           
-            <a href="/tags/Pix2Pix/" rel="tag"># Pix2Pix</a>
+            <a href="/tags/PairedGAN/" rel="tag"># PairedGAN</a>
+          
+            <a href="/tags/CircleGAN/" rel="tag"># CircleGAN</a>
           
         </div>
       
@@ -412,14 +390,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/26/7-23/" rel="next" title="7.23">
+                <i class="fa fa-chevron-left"></i> 7.23
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/26/7-25/" rel="prev" title="7.25">
-                7.25 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/26/7-26/" rel="prev" title="7.26">
+                7.26 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -552,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN的训练"><span class="nav-number">1.</span> <span class="nav-text">GAN的训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN-vanilla"><span class="nav-number">2.</span> <span class="nav-text">GAN vanilla</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-GAN"><span class="nav-number">3.</span> <span class="nav-text">Conditional GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pix2Pix"><span class="nav-number">4.</span> <span class="nav-text">Pix2Pix</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Circle-GAN"><span class="nav-number">1.</span> <span class="nav-text">Circle GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautyGAN-AND-PairedGAN"><span class="nav-number">2.</span> <span class="nav-text">BeautyGAN AND PairedGAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共同特点"><span class="nav-number">3.</span> <span class="nav-text">共同特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">4.</span> <span class="nav-text">区别</span></a></li></ol></div>
             
 
           </div>
