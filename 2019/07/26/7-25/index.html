@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="BeautyGAN,PairedGAN,CircleGAN,">
+  <meta name="keywords" content="BeautyGAN,PairedGAN,CycleGAN,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Circle GANBeautyGAN AND PairedGAN共同特点 不需要成对的图片，只需要化妆图和素颜图 circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”  区别 网络结构  generator  B：仿妆图片和素颜图片使用同一个generator,不同的disc">
-<meta name="keywords" content="BeautyGAN,PairedGAN,CircleGAN">
+<meta name="description" content="Cycle GANSum: 从Pix2Pix到CycleGAN  Pix2Pix的问题  Pix2Pix必须使用pair的数据，但是这样的数据很难找   CycleGAN的改进  CycleGAN分离了风格（Style）和内容（content）  用Adversarial Loss来学习风格  用Cycle Loss来学习内容    为什么不需要pair  因为pix2pix的正负样本构造和Cyc">
+<meta name="keywords" content="BeautyGAN,PairedGAN,CycleGAN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7.25">
 <meta property="og:url" content="http://yoursite.com/2019/07/26/7-25/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="Circle GANBeautyGAN AND PairedGAN共同特点 不需要成对的图片，只需要化妆图和素颜图 circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”  区别 网络结构  generator  B：仿妆图片和素颜图片使用同一个generator,不同的disc">
+<meta property="og:description" content="Cycle GANSum: 从Pix2Pix到CycleGAN  Pix2Pix的问题  Pix2Pix必须使用pair的数据，但是这样的数据很难找   CycleGAN的改进  CycleGAN分离了风格（Style）和内容（content）  用Adversarial Loss来学习风格  用Cycle Loss来学习内容    为什么不需要pair  因为pix2pix的正负样本构造和Cyc">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-26T06:50:54.040Z">
+<meta property="og:updated_time" content="2019-07-26T08:42:54.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7.25">
-<meta name="twitter:description" content="Circle GANBeautyGAN AND PairedGAN共同特点 不需要成对的图片，只需要化妆图和素颜图 circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”  区别 网络结构  generator  B：仿妆图片和素颜图片使用同一个generator,不同的disc">
+<meta name="twitter:description" content="Cycle GANSum: 从Pix2Pix到CycleGAN  Pix2Pix的问题  Pix2Pix必须使用pair的数据，但是这样的数据很难找   CycleGAN的改进  CycleGAN分离了风格（Style）和内容（content）  用Adversarial Loss来学习风格  用Cycle Loss来学习内容    为什么不需要pair  因为pix2pix的正负样本构造和Cyc">
 
 
 
@@ -322,7 +322,33 @@
       
 
       
-        <h3 id="Circle-GAN"><a href="#Circle-GAN" class="headerlink" title="Circle GAN"></a>Circle GAN</h3><h3 id="BeautyGAN-AND-PairedGAN"><a href="#BeautyGAN-AND-PairedGAN" class="headerlink" title="BeautyGAN AND PairedGAN"></a>BeautyGAN AND PairedGAN</h3><h3 id="共同特点"><a href="#共同特点" class="headerlink" title="共同特点"></a>共同特点</h3><ol>
+        <h3 id="Cycle-GAN"><a href="#Cycle-GAN" class="headerlink" title="Cycle GAN"></a>Cycle GAN</h3><p>Sum:</p>
+<p>从Pix2Pix到CycleGAN</p>
+<ol>
+<li><p>Pix2Pix的问题</p>
+<ul>
+<li>Pix2Pix必须使用pair的数据，但是这样的数据很难找</li>
+</ul>
+</li>
+<li><p>CycleGAN的改进</p>
+<ul>
+<li><p>CycleGAN分离了<strong>风格（Style）和内容（content）</strong></p>
+<ul>
+<li><p>用Adversarial Loss来学习风格</p>
+</li>
+<li><p>用Cycle Loss来学习内容</p>
+</li>
+</ul>
+</li>
+<li><p>为什么不需要pair</p>
+<ul>
+<li>因为pix2pix的正负样本构造和CycleGAN不同</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="BeautyGAN-AND-PairedGAN"><a href="#BeautyGAN-AND-PairedGAN" class="headerlink" title="BeautyGAN AND PairedGAN"></a>BeautyGAN AND PairedGAN</h3><h3 id="共同特点"><a href="#共同特点" class="headerlink" title="共同特点"></a>共同特点</h3><ol>
 <li>不需要成对的图片，只需要化妆图和素颜图</li>
 <li>circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”</li>
 </ol>
@@ -377,7 +403,7 @@
           
             <a href="/tags/PairedGAN/" rel="tag"># PairedGAN</a>
           
-            <a href="/tags/CircleGAN/" rel="tag"># CircleGAN</a>
+            <a href="/tags/CycleGAN/" rel="tag"># CycleGAN</a>
           
         </div>
       
@@ -501,7 +527,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -534,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Circle-GAN"><span class="nav-number">1.</span> <span class="nav-text">Circle GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautyGAN-AND-PairedGAN"><span class="nav-number">2.</span> <span class="nav-text">BeautyGAN AND PairedGAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共同特点"><span class="nav-number">3.</span> <span class="nav-text">共同特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">4.</span> <span class="nav-text">区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cycle-GAN"><span class="nav-number">1.</span> <span class="nav-text">Cycle GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautyGAN-AND-PairedGAN"><span class="nav-number">2.</span> <span class="nav-text">BeautyGAN AND PairedGAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共同特点"><span class="nav-number">3.</span> <span class="nav-text">共同特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">4.</span> <span class="nav-text">区别</span></a></li></ol></div>
             
 
           </div>

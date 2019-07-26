@@ -92,7 +92,9 @@
 <meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1a7edab232297.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1be8699960397.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png">
-<meta property="og:updated_time" content="2019-07-26T06:46:55.979Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3ab7f6d9b1e93981.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3ab953a292f11095.png">
+<meta property="og:updated_time" content="2019-07-26T08:30:12.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7.23">
 <meta name="twitter:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
@@ -369,14 +371,34 @@
 <h3 id="Conditional-GAN"><a href="#Conditional-GAN" class="headerlink" title="Conditional GAN"></a>Conditional GAN</h3><p><a href="https://blog.csdn.net/taoyafan/article/details/81229466" target="_blank" rel="noopener">https://blog.csdn.net/taoyafan/article/details/81229466</a></p>
 <p>Sum: </p>
 <ol>
-<li>一个噪声加上一个condition作为输入；假设要训练形成MNIST就是一串噪声生成0-9的值，哪个值根据condition的独热码决定（可以理解为one-hot作为输入，通过one-shot的值，就可以生成图片，<strong>值确定</strong>）</li>
-<li>generator()的图片不仅要逼真而且要满足condition。</li>
-<li>训练的时候要加上condition和真实图片不同输出为0这种情况。</li>
+<li><p>给GAN添加监督</p>
+</li>
+<li><p>一个噪声加上一个condition作为输入；假设要训练形成MNIST就是一串噪声生成0-9的值，哪个值根据condition的独热码决定（可以理解为one-hot作为输入，通过one-shot的值，就可以生成图片，<strong>值确定</strong>）</p>
+</li>
+<li><p>generator()的图片不仅要逼真而且要满足condition。</p>
+</li>
+<li><p>训练的时候要加上condition和真实图片不同输出为0这种情况。</p>
+</li>
 </ol>
 <h3 id="Pix2Pix"><a href="#Pix2Pix" class="headerlink" title="Pix2Pix"></a>Pix2Pix</h3><p><a href="https://blog.csdn.net/Teeyohuang/article/details/82699781" target="_blank" rel="noopener">https://blog.csdn.net/Teeyohuang/article/details/82699781</a></p>
+<p><a href="https://blog.csdn.net/gdymind/article/details/82696481" target="_blank" rel="noopener">https://blog.csdn.net/gdymind/article/details/82696481</a></p>
 <p><img src="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png" alt="image-20190723165703439.png"></p>
 <p>Sum:</p>
 <ol>
+<li><p>将Conditional GAN引入到image Translation</p>
+<p><img src="https://i.loli.net/2019/07/26/5d3ab7f6d9b1e93981.png" alt="WX20190726-161934@2x.png"></p>
+<p><img src="https://i.loli.net/2019/07/26/5d3ab953a292f11095.png" alt="WX20190726-162646@2x.png"></p>
+<ul>
+<li><p>GAN的缺点：</p>
+<p>只能生成和目标图片domain相似的图片，但是不能保证这两张图片相似。所以还要用输入图片去监督G的输出。</p>
+</li>
+<li><p>为什么需要Pair image？</p>
+<p>因为Discrimilator需要正样本（x,y）和负样本(x,G(x))。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
 <li>训练一个生成网络，这个网络的目的是让输入图片符合一种映射，比如把语义的图像补齐。</li>
 <li>鉴别器是N*N的，就是说，不是整张图出一个0/1，而是一个N * N一个patch就有一个0/1.</li>
 </ol>
@@ -519,7 +541,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
