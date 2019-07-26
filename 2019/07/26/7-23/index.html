@@ -87,16 +87,16 @@
 <meta property="og:site_name" content="David_Zhang">
 <meta property="og:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724113447852.png">
-<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724134617778.png">
-<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724135014277.png">
-<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724135354590.png">
-<meta property="og:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190723165703439.png">
-<meta property="og:updated_time" content="2019-07-26T06:14:13.222Z">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Desktop/myblog/source/images/image-20190724113447852.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Desktop/myblog/source/images/image-20190724134617778.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Desktop/myblog/source/images/image-20190724135014277.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Desktop/myblog/source/images/image-20190724135354590.png">
+<meta property="og:image" content="http://yoursite.com/Users/mtdp/Desktop/myblog/source/images/image-20190723165703439.png">
+<meta property="og:updated_time" content="2019-07-26T06:31:33.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7.23">
 <meta name="twitter:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
-<meta name="twitter:image" content="http://yoursite.com/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724113447852.png">
+<meta name="twitter:image" content="http://yoursite.com/Users/mtdp/Desktop/myblog/source/images/image-20190724113447852.png">
 
 
 
@@ -341,7 +341,7 @@
 </ul>
 </li>
 </ul>
-<p>  <img src="/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724113447852.png" alt="image-20190724113447852"></p>
+<p>  <img src="/Users/mtdp/Desktop/myblog/source/images/image-20190724113447852.png" alt="image-20190724113447852"></p>
 <ul>
 <li>图像pix与pix之间的关系很难掌握</li>
 </ul>
@@ -349,13 +349,13 @@
 <li><p>判别器为什么不自己产生image-其实是可以的但是有些条件</p>
 <ul>
 <li><p>对于discriminator的trainning需要借助非常好的negative example，不然稍微给一个好点的negative example就会以为是正样本。（我们不需要左边那个（fake）只需要右边这样好点的（fake））</p>
-<p><img src="/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724134617778.png" alt="image-20190724134617778"></p>
+<p><img src="/Users/mtdp/Desktop/myblog/source/images/image-20190724134617778.png" alt="image-20190724134617778"></p>
 </li>
-<li><p>需要求解：<img src="/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724135014277.png" alt="image-20190724135014277"></p>
+<li><p>需要求解：<img src="/Users/mtdp/Desktop/myblog/source/images/image-20190724135014277.png" alt="image-20190724135014277"></p>
 <p>为什么呢？</p>
 <p>因为如果discriminators足够优秀的话，我们可以用这个discriminator得到使得这个discriminator的得到最大值的x，作为你的生成图片x。所以需要求解x。但是这个x通常不好解出来。</p>
 <p><strong>训练方法如下</strong></p>
-<p><img src="/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190724135354590.png" alt="image-20190724135354590"></p>
+<p><img src="/Users/mtdp/Desktop/myblog/source/images/image-20190724135354590.png" alt="image-20190724135354590"></p>
 <p>第一排绿色部分是正样本，蓝色部分是生成的数据（这个时候没有引入generator,这个生成的数据可以只是噪声）。discriminator要做的就是给蓝色数据低分，绿色数据高分，然后得到一组argmax(D(X))(D(x)波峰的位置)，这些x的值作为下一轮迭代的生成数据，作为fake值，最后D(x)就会稳定到一个区间。</p>
 <p><strong>综上</strong>：</p>
 <p>那么怎么产生这些argmax(D(X)呢？-&gt;    我们就要用generator去生成这些argmax(D(X)。</p>
@@ -374,7 +374,7 @@
 <li>训练的时候要加上condition和真实图片不同输出为0这种情况。</li>
 </ol>
 <h3 id="Pix2Pix"><a href="#Pix2Pix" class="headerlink" title="Pix2Pix"></a>Pix2Pix</h3><p><a href="https://blog.csdn.net/Teeyohuang/article/details/82699781" target="_blank" rel="noopener">https://blog.csdn.net/Teeyohuang/article/details/82699781</a></p>
-<p><img src="/Users/mtdp/Library/Application%20Support/typora-user-images/image-20190723165703439.png" alt="image-20190723165703439"></p>
+<p><img src="/Users/mtdp/Desktop/myblog/source/images/image-20190723165703439.png" alt="image-20190723165703439"></p>
 <p>Sum:</p>
 <ol>
 <li>训练一个生成网络，这个网络的目的是让输入图片符合一种映射，比如把语义的图像补齐。</li>
@@ -408,22 +408,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/07/22/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -497,7 +481,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
