@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Normalization,">
 
 
 
@@ -79,13 +79,46 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="David_Zhang">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="主要参考：  https://zhuanlan.zhihu.com/p/33173246 https://www.cnblogs.com/guoyaohua/p/8724433.html https://zhuanlan.zhihu.com/p/69659844 http://mlexplained.com/2018/01/10/an-intuitive-explanation-of-why-ba">
+<meta name="keywords" content="Normalization">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Batch Normalization">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/Batch-Normalization/index.html">
 <meta property="og:site_name" content="David_Zhang">
+<meta property="og:description" content="主要参考：  https://zhuanlan.zhihu.com/p/33173246 https://www.cnblogs.com/guoyaohua/p/8724433.html https://zhuanlan.zhihu.com/p/69659844 http://mlexplained.com/2018/01/10/an-intuitive-explanation-of-why-ba">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=h_l+%3D+w_l%5ETh_%7Bl-1%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+l%7D%7B%5Cpartial+h_%7Bl-1%7D%7D+%3D+%5Cfrac%7B%5Cpartial+l%7D%7B%5Cpartial+h_l%7D+.+%5Cfrac%7B%5Cpartial+h_l%7D%7B%5Cpartial+h_%7Bl-1%7D%7D+%3D+%5Cfrac%7B%5Cpartial+l%7D%7B%5Cpartial+h_l%7D+w_l">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+l%7D%7B%5Cpartial+h_k%7D+%3D+%5Cfrac%7B%5Cpartial+l%7D%7B%5Cpartial+h_l%7D+%5Cprod+_%7Bi%3Dk%2B1%7D%5E%7Bl%7D+w_i">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cprod_%7Bi%3Dk%2B1%7D%5El+w_i">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=w_i">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0.9%5E%7B100%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=w_i">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=1.1%5E%7B100%7D">
+<meta property="og:image" content="https://i.loli.net/2019/07/31/5d4163635143119114.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/31/5d416313a1d3b51063.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/31/5d4163317d13a15343.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/31/5d41633f8a66559862.png">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=h%3Df%5Cleft%28%5Cbold%7Bg%7D%5Ccdot%5Cfrac%7B%5Cbold%7Bx%7D-%5Cbold%7B%5Cmu%7D%7D%7B%5Cbold%7B%5Csigma%7D%7D%2B%5Cbold%7Bb%7D%5Cright%29%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7B%5Cmu%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7B%5Csigma%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7B%5Chat%7Bx%7D%7D%3D%5Cfrac%7B%5Cbold%7Bx%7D-%5Cbold%7B%5Cmu%7D%7D%7B%5Cbold%7B%5Csigma%7D%7D%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bb%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bg%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7B%5Chat%7Bx%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7By%7D%3D%5Cbold%7Bg%7D%5Ccdot+%5Cbold%7B%5Chat%7Bx%7D%7D+%2B+%5Cbold%7Bb%7D%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bb%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bg%7D%5E2">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bb%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bg%7D%5E2">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bx%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7By%7D%3D%5Cbold%7Bg%7D%5Ccdot+%5Cbold%7B%5Chat%7Bx%7D%7D+%2B+%5Cbold%7Bb%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbold%7Bb%7D">
+<meta property="og:updated_time" content="2019-07-31T10:13:00.418Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="David_Zhang">
+<meta name="twitter:title" content="Batch Normalization">
+<meta name="twitter:description" content="主要参考：  https://zhuanlan.zhihu.com/p/33173246 https://www.cnblogs.com/guoyaohua/p/8724433.html https://zhuanlan.zhihu.com/p/69659844 http://mlexplained.com/2018/01/10/an-intuitive-explanation-of-why-ba">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=h_l+%3D+w_l%5ETh_%7Bl-1%7D">
 
 
 
@@ -115,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/Batch-Normalization/">
 
 
 
 
 
-  <title>David_Zhang</title>
+  <title>Batch Normalization | David_Zhang</title>
   
 
 
@@ -140,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +246,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/31/Batch-Normalization/" itemprop="url">Batch Normalization</a></h1>
+          <h1 class="post-title" itemprop="name headline">Batch Normalization</h1>
         
 
         <div class="post-meta">
@@ -320,9 +350,7 @@
       
 
       
-        
-          
-            <p>主要参考：</p>
+        <p>主要参考：</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/33173246" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33173246</a></li>
 <li><a href="https://www.cnblogs.com/guoyaohua/p/8724433.html" target="_blank" rel="noopener">https://www.cnblogs.com/guoyaohua/p/8724433.html</a></li>
@@ -406,8 +434,6 @@
 </li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -422,370 +448,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/7-26/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/7-26/" itemprop="url">7.26</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T14:51:08+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Normalization/" rel="tag"># Normalization</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>网络越深，神经元对图像进行“审查”的部分就越大，这可能会导致局部性（localized）变差以及模糊（神经元需要对图像中非常大的区域进行“审查”）。 本文是通过每个神经元只出现在自己感兴趣的区域（只有感兴趣区域的神经元会被激活），进而锐化这种反应，即segmentation-aware CNN。 </p>
-<ol>
-<li><p>mask</p>
-<p>A mask is a filter. Concept of masking is also known as spatial filtering. Masking is also known as filtering. In this concept we just deal with the filtering operation that is performed directly on the image.-masking 是 指在image 领域的 filtering。</p>
-<p>在这篇文章中，mask是在局部区域，形成一个局部的前景和后景</p>
-</li>
-<li><p>Attention mask</p>
-<p>创造一种mask(filter)使其具有Attention的功能</p>
-</li>
-<li><p><img src="https://i.loli.net/2019/07/26/5d3aa33851db834364.png" alt="image-20190726104018892.png"></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa31d1cfbd11854.png" alt="image-20190726103924114.png"></p>
-<p>Embedding的学习，用类似FCN的网络生成，每个中间的Embedding都会upsampling到原图，然后进行cancat，最后再用1*1的filter处理。之后mask就可以用到不同的网络。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/7-25/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/7-25/" itemprop="url">7.25</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T14:49:20+08:00">
-                2019-07-26
-              </time>
+              <a href="/2019/07/26/7-26/" rel="next" title="7.26">
+                <i class="fa fa-chevron-left"></i> 7.26
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="Cycle-GAN"><a href="#Cycle-GAN" class="headerlink" title="Cycle GAN"></a>Cycle GAN</h3><p>Sum:</p>
-<p>从Pix2Pix到CycleGAN</p>
-<ol>
-<li><p>Pix2Pix的问题</p>
-<ul>
-<li>Pix2Pix必须使用pair的数据，但是这样的数据很难找</li>
-</ul>
-</li>
-<li><p>CycleGAN的改进</p>
-<ul>
-<li><p>CycleGAN分离了<strong>风格（Style）和内容（content）</strong></p>
-<ul>
-<li><p>用Adversarial Loss来学习风格</p>
-</li>
-<li><p>用Cycle Loss来学习内容</p>
-</li>
-</ul>
-</li>
-<li><p>为什么不需要pair</p>
-<ul>
-<li>因为pix2pix的正负样本构造和CycleGAN不同</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="BeautyGAN-AND-PairedGAN"><a href="#BeautyGAN-AND-PairedGAN" class="headerlink" title="BeautyGAN AND PairedGAN"></a>BeautyGAN AND PairedGAN</h3><h3 id="共同特点"><a href="#共同特点" class="headerlink" title="共同特点"></a>共同特点</h3><ol>
-<li>不需要成对的图片，只需要化妆图和素颜图</li>
-<li>circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”</li>
-</ol>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
-<li><p>网络结构</p>
-<ul>
-<li><p>generator</p>
-<ul>
-<li><p>B：仿妆图片和素颜图片使用同一个generator,不同的discrimilator</p>
-</li>
-<li><p>P：仿妆图片和素雅图片使用两个generator，仿妆到素颜的generator不结合素颜图片</p>
-<p>对于这两个模型，素颜到仿妆的generator都需要结合两个图片，都是分别卷积之后再cancat，但是B用的是VGG，P用的是空洞卷积。</p>
-</li>
-</ul>
-</li>
-<li><p>discrimilator</p>
-<ul>
-<li>由于generator的不同，两个loss有点差异</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>loss：</p>
-<ul>
-<li>BeautyGAN多了一个Histogram loss</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p>trainnig</p>
-<p>P的generator对于每个仿妆区域分别得到</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -795,223 +487,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/7-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/7-23/" itemprop="url">7.23</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T13:59:32+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="GAN的训练"><a href="#GAN的训练" class="headerlink" title="GAN的训练"></a>GAN的训练</h3><p>用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他</p>
-<p>G，D一般是各种神经网络</p>
-<ul>
-<li><p>Generator的学习是一种structure learning(<strong>补充</strong>)</p>
-</li>
-<li><p>为什么不只训练一个生成器</p>
-<ul>
-<li><p>generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异</p>
-<p><a href="https://zhuanlan.zhihu.com/p/57174645" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57174645</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>  <img src="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png" alt="image-20190724113447852.png"></p>
-<ul>
-<li>图像pix与pix之间的关系很难掌握</li>
-</ul>
-<ul>
-<li><p>判别器为什么不自己产生image-其实是可以的但是有些条件</p>
-<ul>
-<li><p>对于discriminator的trainning需要借助非常好的negative example，不然稍微给一个好点的negative example就会以为是正样本。（我们不需要左边那个（fake）只需要右边这样好点的（fake））</p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa16b7ed6095205.png" alt="image-20190724134617778.png"></p>
-</li>
-<li><p>需要求解：<img src="https://i.loli.net/2019/07/26/5d3aa1a7edab232297.png" alt="image-20190724135014277.png"></p>
-<p>为什么呢？</p>
-<p>因为如果discriminators足够优秀的话，我们可以用这个discriminator得到使得这个discriminator的得到最大值的x，作为你的生成图片x。所以需要求解x。但是这个x通常不好解出来。</p>
-<p><strong>训练方法如下</strong></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa1be8699960397.png" alt="image-20190724135354590.png"></p>
-<p>第一排绿色部分是正样本，蓝色部分是生成的数据（这个时候没有引入generator,这个生成的数据可以只是噪声）。discriminator要做的就是给蓝色数据低分，绿色数据高分，然后得到一组argmax(D(X))(D(x)波峰的位置)，这些x的值作为下一轮迭代的生成数据，作为fake值，最后D(x)就会稳定到一个区间。</p>
-<p><strong>综上</strong>：</p>
-<p>那么怎么产生这些argmax(D(X)呢？-&gt;    我们就要用generator去生成这些argmax(D(X)。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="GAN-vanilla"><a href="#GAN-vanilla" class="headerlink" title="GAN vanilla"></a>GAN vanilla</h3><ol>
-<li>没有固定输入，输入是噪声；假设要训练形成MNIST就是一串噪声生成0-9的值，<strong>哪个值不确定</strong>。</li>
-</ol>
-<h3 id="Conditional-GAN"><a href="#Conditional-GAN" class="headerlink" title="Conditional GAN"></a>Conditional GAN</h3><p><a href="https://blog.csdn.net/taoyafan/article/details/81229466" target="_blank" rel="noopener">https://blog.csdn.net/taoyafan/article/details/81229466</a></p>
-<p>Sum: </p>
-<ol>
-<li><p>给GAN添加监督</p>
-</li>
-<li><p>一个噪声加上一个condition作为输入；假设要训练形成MNIST就是一串噪声生成0-9的值，哪个值根据condition的独热码决定（可以理解为one-hot作为输入，通过one-shot的值，就可以生成图片，<strong>值确定</strong>）</p>
-</li>
-<li><p>generator()的图片不仅要逼真而且要满足condition。</p>
-</li>
-<li><p>训练的时候要加上condition和真实图片不同输出为0这种情况。</p>
-</li>
-</ol>
-<h3 id="Pix2Pix"><a href="#Pix2Pix" class="headerlink" title="Pix2Pix"></a>Pix2Pix</h3><p><a href="https://blog.csdn.net/Teeyohuang/article/details/82699781" target="_blank" rel="noopener">https://blog.csdn.net/Teeyohuang/article/details/82699781</a></p>
-<p><a href="https://blog.csdn.net/gdymind/article/details/82696481" target="_blank" rel="noopener">https://blog.csdn.net/gdymind/article/details/82696481</a></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png" alt="image-20190723165703439.png"></p>
-<p>Sum:</p>
-<ol>
-<li><p>将Conditional GAN引入到image Translation</p>
-<p><img src="https://i.loli.net/2019/07/26/5d3ab7f6d9b1e93981.png" alt="WX20190726-161934@2x.png"></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3ab953a292f11095.png" alt="WX20190726-162646@2x.png"></p>
-<ul>
-<li><p>GAN的缺点：</p>
-<p>只能生成和目标图片domain相似的图片，但是不能保证这两张图片相似。所以还要用输入图片去监督G的输出。</p>
-</li>
-<li><p>为什么需要Pair image？</p>
-<p>因为Discrimilator需要正样本（x,y）和负样本(x,G(x))。</p>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li>训练一个生成网络，这个网络的目的是让输入图片符合一种映射，比如把语义的图像补齐。</li>
-<li>鉴别器是N*N的，就是说，不是整张图出一个0/1，而是一个N * N一个patch就有一个0/1.</li>
-</ol>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1019,6 +499,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1039,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1100,6 +593,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Internal-Covariate-Shift"><span class="nav-number">1.1.</span> <span class="nav-text">Internal Covariate Shift</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Internal-Covariate-Shift带来的问题"><span class="nav-number">1.1.1.</span> <span class="nav-text">Internal Covariate Shift带来的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Normalization-通用"><span class="nav-number">2.</span> <span class="nav-text">Normalization 通用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1233,6 +742,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
