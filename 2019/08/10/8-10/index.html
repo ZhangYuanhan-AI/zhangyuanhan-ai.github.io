@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="BeautyGAN,PairedGAN,CycleGAN,">
+  <meta name="keywords" content="SSD,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Cycle GANSum: 从Pix2Pix到CycleGAN  Pix2Pix的问题  Pix2Pix必须使用pair的数据，但是这样的数据很难找   CycleGAN的改进  CycleGAN分离了风格（Style）和内容（content）  用Adversarial Loss来学习风格  用Cycle Loss来学习内容    为什么不需要pair  因为pix2pix的正负样本构造和Cyc">
-<meta name="keywords" content="BeautyGAN,PairedGAN,CycleGAN">
+<meta name="description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
+<meta name="keywords" content="SSD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="7.25">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/7-25/index.html">
+<meta property="og:title" content="8-10">
+<meta property="og:url" content="http://yoursite.com/2019/08/10/8-10/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="Cycle GANSum: 从Pix2Pix到CycleGAN  Pix2Pix的问题  Pix2Pix必须使用pair的数据，但是这样的数据很难找   CycleGAN的改进  CycleGAN分离了风格（Style）和内容（content）  用Adversarial Loss来学习风格  用Cycle Loss来学习内容    为什么不需要pair  因为pix2pix的正负样本构造和Cyc">
+<meta property="og:description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-26T08:42:54.606Z">
+<meta property="og:updated_time" content="2019-08-10T03:39:00.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="7.25">
-<meta name="twitter:description" content="Cycle GANSum: 从Pix2Pix到CycleGAN  Pix2Pix的问题  Pix2Pix必须使用pair的数据，但是这样的数据很难找   CycleGAN的改进  CycleGAN分离了风格（Style）和内容（content）  用Adversarial Loss来学习风格  用Cycle Loss来学习内容    为什么不需要pair  因为pix2pix的正负样本构造和Cyc">
+<meta name="twitter:title" content="8-10">
+<meta name="twitter:description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/26/7-25/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/10/8-10/">
 
 
 
 
 
-  <title>7.25 | David_Zhang</title>
+  <title>8-10 | David_Zhang</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/7-25/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/8-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuanhan">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">7.25</h1>
+          <h1 class="post-title" itemprop="name headline">8-10</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T14:49:20+08:00">
-                2019-07-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-10T11:14:36+08:00">
+                2019-08-10
               </time>
             
 
@@ -322,64 +322,57 @@
       
 
       
-        <h3 id="Cycle-GAN"><a href="#Cycle-GAN" class="headerlink" title="Cycle GAN"></a>Cycle GAN</h3><p>Sum:</p>
-<p>从Pix2Pix到CycleGAN</p>
-<ol>
-<li><p>Pix2Pix的问题</p>
+        <h1 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/33544892" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33544892</a></p>
+<h2 id="Hightlight"><a href="#Hightlight" class="headerlink" title="Hightlight"></a>Hightlight</h2><ol>
+<li><p>One-stage</p>
+</li>
+<li><p>Multi-scale</p>
+</li>
+<li><p>又快又准</p>
+</li>
+<li><p>提出了Hard negative mining，解决样本不平衡。</p>
 <ul>
-<li>Pix2Pix必须使用pair的数据，但是这样的数据很难找</li>
+<li>在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。</li>
 </ul>
 </li>
-<li><p>CycleGAN的改进</p>
+</ol>
+<h2 id="和YOLOv1的区别"><a href="#和YOLOv1的区别" class="headerlink" title="和YOLOv1的区别"></a>和YOLOv1的区别</h2><ol>
+<li><p>多尺度：</p>
 <ul>
-<li><p>CycleGAN分离了<strong>风格（Style）和内容（content）</strong></p>
-<ul>
-<li><p>用Adversarial Loss来学习风格</p>
+<li><p>对于YOLOv1，都是基于一个feature map上的操作。</p>
 </li>
-<li><p>用Cycle Loss来学习内容</p>
-</li>
-</ul>
-</li>
-<li><p>为什么不需要pair</p>
-<ul>
-<li>因为pix2pix的正负样本构造和CycleGAN不同</li>
-</ul>
+<li><p>对于SSD 有6个不同的feature map。</p>
 </li>
 </ul>
 </li>
 </ol>
-<h3 id="BeautyGAN-AND-PairedGAN"><a href="#BeautyGAN-AND-PairedGAN" class="headerlink" title="BeautyGAN AND PairedGAN"></a>BeautyGAN AND PairedGAN</h3><h3 id="共同特点"><a href="#共同特点" class="headerlink" title="共同特点"></a>共同特点</h3><ol>
-<li>不需要成对的图片，只需要化妆图和素颜图</li>
-<li>circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”</li>
-</ol>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
-<li><p>网络结构</p>
+<ol start="2">
+<li><p>Bounding Box：</p>
 <ul>
-<li><p>generator</p>
-<ul>
-<li><p>B：仿妆图片和素颜图片使用同一个generator,不同的discrimilator</p>
+<li><p>对于YOLOv1，其最后要回归的是BB的真实坐标。</p>
 </li>
-<li><p>P：仿妆图片和素雅图片使用两个generator，仿妆到素颜的generator不结合素颜图片</p>
-<p>对于这两个模型，素颜到仿妆的generator都需要结合两个图片，都是分别卷积之后再cancat，但是B用的是VGG，P用的是空洞卷积。</p>
+<li><p>对于SSD，模拟fasterRcnn的anchor，BB由Base Anchor和偏移组成，最后回归的是偏移，另外，不同尺度下base anchor的大小不同，类比maskRcnn。</p>
 </li>
-</ul>
-</li>
-<li><p>discrimilator</p>
-<ul>
-<li>由于generator的不同，两个loss有点差异</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>loss：</p>
-<ul>
-<li>BeautyGAN多了一个Histogram loss</li>
 </ul>
 </li>
 </ol>
 <ol start="3">
-<li><p>trainnig</p>
-<p>P的generator对于每个仿妆区域分别得到</p>
+<li><p>Matching strategy</p>
+<ul>
+<li>对于YOLOv1，如果一个bin中是一个物体的中心，那么该bin（最后是7*7的像素点）就负责预测这个物体。</li>
+<li>对于SSD，matching 分为两个步骤（<strong>一个BB只能对于一个GT，但是一个GT可以对应多个BB</strong>）<ul>
+<li>GT matching，GT只matching与自己IOU最高的，使得与自己IOU最高的BB的GT的类别为GT</li>
+<li>BB matching，BB与自己IOU &gt; 0,5的GT matching，若有多个GT，BB选择IOU最高的。</li>
+<li>前两部顺序不能变化，对于没有match的BB，其类别为背景。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>classification</p>
+<ul>
+<li>对于YOLOv1，分类使用的是全联接。</li>
+<li>对于SSD，分类用的是全卷积。</li>
+</ul>
 </li>
 </ol>
 
@@ -399,11 +392,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BeautyGAN/" rel="tag"># BeautyGAN</a>
-          
-            <a href="/tags/PairedGAN/" rel="tag"># PairedGAN</a>
-          
-            <a href="/tags/CycleGAN/" rel="tag"># CycleGAN</a>
+            <a href="/tags/SSD/" rel="tag"># SSD</a>
           
         </div>
       
@@ -416,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/26/7-23/" rel="next" title="7.23">
-                <i class="fa fa-chevron-left"></i> 7.23
+              <a href="/2019/08/05/8-5/" rel="next" title="8.5">
+                <i class="fa fa-chevron-left"></i> 8.5
               </a>
             
           </div>
@@ -425,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/26/7-26/" rel="prev" title="7.26">
-                7.26 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cycle-GAN"><span class="nav-number">1.</span> <span class="nav-text">Cycle GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautyGAN-AND-PairedGAN"><span class="nav-number">2.</span> <span class="nav-text">BeautyGAN AND PairedGAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共同特点"><span class="nav-number">3.</span> <span class="nav-text">共同特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">4.</span> <span class="nav-text">区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSD"><span class="nav-number">1.</span> <span class="nav-text">SSD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hightlight"><span class="nav-number">1.2.</span> <span class="nav-text">Hightlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和YOLOv1的区别"><span class="nav-number">1.3.</span> <span class="nav-text">和YOLOv1的区别</span></a></li></ol></li></ol></div>
             
 
           </div>

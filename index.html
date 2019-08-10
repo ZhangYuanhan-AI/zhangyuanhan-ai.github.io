@@ -229,6 +229,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/8-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Yuanhan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David_Zhang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/10/8-10/" itemprop="url">8-10</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-10T11:14:36+08:00">
+                2019-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
+                    <span itemprop="name">Paper Reading</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/33544892" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33544892</a></p>
+<h2 id="Hightlight"><a href="#Hightlight" class="headerlink" title="Hightlight"></a>Hightlight</h2><ol>
+<li><p>One-stage</p>
+</li>
+<li><p>Multi-scale</p>
+</li>
+<li><p>又快又准</p>
+</li>
+<li><p>提出了Hard negative mining，解决样本不平衡。</p>
+<ul>
+<li>在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。</li>
+</ul>
+</li>
+</ol>
+<h2 id="和YOLOv1的区别"><a href="#和YOLOv1的区别" class="headerlink" title="和YOLOv1的区别"></a>和YOLOv1的区别</h2><ol>
+<li><p>多尺度：</p>
+<ul>
+<li><p>对于YOLOv1，都是基于一个feature map上的操作。</p>
+</li>
+<li><p>对于SSD 有6个不同的feature map。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>Bounding Box：</p>
+<ul>
+<li><p>对于YOLOv1，其最后要回归的是BB的真实坐标。</p>
+</li>
+<li><p>对于SSD，模拟fasterRcnn的anchor，BB由Base Anchor和偏移组成，最后回归的是偏移，另外，不同尺度下base anchor的大小不同，类比maskRcnn。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>Matching strategy</p>
+<ul>
+<li>对于YOLOv1，如果一个bin中是一个物体的中心，那么该bin（最后是7*7的像素点）就负责预测这个物体。</li>
+<li>对于SSD，matching 分为两个步骤（<strong>一个BB只能对于一个GT，但是一个GT可以对应多个BB</strong>）<ul>
+<li>GT matching，GT只matching与自己IOU最高的，使得与自己IOU最高的BB的GT的类别为GT</li>
+<li>BB matching，BB与自己IOU &gt; 0,5的GT matching，若有多个GT，BB选择IOU最高的。</li>
+<li>前两部顺序不能变化，对于没有match的BB，其类别为背景。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>classification</p>
+<ul>
+<li>对于YOLOv1，分类使用的是全联接。</li>
+<li>对于SSD，分类用的是全卷积。</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/8-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,6 +531,19 @@
 <h2 id="和FasterRcnn的Anchor的区别"><a href="#和FasterRcnn的Anchor的区别" class="headerlink" title="和FasterRcnn的Anchor的区别"></a>和FasterRcnn的Anchor的区别</h2><p>对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于YOLOv1来说其bbox的所有坐标完全是通过回归的方法生成的。</p>
 <h2 id="训练阶段GT的生成"><a href="#训练阶段GT的生成" class="headerlink" title="训练阶段GT的生成"></a>训练阶段GT的生成</h2><p><img src="https://i.loli.net/2019/08/07/Wor27Iu9tGiH4me.png" alt="123.png"></p>
 <h2 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h2><p><img src="https://i.loli.net/2019/08/07/k1xcB7oKbY6DFzn.png" alt="321.png"></p>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><a href="https://blog.csdn.net/hrsstudy/article/details/70305791" target="_blank" rel="noopener">https://blog.csdn.net/hrsstudy/article/details/70305791</a></p>
+<p><a href="https://my.oschina.net/u/876354/blog/1633143" target="_blank" rel="noopener">https://my.oschina.net/u/876354/blog/1633143</a></p>
+<p><img src="https://i.loli.net/2019/08/09/bjmGqP4pvUBiZcJ.png" alt="2.png"></p>
+<ol>
+<li>卷积层怎么变成全联接层的（突然有点忘了 所以记录下来）<ul>
+<li>比如这里卷积层是7 * 7 * 1024，第一个全联接层的结果是4096，所以这里要用到4096个7 * 7 * 1024大小的卷积核</li>
+</ul>
+</li>
+<li>全联接层怎么变成卷积层的<ul>
+<li>直接resize</li>
+</ul>
+</li>
+</ol>
 
           
         
@@ -1211,7 +1418,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1233,7 +1440,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
