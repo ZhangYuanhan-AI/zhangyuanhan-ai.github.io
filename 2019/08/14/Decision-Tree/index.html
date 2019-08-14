@@ -79,15 +79,21 @@
 
 
 
+<meta name="description" content="Decision Tree回归树参考文献https://blog.csdn.net/weixin_40604987/article/details/79296427 划分分裂的方法 最小二乘法分裂  决定一个属性  基于该属性决定切分点  通过切分点左右区域分别计算y的均值c1,c2（这个时候y的取值有很多，不只是0，1）  算两个区域每个y（y1,y2,y2…yn）值和自己区域均值(c1/c2)">
 <meta name="keywords" content="Decision Tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Decision Tree">
 <meta property="og:url" content="http://yoursite.com/2019/08/14/Decision-Tree/index.html">
 <meta property="og:site_name" content="David_Zhang">
+<meta property="og:description" content="Decision Tree回归树参考文献https://blog.csdn.net/weixin_40604987/article/details/79296427 划分分裂的方法 最小二乘法分裂  决定一个属性  基于该属性决定切分点  通过切分点左右区域分别计算y的均值c1,c2（这个时候y的取值有很多，不只是0，1）  算两个区域每个y（y1,y2,y2…yn）值和自己区域均值(c1/c2)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T06:44:25.315Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/14/ASu16D9PMYIeQ7r.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/14/6tWgncNL7xZkI1j.png">
+<meta property="og:updated_time" content="2019-08-14T09:14:54.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Decision Tree">
+<meta name="twitter:description" content="Decision Tree回归树参考文献https://blog.csdn.net/weixin_40604987/article/details/79296427 划分分裂的方法 最小二乘法分裂  决定一个属性  基于该属性决定切分点  通过切分点左右区域分别计算y的均值c1,c2（这个时候y的取值有很多，不只是0，1）  算两个区域每个y（y1,y2,y2…yn）值和自己区域均值(c1/c2)">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/14/ASu16D9PMYIeQ7r.png">
 
 
 
@@ -330,7 +336,33 @@
       
 
       
-        
+        <h1 id="Decision-Tree"><a href="#Decision-Tree" class="headerlink" title="Decision Tree"></a>Decision Tree</h1><h2 id="回归树"><a href="#回归树" class="headerlink" title="回归树"></a>回归树</h2><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="https://blog.csdn.net/weixin_40604987/article/details/79296427" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40604987/article/details/79296427</a></p>
+<h3 id="划分分裂的方法"><a href="#划分分裂的方法" class="headerlink" title="划分分裂的方法"></a>划分分裂的方法</h3><ol>
+<li><p>最小二乘法分裂</p>
+<ul>
+<li><p>决定一个属性</p>
+</li>
+<li><p>基于该属性决定切分点</p>
+</li>
+<li><p>通过切分点左右区域分别计算y的均值c1,c2（这个时候y的取值有很多，不只是0，1）</p>
+</li>
+<li><p>算两个区域每个y（y1,y2,y2…yn）值和自己区域均值(c1/c2)的平方差的和</p>
+</li>
+<li><p>把最小平方差对应的切分点作为当前切分点。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="分类树"><a href="#分类树" class="headerlink" title="分类树"></a>分类树</h2><h3 id="参考文献-1"><a href="#参考文献-1" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/26703300" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26703300</a></li>
+</ol>
+<h3 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h3><p><img src="https://i.loli.net/2019/08/14/ASu16D9PMYIeQ7r.png" alt="决策树_西瓜.png"></p>
+<p><img src="https://i.loli.net/2019/08/14/6tWgncNL7xZkI1j.png" alt="西瓜_结果.png"></p>
+<p>根据每个属性和纯度的关系求出当前的分裂属性</p>
+<blockquote>
+<p>所谓分裂属性就是在某个节点处按照某一特征属性的不同划分构造不同的分支，其目标是让各个分裂子集尽可能地“纯”。尽可能“纯”就是尽量让一个分裂子集中待分类项属于同一类别。<strong>而判断“纯”的方法不同引出了我们的ID3算法，C4.5算法以及CART算法</strong>–<a href="https://zhuanlan.zhihu.com/p/26760551" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26760551</a></p>
+</blockquote>
+
       
     </div>
     
@@ -424,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -485,6 +526,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Decision-Tree"><span class="nav-number">1.</span> <span class="nav-text">Decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回归树"><span class="nav-number">1.1.</span> <span class="nav-text">回归树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">1.1.1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#划分分裂的方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">划分分裂的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类树"><span class="nav-number">1.2.</span> <span class="nav-text">分类树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structure"><span class="nav-number">1.2.2.</span> <span class="nav-text">Structure</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

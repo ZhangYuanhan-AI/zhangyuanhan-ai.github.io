@@ -79,15 +79,20 @@
 
 
 
+<meta name="description" content="Random Forest参考文献https://zhuanlan.zhihu.com/p/34534004 Highlight 数据的随机选取  从原始的数据集中采取有放回的抽样（bootstrap），构造子数据集，子数据集的数据量是和原始数据集相同的。不同子数据集的元素可以重复，同一个子数据集中的元素也可以重复。   利用子数据集来构建子决策树，将这个数据放到每个子决策树中，每个子决策树输出一">
 <meta name="keywords" content="Random Forest">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Random Forest">
 <meta property="og:url" content="http://yoursite.com/2019/08/14/Random-Forest/index.html">
 <meta property="og:site_name" content="David_Zhang">
+<meta property="og:description" content="Random Forest参考文献https://zhuanlan.zhihu.com/p/34534004 Highlight 数据的随机选取  从原始的数据集中采取有放回的抽样（bootstrap），构造子数据集，子数据集的数据量是和原始数据集相同的。不同子数据集的元素可以重复，同一个子数据集中的元素也可以重复。   利用子数据集来构建子决策树，将这个数据放到每个子决策树中，每个子决策树输出一">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T06:44:49.726Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/14/HxKNg6ewJha1q72.jpg">
+<meta property="og:updated_time" content="2019-08-14T09:23:47.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Forest">
+<meta name="twitter:description" content="Random Forest参考文献https://zhuanlan.zhihu.com/p/34534004 Highlight 数据的随机选取  从原始的数据集中采取有放回的抽样（bootstrap），构造子数据集，子数据集的数据量是和原始数据集相同的。不同子数据集的元素可以重复，同一个子数据集中的元素也可以重复。   利用子数据集来构建子决策树，将这个数据放到每个子决策树中，每个子决策树输出一">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/14/HxKNg6ewJha1q72.jpg">
 
 
 
@@ -270,6 +275,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -308,7 +335,24 @@
       
 
       
-        
+        <h1 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhuanlan.zhihu.com/p/34534004" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/34534004</a></p>
+<h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
+<li><p>数据的随机选取</p>
+<blockquote>
+<p>从原始的数据集中采取<strong>有放回的抽样</strong>（bootstrap），构造子数据集，子数据集的数据量是和原始数据集相同的。不同子数据集的元素可以重复，同一个子数据集中的元素也可以重复。</p>
+</blockquote>
+<blockquote>
+<p>利用子数据集来构建子决策树，将这个数据放到每个子决策树中，每个子决策树输出一个结果。最后，如果有了新的数据需要通过随机森林得到分类结果，就可以通过对子决策树的判断结果的投票，得到随机森林的输出结果了。如下图，假设随机森林中有3棵子决策树，2棵子树的分类结果是A类，1棵子树的分类结果是B类，那么随机森林的分类结果就是A类。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/08/14/HxKNg6ewJha1q72.jpg" alt="123321.jpg"></p>
+</li>
+<li><p>待选特征的随机选取</p>
+<blockquote>
+<p>与数据集的随机选取类似，随机森林中的子树的每一个分裂过程并未用到所有的待选特征，而是从所有的待选特征中随机选取一定的特征，之后再在随机选取的特征中选取最优的特征。这样能够使得随机森林中的决策树都能够彼此不同，提升系统的多样性，从而提升分类性能。</p>
+</blockquote>
+</li>
+</ol>
+
       
     </div>
     
@@ -398,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -459,6 +512,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Forest"><span class="nav-number">1.</span> <span class="nav-text">Random Forest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">1.1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">1.2.</span> <span class="nav-text">Highlight</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
