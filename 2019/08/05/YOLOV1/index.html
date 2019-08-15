@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="DeeplabV3+,">
+  <meta name="keywords" content="YOLOV1,">
 
 
 
@@ -79,21 +79,29 @@
 
 
 
-<meta name="description" content="DeeplabV3+Highlight 给空洞卷积系列加上了decoder  主要是权衡计算时间和计算准确度的问题：  Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to">
-<meta name="keywords" content="DeeplabV3+">
+<meta name="description" content="YOLOV1参考 https://zhuanlan.zhihu.com/p/46691043  Highlight one-stage  每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）   very fast   和FasterRcnn的Anchor的区别对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于">
+<meta name="keywords" content="YOLOV1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8.13">
-<meta property="og:url" content="http://yoursite.com/2019/08/13/8-13/index.html">
+<meta property="og:title" content="YOLOV1">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/YOLOV1/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="DeeplabV3+Highlight 给空洞卷积系列加上了decoder  主要是权衡计算时间和计算准确度的问题：  Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to">
+<meta property="og:description" content="YOLOV1参考 https://zhuanlan.zhihu.com/p/46691043  Highlight one-stage  每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）   very fast   和FasterRcnn的Anchor的区别对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/08/13/TXeiaAxzOt8wm6k.png">
-<meta property="og:image" content="https://i.loli.net/2019/08/13/V2aNzQ1froxJjdn.png">
-<meta property="og:updated_time" content="2019-08-13T11:54:41.629Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/07/Wor27Iu9tGiH4me.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/07/k1xcB7oKbY6DFzn.png">
+<meta property="og:image" content="https://i.loli.net/2019/08/09/bjmGqP4pvUBiZcJ.png">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-09c3012b2ff765dc01fa65d10d6b322f_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-09c3012b2ff765dc01fa65d10d6b322f_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-5eb7009c33c2e097277bb28b0cfa7511_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-5eb7009c33c2e097277bb28b0cfa7511_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-65a3c3f8f9b23751cc22cb50e958798d_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-65a3c3f8f9b23751cc22cb50e958798d_hd.jpg">
+<meta property="og:updated_time" content="2019-08-15T03:13:24.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8.13">
-<meta name="twitter:description" content="DeeplabV3+Highlight 给空洞卷积系列加上了decoder  主要是权衡计算时间和计算准确度的问题：  Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to">
-<meta name="twitter:image" content="https://i.loli.net/2019/08/13/TXeiaAxzOt8wm6k.png">
+<meta name="twitter:title" content="YOLOV1">
+<meta name="twitter:description" content="YOLOV1参考 https://zhuanlan.zhihu.com/p/46691043  Highlight one-stage  每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）   very fast   和FasterRcnn的Anchor的区别对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png">
 
 
 
@@ -123,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/13/8-13/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/05/YOLOV1/">
 
 
 
 
 
-  <title>8.13 | David_Zhang</title>
+  <title>YOLOV1 | David_Zhang</title>
   
 
 
@@ -236,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/8-13/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/YOLOV1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuanhan">
@@ -253,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">8.13</h1>
+          <h1 class="post-title" itemprop="name headline">YOLOV1</h1>
         
 
         <div class="post-meta">
@@ -265,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T19:44:18+08:00">
-                2019-08-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T18:03:32+08:00">
+                2019-08-05
               </time>
             
 
@@ -305,7 +313,7 @@
 
           
           
-             <span id="/2019/08/13/8-13/" class="leancloud_visitors" data-flag-title="8.13">
+             <span id="/2019/08/05/YOLOV1/" class="leancloud_visitors" data-flag-title="YOLOV1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -336,20 +344,52 @@
       
 
       
-        <h1 id="DeeplabV3"><a href="#DeeplabV3" class="headerlink" title="DeeplabV3+"></a>DeeplabV3+</h1><h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
-<li><p>给空洞卷积系列加上了decoder</p>
+        <h1 id="YOLOV1"><a href="#YOLOV1" class="headerlink" title="YOLOV1"></a>YOLOV1</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/46691043" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/46691043</a></li>
+</ol>
+<h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
+<li><p>one-stage</p>
 </li>
-<li><p>主要是权衡计算时间和计算准确度的问题：</p>
-<blockquote>
-<p>Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to the pooling or convolutions with striding operations within the network backbone. This could be alleviated by applying the atrous convolution to extract denser feature maps. However, given the design of state-of-art neural networks [7,9,10,25,26] and limited GPU memory, it is computationally prohibitive to extract output feature maps that are 8, or even 4 times smaller than the input resolution.</p>
-</blockquote>
+<li><p>每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）</p>
+<p><img src="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png" alt="1.png"></p>
 </li>
-<li><p>用decoder解决DeeplabV3中用插值上采样不够精确的问题</p>
+<li><p>very fast</p>
 </li>
 </ol>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><img src="https://i.loli.net/2019/08/13/TXeiaAxzOt8wm6k.png" alt="1212.png"></p>
-<p><img src="https://i.loli.net/2019/08/13/V2aNzQ1froxJjdn.png" alt="123.png"></p>
-<h2 id="和Xeception结合"><a href="#和Xeception结合" class="headerlink" title="和Xeception结合"></a>和Xeception结合</h2><p>Pending</p>
+<h2 id="和FasterRcnn的Anchor的区别"><a href="#和FasterRcnn的Anchor的区别" class="headerlink" title="和FasterRcnn的Anchor的区别"></a>和FasterRcnn的Anchor的区别</h2><p>对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于YOLOv1来说其bbox的所有坐标完全是通过回归的方法生成的。</p>
+<h2 id="训练阶段GT的生成"><a href="#训练阶段GT的生成" class="headerlink" title="训练阶段GT的生成"></a>训练阶段GT的生成</h2><p><img src="https://i.loli.net/2019/08/07/Wor27Iu9tGiH4me.png" alt="123.png"></p>
+<h2 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h2><blockquote>
+<p><img src="https://i.loli.net/2019/08/07/k1xcB7oKbY6DFzn.png" alt="321.png"></p>
+</blockquote>
+<p>另外需要注意的是，关于class的loss这里也完全用的是回归的方式而不是softmax。</p>
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><a href="https://blog.csdn.net/hrsstudy/article/details/70305791" target="_blank" rel="noopener">https://blog.csdn.net/hrsstudy/article/details/70305791</a></p>
+<p><a href="https://my.oschina.net/u/876354/blog/1633143" target="_blank" rel="noopener">https://my.oschina.net/u/876354/blog/1633143</a></p>
+<p><img src="https://i.loli.net/2019/08/09/bjmGqP4pvUBiZcJ.png" alt="2.png"></p>
+<ol>
+<li>卷积层怎么变成全联接层的（突然有点忘了 所以记录下来）<ul>
+<li>比如这里卷积层是7 * 7 * 1024，第一个全联接层的结果是4096，所以这里要用到4096个7 * 7 * 1024大小的卷积核</li>
+</ul>
+</li>
+<li>全联接层怎么变成卷积层的<ul>
+<li>直接resize</li>
+</ul>
+</li>
+</ol>
+<p>作者：白裳</p>
+<h2 id="YOLO中的Bounding-Box-Normalization"><a href="#YOLO中的Bounding-Box-Normalization" class="headerlink" title="YOLO中的Bounding Box Normalization"></a>YOLO中的Bounding Box Normalization</h2><blockquote>
+<p>YOLO在实现中有一个重要细节，即对bounding box的坐标(x, y, w, h)进行了normalization，以便进行回归。作者认为这是一个非常重要的细节。在原文2.2 Traing节中有如下一段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Our final layer predicts both class probabilities and bounding box coordinates.</span><br><span class="line">&gt; We normalize the bounding box width and height by the image width and height so that they fall between 0 and 1.</span><br><span class="line">&gt; We parametrize the bounding box x and y coordinates to be offsets of a particular grid cell location so they are also bounded between 0 and 1.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>接下来分析一下到底如何实现。</p>
+<p><img src="https://pic4.zhimg.com/v2-09c3012b2ff765dc01fa65d10d6b322f_b.jpg" alt="img"><img src="https://pic4.zhimg.com/80/v2-09c3012b2ff765dc01fa65d10d6b322f_hd.jpg" alt="img">SxS网格与bounding box关系（图中S=7，row=4且col=1）</p>
+<p>如图5，在YOLO中输入图像被分为SxS网格。假设有一个bounding box（如图4红框），其中心刚好落在了(row,col)网格中，则这个网格需要负责预测整个红框中的dog目标。假设图像的宽为widthimage，高为heightimage；红框中心在(xc，yc)，宽为widthbox，高为heightbox那么：</p>
+<p><strong>(1) 对于bounding box的宽和高做如下normalization，使得输出宽高介于0~1：</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-5eb7009c33c2e097277bb28b0cfa7511_b.jpg" alt="img"><img src="https://pic2.zhimg.com/80/v2-5eb7009c33c2e097277bb28b0cfa7511_hd.jpg" alt="img"></p>
+<p><strong>(2) 使用(row, col)网格的offset归一化bounding box的中心坐标：</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-65a3c3f8f9b23751cc22cb50e958798d_b.jpg" alt="img"><img src="https://pic2.zhimg.com/80/v2-65a3c3f8f9b23751cc22cb50e958798d_hd.jpg" alt="img"></p>
+<p>经过上述公式得到的normalization的(x, y, w, h)，再加之前提到的confidence，共同组成了一个真正在网络中用于回归的bounding box；这里的Xc值的是预测的物体中心点在原图的坐标，Col，row值的是在最后7*7中的bin。</p>
+</blockquote>
 
       
     </div>
@@ -367,7 +407,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DeeplabV3/" rel="tag"># DeeplabV3+</a>
+            <a href="/tags/YOLOV1/" rel="tag"># YOLOV1</a>
           
         </div>
       
@@ -380,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/10/SSD/" rel="next" title="SSD">
-                <i class="fa fa-chevron-left"></i> SSD
+              <a href="/2019/07/31/Batch-Normalization/" rel="next" title="Batch Normalization">
+                <i class="fa fa-chevron-left"></i> Batch Normalization
               </a>
             
           </div>
@@ -390,8 +430,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/14/Boosting-and-Bagging/" rel="prev" title="Boosting and Bagging">
-                Boosting and Bagging <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/10/SSD/" rel="prev" title="SSD">
+                SSD <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -524,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DeeplabV3"><span class="nav-number">1.</span> <span class="nav-text">DeeplabV3+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">1.1.</span> <span class="nav-text">Highlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">1.2.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和Xeception结合"><span class="nav-number">1.3.</span> <span class="nav-text">和Xeception结合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOV1"><span class="nav-number">1.</span> <span class="nav-text">YOLOV1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">1.2.</span> <span class="nav-text">Highlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和FasterRcnn的Anchor的区别"><span class="nav-number">1.3.</span> <span class="nav-text">和FasterRcnn的Anchor的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练阶段GT的生成"><span class="nav-number">1.4.</span> <span class="nav-text">训练阶段GT的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss"><span class="nav-number">1.5.</span> <span class="nav-text">Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">1.6.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YOLO中的Bounding-Box-Normalization"><span class="nav-number">1.7.</span> <span class="nav-text">YOLO中的Bounding Box Normalization</span></a></li></ol></li></ol></div>
             
 
           </div>
