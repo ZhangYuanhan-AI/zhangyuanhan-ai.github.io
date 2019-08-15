@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="SSD,">
+  <meta name="keywords" content="GAN,Pix2Pix,">
 
 
 
@@ -79,18 +79,26 @@
 
 
 
-<meta name="description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
-<meta name="keywords" content="SSD">
+<meta name="description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
+<meta name="keywords" content="GAN,Pix2Pix">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSD">
-<meta property="og:url" content="http://yoursite.com/2019/08/10/SSD/index.html">
+<meta property="og:title" content="GAN，Pix2Pix，Conditional GAN">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/GAN，Pix2Pix，Conditional GAN/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
+<meta property="og:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T03:16:40.387Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa16b7ed6095205.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1a7edab232297.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1be8699960397.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3ab7f6d9b1e93981.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/26/5d3ab953a292f11095.png">
+<meta property="og:updated_time" content="2019-08-15T03:18:59.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSD">
-<meta name="twitter:description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
+<meta name="twitter:title" content="GAN，Pix2Pix，Conditional GAN">
+<meta name="twitter:description" content="GAN的训练用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他 G，D一般是各种神经网络  Generator的学习是一种structure learning(补充)  为什么不只训练一个生成器  generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异 https://zhuanlan.zhihu.com/p/57174645         图像pix与p">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png">
 
 
 
@@ -120,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/10/SSD/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/26/GAN，Pix2Pix，Conditional GAN/">
 
 
 
 
 
-  <title>SSD | David_Zhang</title>
+  <title>GAN，Pix2Pix，Conditional GAN | David_Zhang</title>
   
 
 
@@ -233,7 +241,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/SSD/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/GAN，Pix2Pix，Conditional GAN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuanhan">
@@ -250,7 +258,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSD</h1>
+          <h1 class="post-title" itemprop="name headline">GAN，Pix2Pix，Conditional GAN</h1>
         
 
         <div class="post-meta">
@@ -262,8 +270,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-10T11:14:36+08:00">
-                2019-08-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T13:59:32+08:00">
+                2019-07-26
               </time>
             
 
@@ -302,7 +310,7 @@
 
           
           
-             <span id="/2019/08/10/SSD/" class="leancloud_visitors" data-flag-title="SSD">
+             <span id="/2019/07/26/GAN，Pix2Pix，Conditional GAN/" class="leancloud_visitors" data-flag-title="GAN，Pix2Pix，Conditional GAN">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -333,73 +341,77 @@
       
 
       
-        <h1 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/33544892" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33544892</a></p>
-<h2 id="Hightlight"><a href="#Hightlight" class="headerlink" title="Hightlight"></a>Hightlight</h2><ol>
-<li><p>One-stage</p>
-</li>
-<li><p>Multi-scale</p>
-</li>
-<li><p>又快又准</p>
-</li>
-<li><p>提出了Hard negative mining，解决样本不平衡。</p>
+        <h3 id="GAN的训练"><a href="#GAN的训练" class="headerlink" title="GAN的训练"></a>GAN的训练</h3><p>用同一个损失函数，首先固定G训练D，然后固定D训练G，再交替或者其他</p>
+<p>G，D一般是各种神经网络</p>
 <ul>
-<li>在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。</li>
+<li><p>Generator的学习是一种structure learning(<strong>补充</strong>)</p>
+</li>
+<li><p>为什么不只训练一个生成器</p>
+<ul>
+<li><p>generator关心的是图片与图片之间，像素之间的差异，而不是全局上的差异</p>
+<p><a href="https://zhuanlan.zhihu.com/p/57174645" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57174645</a></p>
+</li>
 </ul>
 </li>
-</ol>
-<h2 id="和YOLOv1的区别"><a href="#和YOLOv1的区别" class="headerlink" title="和YOLOv1的区别"></a>和YOLOv1的区别</h2><ol>
-<li><p>多尺度：</p>
+</ul>
+<p>  <img src="https://i.loli.net/2019/07/26/5d3aa0ac6047255161.png" alt="image-20190724113447852.png"></p>
 <ul>
-<li><p>对于YOLOv1，都是基于一个feature map上的操作。</p>
+<li>图像pix与pix之间的关系很难掌握</li>
+</ul>
+<ul>
+<li><p>判别器为什么不自己产生image-其实是可以的但是有些条件</p>
+<ul>
+<li><p>对于discriminator的trainning需要借助非常好的negative example，不然稍微给一个好点的negative example就会以为是正样本。（我们不需要左边那个（fake）只需要右边这样好点的（fake））</p>
+<p><img src="https://i.loli.net/2019/07/26/5d3aa16b7ed6095205.png" alt="image-20190724134617778.png"></p>
 </li>
-<li><p>对于SSD 有6个不同的feature map。</p>
+<li><p>需要求解：<img src="https://i.loli.net/2019/07/26/5d3aa1a7edab232297.png" alt="image-20190724135014277.png"></p>
+<p>为什么呢？</p>
+<p>因为如果discriminators足够优秀的话，我们可以用这个discriminator得到使得这个discriminator的得到最大值的x，作为你的生成图片x。所以需要求解x。但是这个x通常不好解出来。</p>
+<p><strong>训练方法如下</strong></p>
+<p><img src="https://i.loli.net/2019/07/26/5d3aa1be8699960397.png" alt="image-20190724135354590.png"></p>
+<p>第一排绿色部分是正样本，蓝色部分是生成的数据（这个时候没有引入generator,这个生成的数据可以只是噪声）。discriminator要做的就是给蓝色数据低分，绿色数据高分，然后得到一组argmax(D(X))(D(x)波峰的位置)，这些x的值作为下一轮迭代的生成数据，作为fake值，最后D(x)就会稳定到一个区间。</p>
+<p><strong>综上</strong>：</p>
+<p>那么怎么产生这些argmax(D(X)呢？-&gt;    我们就要用generator去生成这些argmax(D(X)。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="GAN-vanilla"><a href="#GAN-vanilla" class="headerlink" title="GAN vanilla"></a>GAN vanilla</h3><ol>
+<li>没有固定输入，输入是噪声；假设要训练形成MNIST就是一串噪声生成0-9的值，<strong>哪个值不确定</strong>。</li>
+</ol>
+<h3 id="Conditional-GAN"><a href="#Conditional-GAN" class="headerlink" title="Conditional GAN"></a>Conditional GAN</h3><p><a href="https://blog.csdn.net/taoyafan/article/details/81229466" target="_blank" rel="noopener">https://blog.csdn.net/taoyafan/article/details/81229466</a></p>
+<p>Sum: </p>
+<ol>
+<li><p>给GAN添加监督</p>
+</li>
+<li><p>一个噪声加上一个condition作为输入；假设要训练形成MNIST就是一串噪声生成0-9的值，哪个值根据condition的独热码决定（可以理解为one-hot作为输入，通过one-shot的值，就可以生成图片，<strong>值确定</strong>）</p>
+</li>
+<li><p>generator()的图片不仅要逼真而且要满足condition。</p>
+</li>
+<li><p>训练的时候要加上condition和真实图片不同输出为0这种情况。</p>
+</li>
+</ol>
+<h3 id="Pix2Pix"><a href="#Pix2Pix" class="headerlink" title="Pix2Pix"></a>Pix2Pix</h3><p><a href="https://blog.csdn.net/Teeyohuang/article/details/82699781" target="_blank" rel="noopener">https://blog.csdn.net/Teeyohuang/article/details/82699781</a></p>
+<p><a href="https://blog.csdn.net/gdymind/article/details/82696481" target="_blank" rel="noopener">https://blog.csdn.net/gdymind/article/details/82696481</a></p>
+<p><img src="https://i.loli.net/2019/07/26/5d3aa1d3220fa21229.png" alt="image-20190723165703439.png"></p>
+<p>Sum:</p>
+<ol>
+<li><p>将Conditional GAN引入到image Translation</p>
+<p><img src="https://i.loli.net/2019/07/26/5d3ab7f6d9b1e93981.png" alt="WX20190726-161934@2x.png"></p>
+<p><img src="https://i.loli.net/2019/07/26/5d3ab953a292f11095.png" alt="WX20190726-162646@2x.png"></p>
+<ul>
+<li><p>GAN的缺点：</p>
+<p>只能生成和目标图片domain相似的图片，但是不能保证这两张图片相似。所以还要用输入图片去监督G的输出。</p>
+</li>
+<li><p>为什么需要Pair image？</p>
+<p>因为Discrimilator需要正样本（x,y）和负样本(x,G(x))。</p>
 </li>
 </ul>
 </li>
 </ol>
 <ol start="2">
-<li><p>Bounding Box：</p>
-<ul>
-<li><p>对于YOLOv1，其最后要回归的是BB的真实坐标(Normalize)之后。</p>
-</li>
-<li><p>对于SSD，模拟fasterRcnn的anchor，BB由Base Anchor和偏移组成，最后回归的是偏移，另外，不同尺度下base anchor的大小不同，类比maskRcnn。</p>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p>Matching strategy</p>
-<ul>
-<li>对于YOLOv1，如果一个bin中是一个物体的中心，那么该bin（最后是7*7的像素点）就负责预测这个物体。</li>
-<li>对于SSD，matching 分为两个步骤（<strong>一个BB只能对于一个GT，但是一个GT可以对应多个BB</strong>）<ul>
-<li>GT matching，GT只matching与自己IOU最高的，使得与自己IOU最高的BB的GT的类别为GT</li>
-<li>BB matching，BB与自己IOU &gt; 0,5的GT matching，若有多个GT，BB选择IOU最高的。</li>
-<li>前两部顺序不能变化，对于没有match的BB，其类别为背景。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>classification</p>
-<ul>
-<li>对于YOLOv1，分类使用的是全联接。</li>
-<li>对于SSD，分类用的是全卷积。</li>
-</ul>
-</li>
-<li><p>classification</p>
-<ul>
-<li><p>对于YOLOv1，类别中不包括背景，用置信度的值来表示，是否是前景类别。</p>
-</li>
-<li><p>对于SSD，类别中包括背景。</p>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="6">
-<li>classification<ul>
-<li>对于YOLOv1，其class的loss是用的回归的平方误差</li>
-<li>对于SSD用的是softmax</li>
-</ul>
-</li>
+<li>训练一个生成网络，这个网络的目的是让输入图片符合一种映射，比如把语义的图像补齐。</li>
+<li>鉴别器是N*N的，就是说，不是整张图出一个0/1，而是一个N * N一个patch就有一个0/1.</li>
 </ol>
 
       
@@ -418,7 +430,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SSD/" rel="tag"># SSD</a>
+            <a href="/tags/GAN/" rel="tag"># GAN</a>
+          
+            <a href="/tags/Pix2Pix/" rel="tag"># Pix2Pix</a>
           
         </div>
       
@@ -431,18 +445,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/05/YOLOV1/" rel="next" title="YOLOV1">
-                <i class="fa fa-chevron-left"></i> YOLOV1
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/13/DeeplabV3+/" rel="prev" title="DeeplabV3+">
-                DeeplabV3+ <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/26/BeautyGAN，PairedGAN，CycleGAN/" rel="prev" title="BeautyGAN，PairedGAN，CycleGAN">
+                BeautyGAN，PairedGAN，CycleGAN <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSD"><span class="nav-number">1.</span> <span class="nav-text">SSD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hightlight"><span class="nav-number">1.2.</span> <span class="nav-text">Hightlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和YOLOv1的区别"><span class="nav-number">1.3.</span> <span class="nav-text">和YOLOv1的区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN的训练"><span class="nav-number">1.</span> <span class="nav-text">GAN的训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN-vanilla"><span class="nav-number">2.</span> <span class="nav-text">GAN vanilla</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-GAN"><span class="nav-number">3.</span> <span class="nav-text">Conditional GAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pix2Pix"><span class="nav-number">4.</span> <span class="nav-text">Pix2Pix</span></a></li></ol></div>
             
 
           </div>
