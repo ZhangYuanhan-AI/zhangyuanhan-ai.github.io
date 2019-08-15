@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="DeeplabV3+,">
+  <meta name="keywords" content="DeeplabV3,DeeplabV3+,">
 
 
 
@@ -79,21 +79,23 @@
 
 
 
-<meta name="description" content="DeeplabV3+Highlight 给空洞卷积系列加上了decoder  主要是权衡计算时间和计算准确度的问题：  Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to">
-<meta name="keywords" content="DeeplabV3+">
+<meta name="description" content="DeepLabV3参考文献 https://blog.csdn.net/bea_tree/article/details/73527732  Hightlight 将HDC提出的方法融合到了DeepLabV3中，提出了Multi-Grid，解决Gridding effect。  原本一个block内的卷积层，e.g. 三层，都是一个rate，这里将其分别变为不同的rates，比如将2×(1,1,1">
+<meta name="keywords" content="DeeplabV3,DeeplabV3+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DeeplabV3+">
+<meta property="og:title" content="Deeplab">
 <meta property="og:url" content="http://yoursite.com/2019/08/13/DeeplabV3+/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="DeeplabV3+Highlight 给空洞卷积系列加上了decoder  主要是权衡计算时间和计算准确度的问题：  Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to">
+<meta property="og:description" content="DeepLabV3参考文献 https://blog.csdn.net/bea_tree/article/details/73527732  Hightlight 将HDC提出的方法融合到了DeepLabV3中，提出了Multi-Grid，解决Gridding effect。  原本一个block内的卷积层，e.g. 三层，都是一个rate，这里将其分别变为不同的rates，比如将2×(1,1,1">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdn.net/20170621110103120?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmVhX3RyZWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20170621111223743?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmVhX3RyZWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="https://i.loli.net/2019/08/13/TXeiaAxzOt8wm6k.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/13/V2aNzQ1froxJjdn.png">
-<meta property="og:updated_time" content="2019-08-15T03:19:15.108Z">
+<meta property="og:updated_time" content="2019-08-15T10:29:48.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DeeplabV3+">
-<meta name="twitter:description" content="DeeplabV3+Highlight 给空洞卷积系列加上了decoder  主要是权衡计算时间和计算准确度的问题：  Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to">
-<meta name="twitter:image" content="https://i.loli.net/2019/08/13/TXeiaAxzOt8wm6k.png">
+<meta name="twitter:title" content="Deeplab">
+<meta name="twitter:description" content="DeepLabV3参考文献 https://blog.csdn.net/bea_tree/article/details/73527732  Hightlight 将HDC提出的方法融合到了DeepLabV3中，提出了Multi-Grid，解决Gridding effect。  原本一个block内的卷积层，e.g. 三层，都是一个rate，这里将其分别变为不同的rates，比如将2×(1,1,1">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20170621110103120?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmVhX3RyZWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -129,7 +131,7 @@
 
 
 
-  <title>DeeplabV3+ | David_Zhang</title>
+  <title>Deeplab | David_Zhang</title>
   
 
 
@@ -253,7 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DeeplabV3+</h1>
+          <h1 class="post-title" itemprop="name headline">Deeplab</h1>
         
 
         <div class="post-meta">
@@ -305,7 +307,7 @@
 
           
           
-             <span id="/2019/08/13/DeeplabV3+/" class="leancloud_visitors" data-flag-title="DeeplabV3+">
+             <span id="/2019/08/13/DeeplabV3+/" class="leancloud_visitors" data-flag-title="Deeplab">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -336,7 +338,32 @@
       
 
       
-        <h1 id="DeeplabV3"><a href="#DeeplabV3" class="headerlink" title="DeeplabV3+"></a>DeeplabV3+</h1><h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
+        <h1 id="DeepLabV3"><a href="#DeepLabV3" class="headerlink" title="DeepLabV3"></a>DeepLabV3</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="https://blog.csdn.net/bea_tree/article/details/73527732" target="_blank" rel="noopener">https://blog.csdn.net/bea_tree/article/details/73527732</a></li>
+</ol>
+<h2 id="Hightlight"><a href="#Hightlight" class="headerlink" title="Hightlight"></a>Hightlight</h2><ol>
+<li><p>将HDC提出的方法融合到了DeepLabV3中，提出了Multi-Grid，解决Gridding effect。</p>
+<ul>
+<li><p>原本一个block内的卷积层，e.g. 三层，都是一个rate，这里将其分别变为不同的rates，比如将2×(1,1,1)【rate都是2，2，2】变为2×(1,2,1)【rate变为【2，4，2】。</p>
+<blockquote>
+<p><img src="https://img-blog.csdn.net/20170621110103120?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmVhX3RyZWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20170621111223743?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmVhX3RyZWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</blockquote>
+<p>稍微说明：这里的rate指的是当前block的基本rate，假设Multi-Grid = （1，2，1），rate = 2对应到block4的rate就是（2，4，2）。对于Aspp的block4也同理</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>在原有的框架下提出了两个新的框架</p>
+<ul>
+<li>加长版 </li>
+<li>增强版ASPP（deeplab v3） （global mapping层直接双线型插值到outstride = 16）</li>
+</ul>
+</li>
+</ol>
+<h2 id="Drawback"><a href="#Drawback" class="headerlink" title="Drawback"></a>Drawback</h2><p>直接上采样16倍/8倍—太粗暴！！！！</p>
+<h1 id="DeeplabV3"><a href="#DeeplabV3" class="headerlink" title="DeeplabV3+"></a>DeeplabV3+</h1><h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
 <li><p>给空洞卷积系列加上了decoder</p>
 </li>
 <li><p>主要是权衡计算时间和计算准确度的问题：</p>
@@ -344,7 +371,7 @@
 <p>Even though rich semantic information is encoded inthe last feature map, detailed information related to object boundaries is missing due to the pooling or convolutions with striding operations within the network backbone. This could be alleviated by applying the atrous convolution to extract denser feature maps. However, given the design of state-of-art neural networks [7,9,10,25,26] and limited GPU memory, it is computationally prohibitive to extract output feature maps that are 8, or even 4 times smaller than the input resolution.</p>
 </blockquote>
 </li>
-<li><p>用decoder解决DeeplabV3中用插值上采样不够精确的问题</p>
+<li><p>用decoder解决DeeplabV3中用插值上采样（16倍上采样，太粗暴）不够精确的问题。</p>
 </li>
 </ol>
 <h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><img src="https://i.loli.net/2019/08/13/TXeiaAxzOt8wm6k.png" alt="1212.png"></p>
@@ -366,6 +393,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/DeeplabV3/" rel="tag"># DeeplabV3</a>
           
             <a href="/tags/DeeplabV3/" rel="tag"># DeeplabV3+</a>
           
@@ -491,7 +520,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -524,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DeeplabV3"><span class="nav-number">1.</span> <span class="nav-text">DeeplabV3+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">1.1.</span> <span class="nav-text">Highlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">1.2.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和Xeception结合"><span class="nav-number">1.3.</span> <span class="nav-text">和Xeception结合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DeepLabV3"><span class="nav-number">1.</span> <span class="nav-text">DeepLabV3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">1.1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hightlight"><span class="nav-number">1.2.</span> <span class="nav-text">Hightlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drawback"><span class="nav-number">1.3.</span> <span class="nav-text">Drawback</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DeeplabV3"><span class="nav-number">2.</span> <span class="nav-text">DeeplabV3+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">2.1.</span> <span class="nav-text">Highlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">2.2.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和Xeception结合"><span class="nav-number">2.3.</span> <span class="nav-text">和Xeception结合</span></a></li></ol></li></ol></div>
             
 
           </div>
