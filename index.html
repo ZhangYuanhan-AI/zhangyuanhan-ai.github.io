@@ -229,6 +229,344 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/NMS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Yuanhan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David_Zhang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/15/NMS/" itemprop="url">NMS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T16:43:31+08:00">
+                2019-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Deep-Trick/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Trick</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/08/15/NMS/" class="leancloud_visitors" data-flag-title="NMS">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="NMS"><a href="#NMS" class="headerlink" title="NMS"></a>NMS</h1><p>通常来说有两种NMS</p>
+<ol>
+<li><p>SSD fasterRCNN</p>
+<ul>
+<li><p>置信度小于阈值的proposal（anchor）score都变为0</p>
+</li>
+<li><p>将score排序，从score最高的开始，把与当前score最高的proposal（anchor）IOU大于阈值的proposal（anchor）过滤掉，重复当前步骤知道无法继续。</p>
+</li>
+</ul>
+</li>
+<li><p>YOLO</p>
+<p>每个类别都做NMS</p>
+<blockquote>
+<p>首先将小于置信度阈值的值归0，然后分类别地对置信度值采用NMS，这里NMS处理结果不是剔除，而是将其置信度值归为0。最后才是确定各个box的类别，当其置信度值不为0时才做出检测结果输出。</p>
+</blockquote>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/YOLOV2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Yuanhan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David_Zhang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/15/YOLOV2/" itemprop="url">YOLOV2 and YOLOV3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T14:07:23+08:00">
+                2019-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/08/15/YOLOV2/" class="leancloud_visitors" data-flag-title="YOLOV2 and YOLOV3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="YOLOV2"><a href="#YOLOV2" class="headerlink" title="YOLOV2"></a>YOLOV2</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/35325884" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35325884</a></li>
+</ol>
+<h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
+<li><p>最后的feature map为13 * 13大小，每个bin有5个anchor，预测（x,y,w,h,confi,class）取消了YOLOv1的全连接。</p>
+</li>
+<li><p>引入了anchor</p>
+<ul>
+<li>anchor大小的设定和原图无关（SSD中anchor的大小和原图相关),anchor的计算通过Kmeans聚类(<a href="https://blog.csdn.net/huangfei711/article/details/78480078" target="_blank" rel="noopener">https://blog.csdn.net/huangfei711/article/details/78480078</a>) (聚类距离是1- IOU)训练集的GT框的大小来得到，源码中这些特征框的数值应该是对于原图的比例。</li>
+<li>每个anchor都对应了一组GT（和YOLOv1不同）和（SSD）类似。</li>
+</ul>
+</li>
+<li><p>BB的数值变成偏移量-和SSD相同</p>
+</li>
+<li><p>Fine-Grained Features</p>
+<blockquote>
+<p>YOLOv2提出了一种passthrough层来利用更精细的特征图。YOLOv2所利用的Fine-Grained Features是 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26" alt="[公式]"> 大小的特征图（最后一个maxpooling层的输入），对于Darknet-19模型来说就是大小为 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="[公式]"> 的特征图。passthrough层与ResNet网络的shortcut类似，以前面更高分辨率的特征图为输入，然后将其连接到后面的低分辨率特征图上。前面的特征图维度是后面的特征图的2倍，passthrough层抽取前面层的每个 <img src="https://www.zhihu.com/equation?tex=2%5Ctimes2" alt="[公式]"> 的局部区域，然后将其转化为channel维度，对于 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="[公式]"> 的特征图，经passthrough层处理之后就变成了 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes2048" alt="[公式]"> 的新特征图（特征图大小降低4倍，而channles增加4倍，图6为一个实例），这样就可以与后面的 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes1024" alt="[公式]"> 特征图连接在一起形成 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes3072" alt="[公式]"> 大小的特征图，然后在此特征图基础上卷积做预测。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-c94c787a81c1216d8963f7c173c6f086_hd.jpg" alt="img">图6：passthrough层实例</p>
+</blockquote>
+</li>
+<li><p>Multi-Scale Training</p>
+</li>
+<li><blockquote>
+<p>由于YOLOv2模型中只有卷积层和池化层，所以YOLOv2的输入可以不限于 <img src="https://www.zhihu.com/equation?tex=416%5Ctimes416" alt="[公式]"> 大小的图片。为了增强模型的鲁棒性，YOLOv2采用了多尺度输入训练策略，具体来说就是在训练过程中每间隔一定的iterations之后改变模型的输入图片大小。由于YOLOv2的下采样总步长为32，输入图片大小选择一系列为32倍数的值： <img src="https://www.zhihu.com/equation?tex=%5C%7B320%2C+352%2C...%2C+608%5C%7D" alt="[公式]"> ，输入图片最小为 <img src="https://www.zhihu.com/equation?tex=320%5Ctimes320" alt="[公式]"> ，此时对应的特征图大小为 <img src="https://www.zhihu.com/equation?tex=10%5Ctimes10" alt="[公式]"> （不是奇数了，确实有点尴尬），而输入图片最大为 <img src="https://www.zhihu.com/equation?tex=608%5Ctimes608" alt="[公式]">，对应的特征图大小为 <img src="https://www.zhihu.com/equation?tex=19%5Ctimes19" alt="[公式]"> 。在训练过程，每隔10个iterations随机选择一种输入图片大小，然后只需要修改对最后检测层的处理就可以重新训练。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3c72c10c00c9268091d8c93f908d90ed_hd.jpg" alt="img">图7：Multi-Scale Training</p>
+<p>采用Multi-Scale Training策略，YOLOv2可以适应不同大小的图片，并且预测出很好的结果</p>
+</blockquote>
+</li>
+<li><p>GT的选择</p>
+<blockquote>
+<ol>
+<li>哪些预测框来预测背景呢，需要先计算各个预测框和所有ground truth的IOU值，并且取最大值Max_IOU，如果该值小于一定的阈值（YOLOv2使用的是0.6），那么这个预测框就标记为background。</li>
+<li>对于某个ground truth，首先要确定其中心点要落在哪个cell上，然后计算这个cell的5个先验框与ground truth的IOU值（YOLOv2中bias_match=1），计算IOU值时不考虑坐标，<strong>只考虑形状</strong>，所以先将先验框与ground truth的中心点都偏移到同一位置（原点），然后计算出对应的IOU值，IOU值最大的那个先验框与ground truth匹配，对应的预测框用来预测这个ground truth。（不同于SSD，YOLOV2一个GT只和一个anchor匹配）。</li>
+<li>对于那些没有与ground truth匹配的先验框（与预测框对应），除去那些Max_IOU低于阈值的（变成background），其它的就全部忽略，不计算任何误差。（不计算，中间不计算和fasterRCNN有点像，但是fasterRCNN一个GT可以对应多个anchor，重合的anchor在proposa到后面head的时候通过NMS除掉）</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h1 id="YOLOV3"><a href="#YOLOV3" class="headerlink" title="YOLOV3"></a>YOLOV3</h1><h2 id="Highlight-1"><a href="#Highlight-1" class="headerlink" title="Highlight"></a>Highlight</h2><p>加上了FPN和Resnet</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/Focal-Loss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1282,10 +1620,24 @@
 </li>
 </ol>
 <ol start="6">
-<li>classification<ul>
-<li>对于YOLOv1，其class的loss是用的回归的平方误差</li>
-<li>对于SSD用的是softmax</li>
+<li><p>classification</p>
+<ul>
+<li><p>对于YOLOv1，其class的loss是用的回归的平方误差</p>
+</li>
+<li><p>对于SSD用的是softmax</p>
+</li>
 </ul>
+</li>
+</ol>
+<ol start="7">
+<li><p>GT</p>
+<ul>
+<li>对于YOLOV1，一个bin对应两个BB，一个GT，两个BB共享一个GT。GT中有置信度和类别两个区域</li>
+<li>对于SSD，一个bin对应k个Anchor，每个anchor有自己的的GT，GT中没有置信度。</li>
+</ul>
+</li>
+<li><p>NMS</p>
+<p>SSD只在预测的时候做NMS。</p>
 </li>
 </ol>
 
@@ -1756,385 +2108,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/SegMASK/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/SegMASK/" itemprop="url">SegMASK</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T14:51:08+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/07/26/SegMASK/" class="leancloud_visitors" data-flag-title="SegMASK">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#SegMASK</p>
-<p>网络越深，神经元对图像进行“审查”的部分就越大，这可能会导致局部性（localized）变差以及模糊（神经元需要对图像中非常大的区域进行“审查”）。 本文是通过每个神经元只出现在自己感兴趣的区域（只有感兴趣区域的神经元会被激活），进而锐化这种反应，即segmentation-aware CNN。 </p>
-<ol>
-<li><p>mask</p>
-<p>A mask is a filter. Concept of masking is also known as spatial filtering. Masking is also known as filtering. In this concept we just deal with the filtering operation that is performed directly on the image.-masking 是 指在image 领域的 filtering。</p>
-<p>在这篇文章中，mask是在局部区域，形成一个局部的前景和后景</p>
-</li>
-<li><p>Attention mask</p>
-<p>创造一种mask(filter)使其具有Attention的功能</p>
-</li>
-<li><p><img src="https://i.loli.net/2019/07/26/5d3aa33851db834364.png" alt="image-20190726104018892.png"></p>
-<p><img src="https://i.loli.net/2019/07/26/5d3aa31d1cfbd11854.png" alt="image-20190726103924114.png"></p>
-<p>Embedding的学习，用类似FCN的网络生成，每个中间的Embedding都会upsampling到原图，然后进行cancat，最后再用1*1的filter处理。之后mask就可以用到不同的网络。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/BeautyGAN，PairedGAN，CycleGAN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/BeautyGAN，PairedGAN，CycleGAN/" itemprop="url">BeautyGAN，PairedGAN，CycleGAN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T14:49:20+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/07/26/BeautyGAN，PairedGAN，CycleGAN/" class="leancloud_visitors" data-flag-title="BeautyGAN，PairedGAN，CycleGAN">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Cycle-GAN"><a href="#Cycle-GAN" class="headerlink" title="Cycle GAN"></a>Cycle GAN</h3><p>Sum:</p>
-<p>从Pix2Pix到CycleGAN</p>
-<ol>
-<li><p>Pix2Pix的问题</p>
-<ul>
-<li>Pix2Pix必须使用pair的数据，但是这样的数据很难找</li>
-</ul>
-</li>
-<li><p>CycleGAN的改进</p>
-<ul>
-<li><p>CycleGAN分离了<strong>风格（Style）和内容（content）</strong></p>
-<ul>
-<li><p>用Adversarial Loss来学习风格</p>
-</li>
-<li><p>用Cycle Loss来学习内容</p>
-</li>
-</ul>
-</li>
-<li><p>为什么不需要pair</p>
-<ul>
-<li>因为pix2pix的正负样本构造和CycleGAN不同</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="BeautyGAN-AND-PairedGAN"><a href="#BeautyGAN-AND-PairedGAN" class="headerlink" title="BeautyGAN AND PairedGAN"></a>BeautyGAN AND PairedGAN</h3><h3 id="共同特点"><a href="#共同特点" class="headerlink" title="共同特点"></a>共同特点</h3><ol>
-<li>不需要成对的图片，只需要化妆图和素颜图</li>
-<li>circle GAN：只能让素颜图变好看，或是化妆图变素颜，但是不能很好的针对当前的妆容进行仿妆,所以这两种方法，都加了一些”instance-level transfer”</li>
-</ol>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
-<li><p>网络结构</p>
-<ul>
-<li><p>generator</p>
-<ul>
-<li><p>B：仿妆图片和素颜图片使用同一个generator,不同的discrimilator</p>
-</li>
-<li><p>P：仿妆图片和素雅图片使用两个generator，仿妆到素颜的generator不结合素颜图片</p>
-<p>对于这两个模型，素颜到仿妆的generator都需要结合两个图片，都是分别卷积之后再cancat，但是B用的是VGG，P用的是空洞卷积。</p>
-</li>
-</ul>
-</li>
-<li><p>discrimilator</p>
-<ul>
-<li>由于generator的不同，两个loss有点差异</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>loss：</p>
-<ul>
-<li>BeautyGAN多了一个Histogram loss</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p>trainnig</p>
-<p>P的generator对于每个仿妆区域分别得到</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2185,7 +2158,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2207,7 +2180,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

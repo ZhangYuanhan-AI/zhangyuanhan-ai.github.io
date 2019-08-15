@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="David_Zhang">
 <meta property="og:description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T03:16:40.387Z">
+<meta property="og:updated_time" content="2019-08-15T08:44:41.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSD">
 <meta name="twitter:description" content="SSD参考https://zhuanlan.zhihu.com/p/33544892 Hightlight One-stage  Multi-scale  又快又准  提出了Hard negative mining，解决样本不平衡。  在负样本中（matching为背景）中选择置信度最高的几个，使得正负样本比例为3:1。    和YOLOv1的区别 多尺度：  对于YOLOv1，都是基于一个fea">
@@ -395,10 +395,24 @@
 </li>
 </ol>
 <ol start="6">
-<li>classification<ul>
-<li>对于YOLOv1，其class的loss是用的回归的平方误差</li>
-<li>对于SSD用的是softmax</li>
+<li><p>classification</p>
+<ul>
+<li><p>对于YOLOv1，其class的loss是用的回归的平方误差</p>
+</li>
+<li><p>对于SSD用的是softmax</p>
+</li>
 </ul>
+</li>
+</ol>
+<ol start="7">
+<li><p>GT</p>
+<ul>
+<li>对于YOLOV1，一个bin对应两个BB，一个GT，两个BB共享一个GT。GT中有置信度和类别两个区域</li>
+<li>对于SSD，一个bin对应k个Anchor，每个anchor有自己的的GT，GT中没有置信度。</li>
+</ul>
+</li>
+<li><p>NMS</p>
+<p>SSD只在预测的时候做NMS。</p>
 </li>
 </ol>
 
@@ -520,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -542,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

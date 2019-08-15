@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="YOLOV1,">
+  <meta name="keywords" content="YOLOV2,YOLOV3,">
 
 
 
@@ -79,29 +79,34 @@
 
 
 
-<meta name="description" content="YOLOV1参考 https://zhuanlan.zhihu.com/p/46691043  Highlight one-stage  每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）   very fast   和FasterRcnn的Anchor的区别对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于">
-<meta name="keywords" content="YOLOV1">
+<meta name="description" content="YOLOV2参考文献 https://zhuanlan.zhihu.com/p/35325884  Highlight 最后的feature map为13 * 13大小，每个bin有5个anchor，预测（x,y,w,h,confi,class）取消了YOLOv1的全连接。  引入了anchor  anchor大小的设定和原图无关（SSD中anchor的大小和原图相关),anchor的计算通过Km">
+<meta name="keywords" content="YOLOV2,YOLOV3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="YOLOV1">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/YOLOV1/index.html">
+<meta property="og:title" content="YOLOV2 and YOLOV3">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/YOLOV2/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="YOLOV1参考 https://zhuanlan.zhihu.com/p/46691043  Highlight one-stage  每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）   very fast   和FasterRcnn的Anchor的区别对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于">
+<meta property="og:description" content="YOLOV2参考文献 https://zhuanlan.zhihu.com/p/35325884  Highlight 最后的feature map为13 * 13大小，每个bin有5个anchor，预测（x,y,w,h,confi,class）取消了YOLOv1的全连接。  引入了anchor  anchor大小的设定和原图无关（SSD中anchor的大小和原图相关),anchor的计算通过Km">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png">
-<meta property="og:image" content="https://i.loli.net/2019/08/07/Wor27Iu9tGiH4me.png">
-<meta property="og:image" content="https://i.loli.net/2019/08/07/k1xcB7oKbY6DFzn.png">
-<meta property="og:image" content="https://i.loli.net/2019/08/09/bjmGqP4pvUBiZcJ.png">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-09c3012b2ff765dc01fa65d10d6b322f_b.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-09c3012b2ff765dc01fa65d10d6b322f_hd.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-5eb7009c33c2e097277bb28b0cfa7511_b.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-5eb7009c33c2e097277bb28b0cfa7511_hd.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-65a3c3f8f9b23751cc22cb50e958798d_b.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-65a3c3f8f9b23751cc22cb50e958798d_hd.jpg">
-<meta property="og:updated_time" content="2019-08-15T03:13:24.031Z">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=26%5Ctimes26">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=2%5Ctimes2">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes2048">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes1024">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes3072">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-c94c787a81c1216d8963f7c173c6f086_hd.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=416%5Ctimes416">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5C%7B320%2C+352%2C...%2C+608%5C%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=320%5Ctimes320">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=10%5Ctimes10">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=608%5Ctimes608">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=19%5Ctimes19">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-3c72c10c00c9268091d8c93f908d90ed_hd.jpg">
+<meta property="og:updated_time" content="2019-08-15T08:59:04.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YOLOV1">
-<meta name="twitter:description" content="YOLOV1参考 https://zhuanlan.zhihu.com/p/46691043  Highlight one-stage  每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）   very fast   和FasterRcnn的Anchor的区别对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于">
-<meta name="twitter:image" content="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png">
+<meta name="twitter:title" content="YOLOV2 and YOLOV3">
+<meta name="twitter:description" content="YOLOV2参考文献 https://zhuanlan.zhihu.com/p/35325884  Highlight 最后的feature map为13 * 13大小，每个bin有5个anchor，预测（x,y,w,h,confi,class）取消了YOLOv1的全连接。  引入了anchor  anchor大小的设定和原图无关（SSD中anchor的大小和原图相关),anchor的计算通过Km">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=26%5Ctimes26">
 
 
 
@@ -131,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/05/YOLOV1/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/15/YOLOV2/">
 
 
 
 
 
-  <title>YOLOV1 | David_Zhang</title>
+  <title>YOLOV2 and YOLOV3 | David_Zhang</title>
   
 
 
@@ -244,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/YOLOV1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/YOLOV2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuanhan">
@@ -261,7 +266,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">YOLOV1</h1>
+          <h1 class="post-title" itemprop="name headline">YOLOV2 and YOLOV3</h1>
         
 
         <div class="post-meta">
@@ -273,8 +278,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T18:03:32+08:00">
-                2019-08-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T14:07:23+08:00">
+                2019-08-15
               </time>
             
 
@@ -284,28 +289,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -313,7 +296,7 @@
 
           
           
-             <span id="/2019/08/05/YOLOV1/" class="leancloud_visitors" data-flag-title="YOLOV1">
+             <span id="/2019/08/15/YOLOV2/" class="leancloud_visitors" data-flag-title="YOLOV2 and YOLOV3">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,52 +327,45 @@
       
 
       
-        <h1 id="YOLOV1"><a href="#YOLOV1" class="headerlink" title="YOLOV1"></a>YOLOV1</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/46691043" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/46691043</a></li>
+        <h1 id="YOLOV2"><a href="#YOLOV2" class="headerlink" title="YOLOV2"></a>YOLOV2</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/35325884" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35325884</a></li>
 </ol>
 <h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
-<li><p>one-stage</p>
+<li><p>最后的feature map为13 * 13大小，每个bin有5个anchor，预测（x,y,w,h,confi,class）取消了YOLOv1的全连接。</p>
 </li>
-<li><p>每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）</p>
-<p><img src="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png" alt="1.png"></p>
-</li>
-<li><p>very fast</p>
-</li>
-</ol>
-<h2 id="和FasterRcnn的Anchor的区别"><a href="#和FasterRcnn的Anchor的区别" class="headerlink" title="和FasterRcnn的Anchor的区别"></a>和FasterRcnn的Anchor的区别</h2><p>对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于YOLOv1来说其bbox的所有坐标完全是通过回归的方法生成的。</p>
-<h2 id="训练阶段GT的生成"><a href="#训练阶段GT的生成" class="headerlink" title="训练阶段GT的生成"></a>训练阶段GT的生成</h2><p><img src="https://i.loli.net/2019/08/07/Wor27Iu9tGiH4me.png" alt="123.png"></p>
-<h2 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h2><blockquote>
-<p><img src="https://i.loli.net/2019/08/07/k1xcB7oKbY6DFzn.png" alt="321.png"></p>
-</blockquote>
-<p>另外需要注意的是，关于class的loss这里也完全用的是回归的方式而不是softmax。</p>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><a href="https://blog.csdn.net/hrsstudy/article/details/70305791" target="_blank" rel="noopener">https://blog.csdn.net/hrsstudy/article/details/70305791</a></p>
-<p><a href="https://my.oschina.net/u/876354/blog/1633143" target="_blank" rel="noopener">https://my.oschina.net/u/876354/blog/1633143</a></p>
-<p><img src="https://i.loli.net/2019/08/09/bjmGqP4pvUBiZcJ.png" alt="2.png"></p>
-<ol>
-<li>卷积层怎么变成全联接层的（突然有点忘了 所以记录下来）<ul>
-<li>比如这里卷积层是7 * 7 * 1024，第一个全联接层的结果是4096，所以这里要用到4096个7 * 7 * 1024大小的卷积核</li>
+<li><p>引入了anchor</p>
+<ul>
+<li>anchor大小的设定和原图无关（SSD中anchor的大小和原图相关),anchor的计算通过Kmeans聚类(<a href="https://blog.csdn.net/huangfei711/article/details/78480078" target="_blank" rel="noopener">https://blog.csdn.net/huangfei711/article/details/78480078</a>) (聚类距离是1- IOU)训练集的GT框的大小来得到，源码中这些特征框的数值应该是对于原图的比例。</li>
+<li>每个anchor都对应了一组GT（和YOLOv1不同）和（SSD）类似。</li>
 </ul>
 </li>
-<li>全联接层怎么变成卷积层的<ul>
-<li>直接resize</li>
-</ul>
+<li><p>BB的数值变成偏移量-和SSD相同</p>
 </li>
-</ol>
-<p>作者：白裳</p>
-<h2 id="YOLO中的Bounding-Box-Normalization"><a href="#YOLO中的Bounding-Box-Normalization" class="headerlink" title="YOLO中的Bounding Box Normalization"></a>YOLO中的Bounding Box Normalization</h2><blockquote>
-<p>YOLO在实现中有一个重要细节，即对bounding box的坐标(x, y, w, h)进行了normalization，以便进行回归。作者认为这是一个非常重要的细节。在原文2.2 Traing节中有如下一段：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Our final layer predicts both class probabilities and bounding box coordinates.</span><br><span class="line">&gt; We normalize the bounding box width and height by the image width and height so that they fall between 0 and 1.</span><br><span class="line">&gt; We parametrize the bounding box x and y coordinates to be offsets of a particular grid cell location so they are also bounded between 0 and 1.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
+<li><p>Fine-Grained Features</p>
 <blockquote>
-<p>接下来分析一下到底如何实现。</p>
-<p><img src="https://pic4.zhimg.com/v2-09c3012b2ff765dc01fa65d10d6b322f_b.jpg" alt="img"><img src="https://pic4.zhimg.com/80/v2-09c3012b2ff765dc01fa65d10d6b322f_hd.jpg" alt="img">SxS网格与bounding box关系（图中S=7，row=4且col=1）</p>
-<p>如图5，在YOLO中输入图像被分为SxS网格。假设有一个bounding box（如图4红框），其中心刚好落在了(row,col)网格中，则这个网格需要负责预测整个红框中的dog目标。假设图像的宽为widthimage，高为heightimage；红框中心在(xc，yc)，宽为widthbox，高为heightbox那么：</p>
-<p><strong>(1) 对于bounding box的宽和高做如下normalization，使得输出宽高介于0~1：</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-5eb7009c33c2e097277bb28b0cfa7511_b.jpg" alt="img"><img src="https://pic2.zhimg.com/80/v2-5eb7009c33c2e097277bb28b0cfa7511_hd.jpg" alt="img"></p>
-<p><strong>(2) 使用(row, col)网格的offset归一化bounding box的中心坐标：</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-65a3c3f8f9b23751cc22cb50e958798d_b.jpg" alt="img"><img src="https://pic2.zhimg.com/80/v2-65a3c3f8f9b23751cc22cb50e958798d_hd.jpg" alt="img"></p>
-<p>经过上述公式得到的normalization的(x, y, w, h)，再加之前提到的confidence，共同组成了一个真正在网络中用于回归的bounding box；这里的Xc值的是预测的物体中心点在原图的坐标，Col，row值的是在最后7*7中的bin。</p>
+<p>YOLOv2提出了一种passthrough层来利用更精细的特征图。YOLOv2所利用的Fine-Grained Features是 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26" alt="[公式]"> 大小的特征图（最后一个maxpooling层的输入），对于Darknet-19模型来说就是大小为 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="[公式]"> 的特征图。passthrough层与ResNet网络的shortcut类似，以前面更高分辨率的特征图为输入，然后将其连接到后面的低分辨率特征图上。前面的特征图维度是后面的特征图的2倍，passthrough层抽取前面层的每个 <img src="https://www.zhihu.com/equation?tex=2%5Ctimes2" alt="[公式]"> 的局部区域，然后将其转化为channel维度，对于 <img src="https://www.zhihu.com/equation?tex=26%5Ctimes26%5Ctimes512" alt="[公式]"> 的特征图，经passthrough层处理之后就变成了 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes2048" alt="[公式]"> 的新特征图（特征图大小降低4倍，而channles增加4倍，图6为一个实例），这样就可以与后面的 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes1024" alt="[公式]"> 特征图连接在一起形成 <img src="https://www.zhihu.com/equation?tex=13%5Ctimes13%5Ctimes3072" alt="[公式]"> 大小的特征图，然后在此特征图基础上卷积做预测。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-c94c787a81c1216d8963f7c173c6f086_hd.jpg" alt="img">图6：passthrough层实例</p>
 </blockquote>
+</li>
+<li><p>Multi-Scale Training</p>
+</li>
+<li><blockquote>
+<p>由于YOLOv2模型中只有卷积层和池化层，所以YOLOv2的输入可以不限于 <img src="https://www.zhihu.com/equation?tex=416%5Ctimes416" alt="[公式]"> 大小的图片。为了增强模型的鲁棒性，YOLOv2采用了多尺度输入训练策略，具体来说就是在训练过程中每间隔一定的iterations之后改变模型的输入图片大小。由于YOLOv2的下采样总步长为32，输入图片大小选择一系列为32倍数的值： <img src="https://www.zhihu.com/equation?tex=%5C%7B320%2C+352%2C...%2C+608%5C%7D" alt="[公式]"> ，输入图片最小为 <img src="https://www.zhihu.com/equation?tex=320%5Ctimes320" alt="[公式]"> ，此时对应的特征图大小为 <img src="https://www.zhihu.com/equation?tex=10%5Ctimes10" alt="[公式]"> （不是奇数了，确实有点尴尬），而输入图片最大为 <img src="https://www.zhihu.com/equation?tex=608%5Ctimes608" alt="[公式]">，对应的特征图大小为 <img src="https://www.zhihu.com/equation?tex=19%5Ctimes19" alt="[公式]"> 。在训练过程，每隔10个iterations随机选择一种输入图片大小，然后只需要修改对最后检测层的处理就可以重新训练。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3c72c10c00c9268091d8c93f908d90ed_hd.jpg" alt="img">图7：Multi-Scale Training</p>
+<p>采用Multi-Scale Training策略，YOLOv2可以适应不同大小的图片，并且预测出很好的结果</p>
+</blockquote>
+</li>
+<li><p>GT的选择</p>
+<blockquote>
+<ol>
+<li>哪些预测框来预测背景呢，需要先计算各个预测框和所有ground truth的IOU值，并且取最大值Max_IOU，如果该值小于一定的阈值（YOLOv2使用的是0.6），那么这个预测框就标记为background。</li>
+<li>对于某个ground truth，首先要确定其中心点要落在哪个cell上，然后计算这个cell的5个先验框与ground truth的IOU值（YOLOv2中bias_match=1），计算IOU值时不考虑坐标，<strong>只考虑形状</strong>，所以先将先验框与ground truth的中心点都偏移到同一位置（原点），然后计算出对应的IOU值，IOU值最大的那个先验框与ground truth匹配，对应的预测框用来预测这个ground truth。（不同于SSD，YOLOV2一个GT只和一个anchor匹配）。</li>
+<li>对于那些没有与ground truth匹配的先验框（与预测框对应），除去那些Max_IOU低于阈值的（变成background），其它的就全部忽略，不计算任何误差。（不计算，中间不计算和fasterRCNN有点像，但是fasterRCNN一个GT可以对应多个anchor，重合的anchor在proposa到后面head的时候通过NMS除掉）</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h1 id="YOLOV3"><a href="#YOLOV3" class="headerlink" title="YOLOV3"></a>YOLOV3</h1><h2 id="Highlight-1"><a href="#Highlight-1" class="headerlink" title="Highlight"></a>Highlight</h2><p>加上了FPN和Resnet</p>
 
       
     </div>
@@ -407,7 +383,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/YOLOV1/" rel="tag"># YOLOV1</a>
+            <a href="/tags/YOLOV2/" rel="tag"># YOLOV2</a>
+          
+            <a href="/tags/YOLOV3/" rel="tag"># YOLOV3</a>
           
         </div>
       
@@ -420,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/31/Batch-Normalization/" rel="next" title="Batch Normalization">
-                <i class="fa fa-chevron-left"></i> Batch Normalization
+              <a href="/2019/08/15/Focal-Loss/" rel="next" title="Focal Loss">
+                <i class="fa fa-chevron-left"></i> Focal Loss
               </a>
             
           </div>
@@ -430,8 +408,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/10/SSD/" rel="prev" title="SSD">
-                SSD <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/15/NMS/" rel="prev" title="NMS">
+                NMS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -564,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOV1"><span class="nav-number">1.</span> <span class="nav-text">YOLOV1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">1.2.</span> <span class="nav-text">Highlight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和FasterRcnn的Anchor的区别"><span class="nav-number">1.3.</span> <span class="nav-text">和FasterRcnn的Anchor的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练阶段GT的生成"><span class="nav-number">1.4.</span> <span class="nav-text">训练阶段GT的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss"><span class="nav-number">1.5.</span> <span class="nav-text">Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">1.6.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YOLO中的Bounding-Box-Normalization"><span class="nav-number">1.7.</span> <span class="nav-text">YOLO中的Bounding Box Normalization</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOV2"><span class="nav-number">1.</span> <span class="nav-text">YOLOV2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">2.</span> <span class="nav-text">参考文献</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight"><span class="nav-number">2.1.</span> <span class="nav-text">Highlight</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YOLOV3"><span class="nav-number">3.</span> <span class="nav-text">YOLOV3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Highlight-1"><span class="nav-number">3.1.</span> <span class="nav-text">Highlight</span></a></li></ol></li></ol></div>
             
 
           </div>
