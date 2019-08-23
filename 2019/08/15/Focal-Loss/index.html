@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Focal Loss参考文献https://zhuanlan.zhihu.com/p/32423092 这篇文章特别清晰的解释了Focal Loss的推导。 中心思想： 让网络集中力量训练不好训练的部分。">
+<meta name="description" content="Focal Loss参考文献https://zhuanlan.zhihu.com/p/32423092 这篇文章特别清晰的解释了Focal Loss的推导。 中心思想：  让网络集中力量训练不好训练的部分。 关于$\gamma$ 的大小对结果的影响（旷视面试的时候被que到）： 当$\gamma$ = 0的时候，focal loss 变成softmax 当$\gamma$ &amp;gt; 0 的时候，$">
 <meta name="keywords" content="Focal Loss">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Focal Loss">
 <meta property="og:url" content="http://yoursite.com/2019/08/15/Focal-Loss/index.html">
 <meta property="og:site_name" content="David_Zhang">
-<meta property="og:description" content="Focal Loss参考文献https://zhuanlan.zhihu.com/p/32423092 这篇文章特别清晰的解释了Focal Loss的推导。 中心思想： 让网络集中力量训练不好训练的部分。">
+<meta property="og:description" content="Focal Loss参考文献https://zhuanlan.zhihu.com/p/32423092 这篇文章特别清晰的解释了Focal Loss的推导。 中心思想：  让网络集中力量训练不好训练的部分。 关于$\gamma$ 的大小对结果的影响（旷视面试的时候被que到）： 当$\gamma$ = 0的时候，focal loss 变成softmax 当$\gamma$ &amp;gt; 0 的时候，$">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T04:07:34.215Z">
+<meta property="og:updated_time" content="2019-08-20T08:03:51.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Focal Loss">
-<meta name="twitter:description" content="Focal Loss参考文献https://zhuanlan.zhihu.com/p/32423092 这篇文章特别清晰的解释了Focal Loss的推导。 中心思想： 让网络集中力量训练不好训练的部分。">
+<meta name="twitter:description" content="Focal Loss参考文献https://zhuanlan.zhihu.com/p/32423092 这篇文章特别清晰的解释了Focal Loss的推导。 中心思想：  让网络集中力量训练不好训练的部分。 关于$\gamma$ 的大小对结果的影响（旷视面试的时候被que到）： 当$\gamma$ = 0的时候，focal loss 变成softmax 当$\gamma$ &amp;gt; 0 的时候，$">
 
 
 
@@ -336,7 +336,14 @@
         <h1 id="Focal-Loss"><a href="#Focal-Loss" class="headerlink" title="Focal Loss"></a>Focal Loss</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhuanlan.zhihu.com/p/32423092" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32423092</a></p>
 <p>这篇文章特别清晰的解释了Focal Loss的推导。</p>
 <p>中心思想：</p>
-<p>让网络集中力量训练不好训练的部分。</p>
+<ol>
+<li>让网络集中力量训练不好训练的部分。</li>
+<li>关于$\gamma$ 的大小对结果的影响（旷视面试的时候被que到）：<ul>
+<li>当$\gamma$ = 0的时候，focal loss 变成softmax</li>
+<li>当$\gamma$ &gt; 0 的时候，$\gamma$越大，容易区分的样本给loss的贡献越少，所以$\gamma$有点像容易区分样本的权重。</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -456,7 +463,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -478,7 +485,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

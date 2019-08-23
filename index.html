@@ -229,6 +229,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/GCNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Yuanhan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David_Zhang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/GCNet/" itemprop="url">GCNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T14:42:18+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
+                    <span itemprop="name">Paper Reading</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/08/23/GCNet/" class="leancloud_visitors" data-flag-title="GCNet">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="GCNet"><a href="#GCNet" class="headerlink" title="GCNet"></a>GCNet</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zhuanlan.zhihu.com/p/64988633" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/64988633</a></p>
+<h2 id="一些疑惑"><a href="#一些疑惑" class="headerlink" title="一些疑惑"></a>一些疑惑</h2><ol>
+<li><p>通过严格的实验分析，作者发现non-local network的全局上下文在不同位置几乎是相同的，这表明学习到了无位置依赖的全局上下文。</p>
+<ul>
+<li>但是我觉得不一定的，因为对于一个feature map 大部分位置并不会有什么大的激活，所以大部分位置的att可能都相同，只有少部分位置被激活，只有这些位置的att相似，比如大部分的att都是(0,0,0,0,0,1,0,0,0,1)只有小部分的激活点的att是(1,1,1,1,1,1,0,1,1,1,0)那么平均下来当然大部分的atte相同，仅仅靠一个取平均值的说法并不可靠。<ul>
+<li>进一步，我觉得层数越浅，可能att越不相似，因为浅层的信息语义比较浅，大部分位置都有激活。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对于simple_No_local的最后的map是1*c的解释：</p>
+<blockquote>
+<p>non-local block可以表示为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bz%7D_%7Bi%7D%3D%5Cmathbf%7Bx%7D_%7Bi%7D%2BW_%7Bz%7D+%5Csum_%7Bj%3D1%7D%5E%7BN_%7Bp%7D%7D+%5Cfrac%7Bf%5Cleft%28%5Cmathbf%7Bx%7D_%7Bi%7D%2C+%5Cmathbf%7Bx%7D_%7Bj%7D%5Cright%29%7D%7B%5Cmathcal%7BC%7D%28%5Cmathbf%7Bx%7D%29%7D%5Cleft%28W_%7Bv%7D+%5Ccdot+%5Cmathbf%7Bx%7D_%7Bj%7D%5Cright%29%5C%5C" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=i" alt="[公式]"> 为位置的索引， <img src="https://www.zhihu.com/equation?tex=j" alt="[公式]"> 枚举所有可能的位置。 <img src="https://www.zhihu.com/equation?tex=f%5Cleft%28%5Cmathbf%7Bx%7D_%7Bi%7D%2C+%5Cmathbf%7Bx%7D_%7Bj%7D%5Cright%29" alt="[公式]"> 表示位置 <img src="https://www.zhihu.com/equation?tex=i" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=j" alt="[公式]"> 的关系， <img src="https://www.zhihu.com/equation?tex=%5Cmathcal%7BC%7D%28%5Cmathbf%7Bx%7D%29" alt="[公式]"> 为归一化因子。 <img src="https://www.zhihu.com/equation?tex=W_%7Bz%7D" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=W_%7Bv%7D" alt="[公式]"> 表示线性转换矩阵(例如1x1卷积)。为了简单起见，定义 <img src="https://www.zhihu.com/equation?tex=%5Comega_%7Bi+j%7D%3D%5Cfrac%7Bf%5Cleft%28%5Cmathbf%7Bx%7D_%7Bi%7D%2C+%5Cmathbf%7Bx%7D_%7Bj%7D%5Cright%29%7D%7BC%28%5Cmathbf%7Bx%7D%29%7D" alt="[公式]">为位置 <img src="https://www.zhihu.com/equation?tex=i" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=j" alt="[公式]"> 的归一化关系。本文中将 <img src="https://www.zhihu.com/equation?tex=%5Comega_%7Bi+j%7D" alt="[公式]"> 表示为Embedded Gaussian的形式，定义为 <img src="https://www.zhihu.com/equation?tex=%5Comega_%7Bi+j%7D%3D%5Cfrac%7B%5Cexp+%5Cleft%28%5Cleft%5Clangle+W_%7Bq%7D+%5Cmathbf%7Bx%7D_%7Bi%7D%2C+W_%7Bk%7D+%5Cmathbf%7Bx%7D_%7Bj%7D%5Cright%5Crangle%5Cright%29%7D%7B%5Csum_%7Bm%7D+%5Cexp+%5Cleft%28%5Cleft%5Clangle+W_%7Bq%7D+%5Cmathbf%7Bx%7D_%7Bi%7D%2C+W_%7Bk%7D+%5Cmathbf%7Bx%7D_%7Bm%7D%5Cright%5Crangle%5Cright%29%7D" alt="[公式]"> 。</p>
+</blockquote>
+<p>如果attention都一样，那么<img src="https://www.zhihu.com/equation?tex=%5Comega_%7Bi+j%7D%3D%5Cfrac%7Bf%5Cleft%28%5Cmathbf%7Bx%7D_%7Bi%7D%2C+%5Cmathbf%7Bx%7D_%7Bj%7D%5Cright%29%7D%7BC%28%5Cmathbf%7Bx%7D%29%7D" alt="[公式]">可以直接从HW*HW的向量变成HW * 1的向量这个attention可以称为基于global的attention，进一步，后续的$W_z$之后的值也是一个对于所有position都一样的值，因为对于每个position，这个值都一样，所以一个channel只需要有一个值，最后会把这个值扩展为H * W大小,有c个channel所以有c个值。</p>
+</li>
+<li><p><strong>对于维度这么高的feature map只有一个attention的值合不合适？这个attention到底要怎么计算？</strong></p>
+</li>
+<li><p>model the global context？</p>
+<blockquote>
+<p>To model the global context features, SENet [14], GENet</p>
+<p>[13], and PSANet [41] perform rescaling to different channels</p>
+<p>to recalibrate the channel dependency with global context.</p>
+<p>CBAM [32] recalibrates the importance of different</p>
+<p>spatial positions and channels both via rescaling. However,</p>
+<p>all these methods adopt rescaling for feature fusion which</p>
+<p>is not effective enough for global context modeling.</p>
+</blockquote>
+<p>这个model the global context指建模的是全局信息，比如SE中的global avg pooling：</p>
+<blockquote>
+<p><img src="https://pic1.zhimg.com/80/v2-64e3c83d1b83d47e6238b13b373964f4_hd.jpg" alt="img"></p>
+<p>SE block也可以抽象成3个步骤：</p>
+<p>(a)global avg pooling用于上下文建模(即squeeze operation)。</p>
+<p>(b)bottleneck transform用于计算每个通道的重要程度(即excitation operation)。</p>
+<p>(c)rescaling function用于通道特征重标定(即element-wise multiplication)。</p>
+</blockquote>
+<p>又比如GC中的global attention pooling：</p>
+<blockquote>
+<p><img src="https://pic2.zhimg.com/80/v2-c9a9fd5ca99d9c3a0a3be35cc481d1b1_hd.jpg" alt="img"></p>
+<p>(a)global attention pooling用于上下文建模。</p>
+<ul>
+<li>这部分又有两步<ol>
+<li>生成attention</li>
+<li>pooling</li>
+</ol>
+</li>
+</ul>
+<p>(b)bottleneck transform来捕获通道间依赖。</p>
+<p>(c)broadcast element-wise addition用于特征融合。</p>
+</blockquote>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/ROI-Align/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -856,7 +1062,14 @@
             <h1 id="Focal-Loss"><a href="#Focal-Loss" class="headerlink" title="Focal Loss"></a>Focal Loss</h1><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhuanlan.zhihu.com/p/32423092" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32423092</a></p>
 <p>这篇文章特别清晰的解释了Focal Loss的推导。</p>
 <p>中心思想：</p>
-<p>让网络集中力量训练不好训练的部分。</p>
+<ol>
+<li>让网络集中力量训练不好训练的部分。</li>
+<li>关于$\gamma$ 的大小对结果的影响（旷视面试的时候被que到）：<ul>
+<li>当$\gamma$ = 0的时候，focal loss 变成softmax</li>
+<li>当$\gamma$ &gt; 0 的时候，$\gamma$越大，容易区分的样本给loss的贡献越少，所以$\gamma$有点像容易区分样本的权重。</li>
+</ul>
+</li>
+</ol>
 
           
         
@@ -1882,204 +2095,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/YOLOV1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Yuanhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David_Zhang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/05/YOLOV1/" itemprop="url">YOLOV1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T18:03:32+08:00">
-                2019-08-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper-Reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/08/05/YOLOV1/" class="leancloud_visitors" data-flag-title="YOLOV1">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="YOLOV1"><a href="#YOLOV1" class="headerlink" title="YOLOV1"></a>YOLOV1</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/46691043" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/46691043</a></li>
-</ol>
-<h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><ol>
-<li><p>one-stage</p>
-</li>
-<li><p>每个bin负责预测物体中心在该bin的物体（由于狗中心在这个bin,所以这个bin负责预测狗）</p>
-<p><img src="https://i.loli.net/2019/08/05/jQVU1LdbJewO7ZT.png" alt="1.png"></p>
-</li>
-<li><p>very fast</p>
-</li>
-</ol>
-<h2 id="和FasterRcnn的Anchor的区别"><a href="#和FasterRcnn的Anchor的区别" class="headerlink" title="和FasterRcnn的Anchor的区别"></a>和FasterRcnn的Anchor的区别</h2><p>对于fasterRcnn的Anchor是基于一个预先定义好的anchor_base决定的，而对于YOLOv1来说其bbox的所有坐标完全是通过回归的方法生成的。</p>
-<h2 id="训练阶段GT的生成"><a href="#训练阶段GT的生成" class="headerlink" title="训练阶段GT的生成"></a>训练阶段GT的生成</h2><p><img src="https://i.loli.net/2019/08/07/Wor27Iu9tGiH4me.png" alt="123.png"></p>
-<h2 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h2><blockquote>
-<p><img src="https://i.loli.net/2019/08/07/k1xcB7oKbY6DFzn.png" alt="321.png"></p>
-</blockquote>
-<p>另外需要注意的是，关于class的loss这里也完全用的是回归的方式而不是softmax。</p>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><a href="https://blog.csdn.net/hrsstudy/article/details/70305791" target="_blank" rel="noopener">https://blog.csdn.net/hrsstudy/article/details/70305791</a></p>
-<p><a href="https://my.oschina.net/u/876354/blog/1633143" target="_blank" rel="noopener">https://my.oschina.net/u/876354/blog/1633143</a></p>
-<p><img src="https://i.loli.net/2019/08/09/bjmGqP4pvUBiZcJ.png" alt="2.png"></p>
-<ol>
-<li>卷积层怎么变成全联接层的（突然有点忘了 所以记录下来）<ul>
-<li>比如这里卷积层是7 * 7 * 1024，第一个全联接层的结果是4096，所以这里要用到4096个7 * 7 * 1024大小的卷积核</li>
-</ul>
-</li>
-<li>全联接层怎么变成卷积层的<ul>
-<li>直接resize</li>
-</ul>
-</li>
-</ol>
-<p>作者：白裳</p>
-<h2 id="YOLO中的Bounding-Box-Normalization"><a href="#YOLO中的Bounding-Box-Normalization" class="headerlink" title="YOLO中的Bounding Box Normalization"></a>YOLO中的Bounding Box Normalization</h2><blockquote>
-<p>YOLO在实现中有一个重要细节，即对bounding box的坐标(x, y, w, h)进行了normalization，以便进行回归。作者认为这是一个非常重要的细节。在原文2.2 Traing节中有如下一段：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Our final layer predicts both class probabilities and bounding box coordinates.</span><br><span class="line">&gt; We normalize the bounding box width and height by the image width and height so that they fall between 0 and 1.</span><br><span class="line">&gt; We parametrize the bounding box x and y coordinates to be offsets of a particular grid cell location so they are also bounded between 0 and 1.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>接下来分析一下到底如何实现。</p>
-<p><img src="https://pic4.zhimg.com/v2-09c3012b2ff765dc01fa65d10d6b322f_b.jpg" alt="img"><img src="https://pic4.zhimg.com/80/v2-09c3012b2ff765dc01fa65d10d6b322f_hd.jpg" alt="img">SxS网格与bounding box关系（图中S=7，row=4且col=1）</p>
-<p>如图5，在YOLO中输入图像被分为SxS网格。假设有一个bounding box（如图4红框），其中心刚好落在了(row,col)网格中，则这个网格需要负责预测整个红框中的dog目标。假设图像的宽为widthimage，高为heightimage；红框中心在(xc，yc)，宽为widthbox，高为heightbox那么：</p>
-<p><strong>(1) 对于bounding box的宽和高做如下normalization，使得输出宽高介于0~1：</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-5eb7009c33c2e097277bb28b0cfa7511_b.jpg" alt="img"><img src="https://pic2.zhimg.com/80/v2-5eb7009c33c2e097277bb28b0cfa7511_hd.jpg" alt="img"></p>
-<p><strong>(2) 使用(row, col)网格的offset归一化bounding box的中心坐标：</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-65a3c3f8f9b23751cc22cb50e958798d_b.jpg" alt="img"><img src="https://pic2.zhimg.com/80/v2-65a3c3f8f9b23751cc22cb50e958798d_hd.jpg" alt="img"></p>
-<p>经过上述公式得到的normalization的(x, y, w, h)，再加之前提到的confidence，共同组成了一个真正在网络中用于回归的bounding box；这里的Xc值的是预测的物体中心点在原图的坐标，Col，row值的是在最后7*7中的bin。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2130,7 +2145,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2152,7 +2167,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
