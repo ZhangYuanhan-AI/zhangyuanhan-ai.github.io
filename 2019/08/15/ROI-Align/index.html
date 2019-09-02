@@ -231,6 +231,206 @@
   <div id="posts" class="posts-expand">
     
 
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/ROI-Align/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Yuanhan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David_Zhang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ROI Align</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T19:28:41+08:00">
+                2019-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Deep-Trick/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Trick</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/08/15/ROI-Align/" class="leancloud_visitors" data-flag-title="ROI Align">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#ROI Align</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/37998710" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/37998710</a></li>
+</ol>
+<blockquote>
+<h2 id="ROIpooling"><a href="#ROIpooling" class="headerlink" title="ROIpooling"></a>ROIpooling</h2><p>ROI pooling就不多解释了，直接通过一个例子来形象理解。假设现在我们有一个8x8大小的feature map，我们要在这个feature map上得到ROI，并且进行ROI pooling到2x2大小的输出。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-17d3c689270ac638d9aafd90b96149e5_hd.jpg" alt="img"></p>
+<p>假设ROI的bounding box为 <img src="https://www.zhihu.com/equation?tex=%5Bx_1%2Cy_1%2Cx_2%2Cy_2%5D%3D%5B0%2C3%2C7%2C8%5D" alt="[公式]"> 。如图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-b52b7f305f1aaea6febfe0d22a7d23da_hd.jpg" alt="img"></p>
+<p>将它划分为2x2的网格，因为ROI的长宽除以2是不能整除的，所以会出现每个格子大小不一样的情况。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-5ba9049300789586c29f78ebc2a5acb7_hd.jpg" alt="img"></p>
+<p>进行max pooling的最终2x2的输出为：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-df2414cb2eb3ae6e3bc30b9289cf5c44_hd.jpg" alt="img"></p>
+<p>最后以一张动图形象概括之：</p>
+<p><img src="https://pic4.zhimg.com/v2-e55e66c9c21136efa62beacfcb02f9ef_b.gif" alt="img"></p>
+<p>参考：<a href="https://link.zhihu.com/?target=https%3A//blog.deepsense.ai/region-of-interest-pooling-explained/" target="_blank" rel="noopener">Region of interest pooling explained</a></p>
+<h2 id="3-ROI-Align"><a href="#3-ROI-Align" class="headerlink" title="3. ROI Align"></a>3. ROI Align</h2><p>在Faster RCNN中，有两次整数化的过程：</p>
+<ol>
+<li>region proposal的xywh通常是小数，但是为了方便操作会把它整数化。</li>
+<li>将整数化后的边界区域平均分割成 k x k 个单元，对每一个单元的边界进行整数化。</li>
+</ol>
+<p>两次整数化的过程如下图所示：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-36e08338390289e0dd88203b4e8ddda2_hd.jpg" alt="img"></p>
+<p>事实上，经过上述两次整数化，此时的候选框已经和最开始回归出来的位置有一定的偏差，这个偏差会影响检测或者分割的准确度。在论文里，作者把它总结为“不匹配问题”（misalignment）。</p>
+<p>为了解决这个问题，ROI Align方法取消整数化操作，保留了小数，使用以上介绍的双线性插值的方法获得坐标为浮点数的像素点上的图像数值。但在实际操作中，ROI Align并不是简单地补充出候选区域边界上的坐标点，然后进行池化，而是重新进行设计。</p>
+<p>下面通过一个例子来讲解ROI Align操作。如下图所示，虚线部分表示feature map，实线表示ROI，这里将ROI切分成2x2的单元格。如果采样点数是4，那我们首先将每个单元格子均分成四个小方格（如红色线所示），每个小方格中心就是采样点。这些采样点的坐标通常是浮点数，所以需要对采样点像素进行双线性插值（如四个箭头所示），就可以得到该像素点的值了。然后对每个单元格内的四个采样点进行maxpooling，就可以得到最终的ROIAlign的结果。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-76b8a15c735d560f73718581de34249c_hd.jpg" alt="img"></p>
+<p>需要说明的是，在相关实验中，作者发现将采样点设为4会获得最佳性能，甚至直接设为1在性能上也相差无几。事实上，ROI Align 在遍历取样点的数量上没有ROIPooling那么多，但却可以获得更好的性能，这主要归功于解决了misalignment的问题。</p>
+</blockquote>
+<p>个人补充：实际上最后应该是要得到13*13的feature map 那么就要把ROI化成13个bin，注意每个bin还要划分4格，每个格子的中心是个浮点数要通过插值把其真实值插出来，然后对这4个小格子的值做最后的maxpooling得到这个bin的值。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ROI-Align/" rel="tag"># ROI Align</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/15/NMS/" rel="next" title="NMS">
+                <i class="fa fa-chevron-left"></i> NMS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/22/Attention-U-Net/" rel="prev" title="Attention U-Net">
+                Attention U-Net <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
     <div class="post-spread">
       
     </div>
