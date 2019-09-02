@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/123/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/EM-algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuanhan">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/01/123/" itemprop="url">123</a></h1>
+                <a class="post-title-link" href="/2019/09/02/EM-algorithm/" itemprop="url">EM algorithm</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-01T20:54:22+08:00">
-                2019-09-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-02T15:49:06+08:00">
+                2019-09-02
               </time>
             
 
@@ -271,6 +271,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -278,7 +300,7 @@
 
           
           
-             <span id="/2019/09/01/123/" class="leancloud_visitors" data-flag-title="123">
+             <span id="/2019/09/02/EM-algorithm/" class="leancloud_visitors" data-flag-title="EM algorithm">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -311,7 +333,47 @@
       
         
           
-            
+            <h1 id="EM-algorithm"><a href="#EM-algorithm" class="headerlink" title="EM algorithm"></a>EM algorithm</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><p><a href="https://www.bilibili.com/video/av24989947" target="_blank" rel="noopener">https://www.bilibili.com/video/av24989947</a>   <a href="https://www.bilibili.com/video/av25304979/" target="_blank" rel="noopener">https://www.bilibili.com/video/av25304979/</a>：简单入门了EM</p>
+</li>
+<li><p><a href="https://blog.csdn.net/zouxy09/article/details/8537620" target="_blank" rel="noopener">https://blog.csdn.net/zouxy09/article/details/8537620</a> ：理解EM算法原理</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/jerrylead/archive/2011/04/06/2006936.html" target="_blank" rel="noopener">https://www.cnblogs.com/jerrylead/archive/2011/04/06/2006936.html</a> ：理解EM算法原理</p>
+</li>
+</ol>
+<h2 id="EM-推导"><a href="#EM-推导" class="headerlink" title="EM 推导"></a>EM 推导</h2><p>给定的训练样本是<a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104061615579515.png" target="_blank" rel="noopener"><img src="https://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104061615576168.png" alt="clip_image023"></a>，样例间独立，我们想找到每个样例隐含的类别z，能使得p(x,z)最大。p(x,z)的最大似然估计如下：</p>
+<p>​      <a href="http://images.cnblogs.com/cnblogs_com/jerrylead/201104/201104061615582613.png" target="_blank" rel="noopener"><img src="https://images.cnblogs.com/cnblogs_com/jerrylead/201104/20110406161558694.png" alt="clip_image024"></a></p>
+<blockquote>
+<p>这里我们引入一些实际的例子：</p>
+<ol>
+<li><p>有一排球，其中球的类别有黄，蓝两种球分布在一维水平面上，每个球的分布都是高斯分布如图：</p>
+<p><img src="https://i.loli.net/2019/09/02/wEFbBGuqDSTceli.png" alt="彩色球.png">，但是实际上，我们不知道哪些球是黄色，哪些球是蓝色，EM算法要做的就是在只知道有两种类型球（但是不知道哪些球是黄色，哪些球是蓝色）的基础上，估计这两种类型球的高斯分布。从而得到以下模型：<img src="https://i.loli.net/2019/09/02/EHai4QbYhVe1qKJ.png" alt="分布.png">。</p>
+</li>
+</ol>
+</blockquote>
+<p>我们想做的就是找到适合的θ和z让L(θ)最大。</p>
+<p><img src="https://img-my.csdn.net/uploads/201301/24/1359004165_6698.jpg" alt="img"></p>
+<p>关于2-3的推到详见参考2，3,其中$Q_i(Z^{i})​$准确的来说应该写为$Q_i(Z^{i}_j)​$指的是当前第$i​$样本，对于第$j​$类的概率，那么又有如下问题：</p>
+<ol>
+<li><p>为什么在（2）式不直接对$z^{i},\theta​$求导呢？：因为（2）式求导后形式会非常复杂（自己可以想象下log(f1(x)+ f2(x)+ f3(x)+…)复合函数的求导）。</p>
+</li>
+<li><p>（3）式只是$l(\theta)​$的下界，不能代表$l(\theta)​$，那怎么求得出argmax？：现在我们就需要一点想象力了，上面的式（2）和式（3）不等式可以写成：似然函数L(θ)&gt;=J(z,Q)，那么我们可以通过不断的最大化这个下界J，来使得L(θ)不断提高，最终达到它的最大值。，假设我们这个时候已经取到了J(z,Q)的最大值，那么让等式成立就行了，那如果对于当前的$\theta​$，J(z,Q)怎样才能取到最大值呢？–就是让当前$\theta​$下的不等式成立。</p>
+<blockquote>
+<p> 首先第一个问题，在Jensen不等式中说到，当自变量X是常数的时候，等式成立。而在这里，即：</p>
+<p><img src="https://img-my.csdn.net/uploads/201301/24/1359004517_4140.jpg" alt="img"></p>
+<p>再推导下，由于<img src="https://img-my.csdn.net/uploads/201301/24/1359004538_8410.jpg" alt="img">（因为Q是随机变量z(i)的概率密度函数），则可以得到：分子的和等于c（分子分母都对所有z(i)求和：多个等式分子分母相加不变，这个认为每个样例的两个概率比值都是c），则：</p>
+<p><img src="https://img-my.csdn.net/uploads/201301/24/1359004651_3922.jpg" alt="img"></p>
+<p>其中$p(z^{i} | x^{i};\theta) = \frac{p( x^{i};\theta) | z^{i})}{\sum p( x^{i};\theta) }$  bayes公式，我们用上面的蓝黄球来举例子：$p(z^{i} | x^{i};\theta)$的意思就是，当前$\theta$下第$i$个球为黄/蓝球的概率，$p( x^{i};\theta | z^{i}) $指的是：在黄/蓝球，并且在$\theta$已知的条件下，第i个球为$x^i$的概率（就这个例子来看，这个概率是一个高斯函数），分子就是所有条件概率的和了。</p>
+</blockquote>
+</li>
+</ol>
+<p>即是说当$Q_i(Z^{i})​$等于这个后验概率的时候，不等式成立，当不等式成立后，我们再更新$\theta_t​$到$\theta_{t+1}​$使得J(z,Q)变得更大，然后再让等式成立，反复迭代，知道$\theta​$的值不再发生变化。</p>
+<h2 id="EM-算法流程"><a href="#EM-算法流程" class="headerlink" title="EM 算法流程"></a>EM 算法流程</h2><p><strong>重复以下步骤直到收敛</strong>：</p>
+<p>​        <strong>E步骤：</strong>根据参数初始值或上一次迭代的模型参数来计算出隐性变量的后验概率，其实就是隐性变量的期望。作为隐藏变量的现估计值：</p>
+<p>​       <img src="https://img-my.csdn.net/uploads/201301/24/1359004674_9261.jpg" alt="img"></p>
+<p>​        <strong>M步骤：</strong>将似然函数最大化以获得新的参数值：</p>
+<p>​          <img src="https://img-my.csdn.net/uploads/201301/24/1359004692_8552.jpg" alt="img"></p>
+
           
         
       
@@ -2030,7 +2092,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
