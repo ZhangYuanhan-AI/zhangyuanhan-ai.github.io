@@ -12,9 +12,8 @@ const venues = [...new Set(publications.map(p => p.venue))].sort();
       <h2 class="section-heading !mb-0">Selected Research</h2>
       <div class="flex flex-wrap gap-2" id="filter-bar">
         <button class="filter-pill active" data-filter="all">All</button>
-        {years.map(year => (
-          <button class="filter-pill" data-filter={`year-${year}`}>{year}</button>
-        ))}
+        <button class="filter-pill" data-filter="cat-post-training">Post-training</button>
+        <button class="filter-pill" data-filter="cat-benchmarking">Benchmarking</button>
       </div>
     </div>
 
@@ -37,18 +36,49 @@ const venues = [...new Set(publications.map(p => p.venue))].sort();
 (function () {
   var filterBar = document.getElementById('filter-bar');
   var cards = document.querySelectorAll('#publications-list article');
-  filterBar?.addEventListener('click', function(e) {
-    var btn = e.target.closest('.filter-pill');
-    if (!btn) return;
-    filterBar.querySelectorAll('.filter-pill').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    var filter = btn.dataset.filter;
+
+  function filterCards(filter) {
+    // Update active pill
+    if (filterBar) {
+      filterBar.querySelectorAll('.filter-pill').forEach(function(b) { b.classList.remove('active'); });
+      var match = filterBar.querySelector('[data-filter="' + filter + '"]');
+      if (match) match.classList.add('active');
+      else filterBar.querySelector('[data-filter="all"]')?.classList.remove('active');
+    }
+
     cards.forEach(function(card) {
       if (filter === 'all') { card.classList.remove('hidden'); return; }
+      // Category filter (from hero links)
+      if (filter.indexOf('cat-') === 0) {
+        var cat = filter.substring(4);
+        var cats = (card.dataset.categories || '').split(',');
+        card.classList.toggle('hidden', cats.indexOf(cat) === -1);
+        return;
+      }
+      // Year/venue filter (from pill buttons)
       var parts = filter.split('-'), type = parts[0], value = parts.slice(1).join('-');
       card.classList.toggle('hidden', type === 'year' ? card.dataset.year !== value : card.dataset.venue !== value);
     });
+  }
+
+  // Filter bar clicks
+  filterBar?.addEventListener('click', function(e) {
+    var btn = e.target.closest('.filter-pill');
+    if (!btn) return;
+    filterCards(btn.dataset.filter);
   });
+
+  // Hero keyword clicks
+  document.querySelectorAll('[data-filter-cat]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var cat = link.dataset.filterCat;
+      filterCards('cat-' + cat);
+      document.getElementById('publications')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Mouse glow
   document.querySelectorAll('.card-glow').forEach(function(c) {
     c.addEventListener('mousemove', function(e) {
       var r = c.getBoundingClientRect();

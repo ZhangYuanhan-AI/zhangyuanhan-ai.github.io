@@ -6,7 +6,7 @@ interface Props {
     id: string; title: string; authors: Author[]; venue: string; year: number;
     venueNote?: string; image: string; projectUrl: string; pdfUrl: string;
     links: Link[]; starsUrl?: string; description: string; topics: string[];
-    lightBg?: boolean;
+    lightBg?: boolean; categories?: string[];
   };
   index: number;
 }
@@ -30,6 +30,7 @@ const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dar
   data-year={pub.year}
   data-venue={pub.venue}
   data-topics={pub.topics.join(',')}
+  data-categories={(pub.categories || []).join(',')}
   style={`transition-delay: ${index * 30}ms`}
 >
   <!-- <div class="hidden sm:block shrink-0 w-36 md:w-40 overflow-hidden rounded p-2 bg-[#F3EFEA]">

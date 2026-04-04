@@ -45,6 +45,9 @@
     "topics": [
       "benchmark",
       "video"
+    ],
+    "categories": [
+      "benchmarking"
     ]
   },
   {
@@ -101,6 +104,9 @@
     "topics": [
       "multimodal",
       "video"
+    ],
+    "categories": [
+      "post-training"
     ]
   },
   {
@@ -168,6 +174,9 @@
     "description": "A family of LMMs consolidating insights into data, models, and visual representations.",
     "topics": [
       "multimodal"
+    ],
+    "categories": [
+      "post-training"
     ]
   },
   {
@@ -244,6 +253,9 @@
     "topics": [
       "benchmark",
       "multimodal"
+    ],
+    "categories": [
+      "benchmarking"
     ]
   },
   {
@@ -303,6 +315,9 @@
     "description": "A vision-language model with in-context instruction tuning.",
     "topics": [
       "multimodal"
+    ],
+    "categories": [
+      "post-training"
     ]
   },
   {
@@ -343,6 +358,9 @@
     "description": "Searching prompt modules for parameter-efficient transfer learning.",
     "topics": [
       "adaptation"
+    ],
+    "categories": [
+      "post-training"
     ]
   },
   {
@@ -406,6 +424,10 @@
     "description": "4x larger than ImageNet, 2x larger than Object365 — built by active learning.",
     "topics": [
       "benchmark"
+    ],
+    "categories": [
+      "post-training",
+      "benchmarking"
     ]
   },
   {
@@ -446,6 +468,9 @@
     "description": "Retrieving prompts for visual in-context learning.",
     "topics": [
       "adaptation"
+    ],
+    "categories": [
+      "post-training"
     ]
   },
   {
@@ -494,6 +519,9 @@
     "description": "New benchmark for evaluating vision foundation models; supervised contrastive learning framework.",
     "topics": [
       "benchmark"
+    ],
+    "categories": [
+      "benchmarking"
     ]
   }
 ]
