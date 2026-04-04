@@ -1,0 +1,29 @@
+---
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#F3EFEA]/80 dark:bg-[#1C1B19]/80 backdrop-blur-xl transition-colors duration-300">
+  <div class="max-w-3xl mx-auto px-6 flex items-center justify-between h-11">
+    <a href="#" class="font-mono text-[11px] font-bold text-[#3D3835] dark:text-[#C4BCB4] tracking-tight">Yuanhan Zhang</a>
+    <div class="flex items-center gap-4">
+      <a href="#publications" class="font-mono text-[11px] text-[#9B948E] dark:text-[#6B6460] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Research</a>
+      <button id="calendly-nav" class="font-mono text-[11px] text-[#9B948E] dark:text-[#6B6460] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors cursor-pointer">Chat</button>
+      <button id="theme-toggle" aria-label="Toggle theme" class="font-mono text-[11px] text-[#9B948E] dark:text-[#6B6460] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors cursor-pointer">
+        <span class="dark:hidden">Dark</span><span class="hidden dark:inline">Light</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script is:inline>
+  function toggleTheme() { var d = document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', d ? 'dark' : 'light'); }
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('calendly-nav')?.addEventListener('click', function () {
+    if (typeof Calendly !== 'undefined') {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/zhangyuanhan/15min' });
+    } else {
+      window.open('https://calendly.com/zhangyuanhan/15min', '_blank');
+    }
+  });
+</script>

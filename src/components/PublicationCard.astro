@@ -1,0 +1,70 @@
+---
+interface Author { name: string; url?: string; self?: boolean; }
+interface Link { label: string; url: string; }
+interface Props {
+  pub: {
+    id: string; title: string; authors: Author[]; venue: string; year: number;
+    venueNote?: string; image: string; projectUrl: string; pdfUrl: string;
+    links: Link[]; starsUrl?: string; description: string; topics: string[];
+    lightBg?: boolean;
+  };
+  index: number;
+}
+
+const { pub, index } = Astro.props;
+
+const venueColors: Record<string, string> = {
+  'ICCV': 'text-[#B3A0B8] bg-[#B3A0B8]/10',
+  'TMLR': 'text-[#8BA89A] bg-[#8BA89A]/10',
+  'ICLR': 'text-[#C2A67E] bg-[#C2A67E]/10',
+  'ECCV': 'text-[#8DA0B2] bg-[#8DA0B2]/10',
+  'TPAMI': 'text-[#C4A6A0] bg-[#C4A6A0]/10',
+  'NeurIPS': 'text-[#C2A67E] bg-[#C2A67E]/10',
+  'ICME': 'text-[#8BA89A] bg-[#8BA89A]/10',
+};
+const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dark:bg-[#2E2C28]/30';
+---
+
+<article
+  class="card-glow flex gap-4 stagger-item"
+  data-year={pub.year}
+  data-venue={pub.venue}
+  data-topics={pub.topics.join(',')}
+  style={`transition-delay: ${index * 30}ms`}
+>
+  <!-- <div class="hidden sm:block shrink-0 w-36 md:w-40 overflow-hidden rounded p-2 bg-[#F3EFEA]">
+    <img src={pub.image} alt={pub.title} class="w-full rounded-sm object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+  </div> -->
+
+  <div class="flex-1 min-w-0 relative z-10">
+    <a href={pub.projectUrl} target="_blank" rel="noopener noreferrer">
+      <h3 class="text-sm font-semibold text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors leading-snug">{pub.title}</h3>
+    </a>
+
+    <p class="mt-1 text-[11px] text-[#9B948E] dark:text-[#6B6460] leading-relaxed">
+      {pub.authors.map((author, i) => (
+        <>
+          {i > 0 && ', '}
+          {author.self ? (
+            <strong class="text-[#8BA89A] dark:text-[#A3BDAE]">{author.name}</strong>
+          ) : author.url ? (
+            <a href={author.url} target="_blank" rel="noopener noreferrer" class="hover:text-[#3D3835] dark:hover:text-[#C4BCB4] transition-colors">{author.name}</a>
+          ) : (
+            <span>{author.name}</span>
+          )}
+        </>
+      ))}
+    </p>
+
+    <p class="mt-1 text-[11px] text-[#9B948E] dark:text-[#6B6460] leading-relaxed">{pub.description}</p>
+
+    <div class="mt-1.5 flex items-center gap-2 flex-wrap">
+      <span class={`pill ${venueClass}`}>{pub.venue}{pub.venueNote ? ` ${pub.venueNote}` : ''} {pub.year}</span>
+      {pub.starsUrl && <img src={pub.starsUrl} alt="stars" class="h-3.5 opacity-40 hover:opacity-70 transition-opacity" loading="lazy" />}
+      <a href={pub.pdfUrl} target="_blank" rel="noopener noreferrer" class="link-btn">Paper</a>
+      {pub.links.map(link => (
+        <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-btn">{link.label}</a>
+      ))}
+    </div>
+  </div>
+</article>

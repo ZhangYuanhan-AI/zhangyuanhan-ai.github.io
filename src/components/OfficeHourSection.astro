@@ -1,0 +1,31 @@
+---
+---
+
+<section id="office-hour" class="py-20 animate-on-scroll">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="section-heading">Connect</h2>
+
+    <p class="text-sm text-[#9B948E] dark:text-[#6B6460] mb-8">Open to research chats and collaboration.</p>
+
+    <button
+      id="calendly-btn"
+      class="inline-flex items-center gap-2 font-mono text-xs font-semibold
+             text-[#8BA89A] dark:text-[#A3BDAE]
+             border border-[#8BA89A]/30 dark:border-[#A3BDAE]/30
+             rounded-full px-6 py-2.5
+             hover:bg-[#8BA89A]/10 dark:hover:bg-[#A3BDAE]/10
+             hover:border-[#8BA89A]/50 dark:hover:border-[#A3BDAE]/50
+             transition-all duration-200"
+    >
+      Book a 15-min slot
+    </button>
+  </div>
+</section>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script is:inline>
+  document.getElementById('calendly-btn')?.addEventListener('click', function () {
+    if (typeof Calendly !== 'undefined') Calendly.initPopupWidget({ url: 'https://calendly.com/zhangyuanhan/15min' });
+  });
+</script>

@@ -1,0 +1,60 @@
+---
+import PublicationCard from './PublicationCard.astro';
+import publications from '../data/publications.json';
+
+const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
+const venues = [...new Set(publications.map(p => p.venue))].sort();
+---
+
+<section id="publications" class="py-10 animate-on-scroll">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-6">
+      <h2 class="section-heading !mb-0">Selected Research</h2>
+      <div class="flex flex-wrap gap-2" id="filter-bar">
+        <button class="filter-pill active" data-filter="all">All</button>
+        {years.map(year => (
+          <button class="filter-pill" data-filter={`year-${year}`}>{year}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="divide-y divide-[#DDD6CC]/40 dark:divide-[#2E2C28]/60" id="publications-list">
+      {publications.map((pub, index) => (
+        <PublicationCard pub={pub} index={index} />
+      ))}
+    </div>
+
+    <p class="mt-6 text-center">
+      <a href="https://scholar.google.com/citations?user=g6grFy0AAAAJ&hl" target="_blank" rel="noopener noreferrer"
+        class="font-mono text-[11px] text-[#9B948E] dark:text-[#6B6460] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">
+        Full publication list &rarr;
+      </a>
+    </p>
+  </div>
+</section>
+
+<script is:inline>
+(function () {
+  var filterBar = document.getElementById('filter-bar');
+  var cards = document.querySelectorAll('#publications-list article');
+  filterBar?.addEventListener('click', function(e) {
+    var btn = e.target.closest('.filter-pill');
+    if (!btn) return;
+    filterBar.querySelectorAll('.filter-pill').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var filter = btn.dataset.filter;
+    cards.forEach(function(card) {
+      if (filter === 'all') { card.classList.remove('hidden'); return; }
+      var parts = filter.split('-'), type = parts[0], value = parts.slice(1).join('-');
+      card.classList.toggle('hidden', type === 'year' ? card.dataset.year !== value : card.dataset.venue !== value);
+    });
+  });
+  document.querySelectorAll('.card-glow').forEach(function(c) {
+    c.addEventListener('mousemove', function(e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+    });
+  });
+})();
+</script>

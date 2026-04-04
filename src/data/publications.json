@@ -1,0 +1,499 @@
+[
+  {
+    "id": "video-tt",
+    "title": "Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang*",
+        "self": true
+      },
+      {
+        "name": "Yunice Chew*"
+      },
+      {
+        "name": "Yuhao Dong",
+        "url": "https://scholar.google.com/citations?user=kMui170AAAAJ&hl=zh-CN"
+      },
+      {
+        "name": "Aria Leo"
+      },
+      {
+        "name": "Bo Hu"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "ICCV",
+    "year": 2025,
+    "venueNote": "",
+    "image": "/images/video-tt.png",
+    "projectUrl": "https://zhangyuanhan-ai.github.io/video-tt/",
+    "pdfUrl": "https://arxiv.org/abs/2507.15028",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://zhangyuanhan-ai.github.io/video-tt/"
+      },
+      {
+        "label": "Dataset and Code",
+        "url": "https://huggingface.co/datasets/lmms-lab/video-tt"
+      }
+    ],
+    "description": "A holistic benchmark to assess advanced reasoning and understanding correctness/robustness between MLLMs and humans.",
+    "topics": [
+      "benchmark",
+      "video"
+    ]
+  },
+  {
+    "id": "llava-video",
+    "title": "LLaVA-Video: Video Instruction Tuning With Synthetic Data",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Jinming Wu",
+        "url": "https://scholar.google.com/citations?user=eh-XJIoAAAAJ&hl=zh-CN"
+      },
+      {
+        "name": "Wei Li",
+        "url": "https://scholar.google.com/citations?user=q8ZrKVIAAAAJ&hl=zh-CN"
+      },
+      {
+        "name": "Bo Li",
+        "url": "https://brianboli.com/"
+      },
+      {
+        "name": "Zejun Ma",
+        "url": "https://scholar.google.com/citations?user=XwY9LXoAAAAJ&hl=zh-CN"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      },
+      {
+        "name": "Chunyuan Li",
+        "url": "https://chunyuan.li/"
+      }
+    ],
+    "venue": "TMLR",
+    "year": 2025,
+    "venueNote": "",
+    "image": "/images/llava-video.jpg",
+    "projectUrl": "https://llava-vl.github.io/blog/2024-09-30-llava-video/",
+    "pdfUrl": "https://arxiv.org/abs/2410.02713",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://llava-vl.github.io/blog/2024-09-30-llava-video/"
+      },
+      {
+        "label": "Dataset, Model and Code",
+        "url": "https://llava-vl.github.io/blog/2024-09-30-llava-video/"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
+    "description": "Fully open-sourced video LMM (code, model, and data) with competitive ability.",
+    "topics": [
+      "multimodal",
+      "video"
+    ]
+  },
+  {
+    "id": "llava-onevision",
+    "title": "LLaVA-OneVision: Easy Visual Task Transfer",
+    "authors": [
+      {
+        "name": "Bo Li",
+        "url": "https://brianboli.com/"
+      },
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Dong Guo",
+        "url": "https://www.linkedin.com/in/dongguoset"
+      },
+      {
+        "name": "Renrui Zhang",
+        "url": "https://zrrskywalker.github.io/"
+      },
+      {
+        "name": "Feng Li",
+        "url": "https://fengli-ust.github.io/"
+      },
+      {
+        "name": "Hao Zhang",
+        "url": "https://haozhang534.github.io/"
+      },
+      {
+        "name": "Kaichen Zhang",
+        "url": "https://www.linkedin.com/in/kaichen-zhang-014b17219/?originalSubdomain=sg"
+      },
+      {
+        "name": "Yanwei Li",
+        "url": "https://yanwei-li.com/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      },
+      {
+        "name": "Chunyuan Li",
+        "url": "https://chunyuan.li/"
+      }
+    ],
+    "venue": "TMLR",
+    "year": 2025,
+    "venueNote": "",
+    "image": "/images/llava-onevision.png",
+    "projectUrl": "https://llava-vl.github.io/blog/2024-08-05-llava-onevision/",
+    "pdfUrl": "https://arxiv.org/abs/2408.03326",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://llava-vl.github.io/blog/2024-08-05-llava-onevision/"
+      },
+      {
+        "label": "Dataset and Code",
+        "url": "https://llava-vl.github.io/blog/2024-08-05-llava-onevision/"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
+    "description": "A family of LMMs consolidating insights into data, models, and visual representations.",
+    "topics": [
+      "multimodal"
+    ]
+  },
+  {
+    "id": "mmbench",
+    "title": "MMBench: Is Your Multi-modal Model an All-around Player?",
+    "authors": [
+      {
+        "name": "Yuan Liu*",
+        "url": "https://yuanliuuuuuu.github.io/"
+      },
+      {
+        "name": "Haodong Duan*",
+        "url": "https://kennymckormick.github.io/"
+      },
+      {
+        "name": "Yuanhan Zhang*",
+        "self": true
+      },
+      {
+        "name": "Bo Li*",
+        "url": "https://brianboli.com/"
+      },
+      {
+        "name": "Songyang Zhang*",
+        "url": "https://tonysy.github.io/"
+      },
+      {
+        "name": "Wangbo Zhao",
+        "url": "https://scholar.google.com.hk/citations?user=aocj89kAAAAJ&hl=zh-CN"
+      },
+      {
+        "name": "Yike Yuan",
+        "url": "https://github.com/yyk-wew"
+      },
+      {
+        "name": "Jiaqi Wang",
+        "url": "https://myownskyw7.github.io/"
+      },
+      {
+        "name": "Conghui He",
+        "url": "https://conghui.github.io/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      },
+      {
+        "name": "Kai Chen",
+        "url": "https://chenkai.site/"
+      },
+      {
+        "name": "Dahua Lin",
+        "url": "http://dahua.site/"
+      }
+    ],
+    "venue": "ECCV",
+    "year": 2024,
+    "venueNote": "Oral",
+    "image": "/images/mmbench.png",
+    "projectUrl": "https://mmbench.opencompass.org.cn/home",
+    "pdfUrl": "https://arxiv.org/abs/2307.06281",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://mmbench.opencompass.org.cn/home"
+      },
+      {
+        "label": "Dataset and Code",
+        "url": "https://mmbench.opencompass.org.cn/home"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/open-compass/MMBench?style=social",
+    "description": "Benchmarking 20 abilities of vision-language models.",
+    "topics": [
+      "benchmark",
+      "multimodal"
+    ]
+  },
+  {
+    "id": "otter",
+    "title": "Otter: A Multi-modal Model with In-context Instruction Tuning",
+    "authors": [
+      {
+        "name": "Bo Li*",
+        "url": "https://brianboli.com/"
+      },
+      {
+        "name": "Yuanhan Zhang*",
+        "self": true
+      },
+      {
+        "name": "Liangyu Chen",
+        "url": "https://cliangyu.com/"
+      },
+      {
+        "name": "Jinghao Wan",
+        "url": "https://king159.github.io/"
+      },
+      {
+        "name": "Fanyi Pu",
+        "url": "https://pufanyi.github.io/"
+      },
+      {
+        "name": "Jingkang Yang",
+        "url": "https://jingkang50.github.io/"
+      },
+      {
+        "name": "Chunyuan Li",
+        "url": "https://chunyuan.li/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "TPAMI",
+    "year": 2024,
+    "venueNote": "",
+    "image": "/images/otter_brand.png",
+    "projectUrl": "https://otter-ntu.github.io/",
+    "pdfUrl": "https://arxiv.org/abs/2306.05425",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://otter-ntu.github.io/"
+      },
+      {
+        "label": "Dataset and Code",
+        "url": "https://otter-ntu.github.io/"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/Luodian/Otter?style=social",
+    "description": "A vision-language model with in-context instruction tuning.",
+    "topics": [
+      "multimodal"
+    ]
+  },
+  {
+    "id": "noah",
+    "title": "Neural Prompt Search",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Kaiyang Zhou",
+        "url": "https://kaiyangzhou.github.io/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "TPAMI",
+    "year": 2024,
+    "venueNote": "",
+    "image": "/images/NOAH_teaser.png",
+    "lightBg": true,
+    "projectUrl": "https://zhangyuanhan-ai.github.io/NOAH",
+    "pdfUrl": "https://arxiv.org/abs/2206.04673",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://zhangyuanhan-ai.github.io/NOAH"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/Davidzhangyuanhan/NOAH"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/Davidzhangyuanhan/NOAH?style=social",
+    "description": "Searching prompt modules for parameter-efficient transfer learning.",
+    "topics": [
+      "adaptation"
+    ]
+  },
+  {
+    "id": "bamboo",
+    "title": "Bamboo: Building Mega-Scale Vision Dataset Continually with Human-Machine Synergy",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Qinghong Sun"
+      },
+      {
+        "name": "Yichun Zhou"
+      },
+      {
+        "name": "Zexin He"
+      },
+      {
+        "name": "Zhenfei Yin",
+        "url": "https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN"
+      },
+      {
+        "name": "Kun Wang"
+      },
+      {
+        "name": "Lv Sheng",
+        "url": "https://lucassheng.github.io/"
+      },
+      {
+        "name": "Yu Qiao",
+        "url": "http://mmlab.siat.ac.cn/yuqiao"
+      },
+      {
+        "name": "Jing Shao",
+        "url": "https://amandajshao.github.io/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "IJCV",
+    "year": 2024,
+    "venueNote": "",
+    "image": "/images/bamboo_teaser_new.png",
+    "projectUrl": "https://github.com/ZhangYuanhan-AI/Bamboo",
+    "pdfUrl": "https://arxiv.org/abs/2203.07845",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://github.com/ZhangYuanhan-AI/Bamboo"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ZhangYuanhan-AI/Bamboo"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/Bamboo?style=social",
+    "description": "4x larger than ImageNet, 2x larger than Object365 — built by active learning.",
+    "topics": [
+      "benchmark"
+    ]
+  },
+  {
+    "id": "visual-prompt-retrieval",
+    "title": "What Makes Good Examples for Visual In-Context Learning?",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Kaiyang Zhou",
+        "url": "https://kaiyangzhou.github.io/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "NeurIPS",
+    "year": 2023,
+    "venueNote": "",
+    "image": "/images/visual_prompt_retrieval.png",
+    "lightBg": true,
+    "projectUrl": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval",
+    "pdfUrl": "https://arxiv.org/abs/2301.13670",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/visual_prompt_retrieval?style=social",
+    "description": "Retrieving prompts for visual in-context learning.",
+    "topics": [
+      "adaptation"
+    ]
+  },
+  {
+    "id": "omnibenchmark",
+    "title": "Benchmarking Omni-Vision Representation through the Lens of Visual Realms",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Zhenfei Yin",
+        "url": "https://yinzhenfei.github.io/"
+      },
+      {
+        "name": "Jing Shao",
+        "url": "https://amandajshao.github.io/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "ECCV",
+    "year": 2022,
+    "venueNote": "",
+    "image": "/images/OmniBenchmark.png",
+    "lightBg": true,
+    "projectUrl": "https://zhangyuanhan-ai.github.io/OmniBenchmark",
+    "pdfUrl": "https://arxiv.org/abs/2207.07106",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://zhangyuanhan-ai.github.io/OmniBenchmark"
+      },
+      {
+        "label": "Leaderboard",
+        "url": "https://paperswithcode.com/sota/image-classification-on-omnibenchmark"
+      },
+      {
+        "label": "Dataset and Code",
+        "url": "https://github.com/ZhangYuanhan-AI/OmniBenchmark"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/OmniBenchmark?style=social",
+    "description": "New benchmark for evaluating vision foundation models; supervised contrastive learning framework.",
+    "topics": [
+      "benchmark"
+    ]
+  }
+]

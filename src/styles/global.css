@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Morandi color tokens as CSS variables ---- */
+:root {
+  --m-cream:    #F3EFEA;
+  --m-paper:    #EBE6DF;
+  --m-sand:     #DDD6CC;
+  --m-charcoal: #1C1B19;
+  --m-ash:      #242320;
+  --m-stone:    #2E2C28;
+  --m-ink:      #3D3835;
+  --m-dusk:     #6B6460;
+  --m-mist:     #9B948E;
+  --m-cloud:    #C4BCB4;
+  --m-sage:     #8BA89A;
+  --m-sage2:    #A3BDAE;
+  --m-slate:    #8DA0B2;
+  --m-mauve:    #B3A0B8;
+  --m-rose:     #C4A6A0;
+  --m-clay:     #C2A67E;
+  /* Brighter tones for dark mode gradients */
+  --m-blush:    #D4B5B0;
+  --m-lavender: #C9B8CE;
+  --m-frost:    #B8CCC2;
+  --m-pearl:    #C8BFB8;
+  --m-mint:     #7ECDB0;
+  --m-lilac:    #B48EC4;
+  --m-peach:    #D4917E;
+  --m-silk:     #C8A86E;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate-on-scroll, .stagger-item {
+      opacity: 1 !important; transform: none !important; transition: none !important;
+    }
+    .glitch-text::before, .glitch-text::after { display: none !important; }
+  }
+
+  ::selection {
+    background-color: rgba(139, 168, 154, 0.25);
+    color: inherit;
+  }
+
+  /* Focus visible for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--m-sage);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .dark ::-webkit-scrollbar { width: 5px; }
+  .dark ::-webkit-scrollbar-track { background: transparent; }
+  .dark ::-webkit-scrollbar-thumb { background: var(--m-stone); border-radius: 3px; }
+  .dark ::-webkit-scrollbar-thumb:hover { background: var(--m-sage); }
+}
+
+@layer components {
+
+  /* ---- Glitch text (dark mode only, muted colors) ---- */
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+  }
+  .dark .glitch-text::before,
+  .dark .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+  }
+  .dark .glitch-text::before {
+    color: var(--m-mint);
+    animation: glitch-1 4s infinite linear alternate-reverse;
+    text-shadow: -2px 0 var(--m-lilac);
+    left: 2px;
+  }
+  .dark .glitch-text::after {
+    color: var(--m-lilac);
+    animation: glitch-2 3s infinite linear alternate-reverse;
+    text-shadow: 2px 0 var(--m-mint);
+    left: -2px;
+  }
+
+  /* ---- Gradient text ---- */
+  .gradient-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(135deg, var(--m-sage), var(--m-slate), var(--m-mauve), var(--m-rose));
+    background-size: 300% 300%;
+    animation: gradient-x 6s ease infinite;
+  }
+  .dark .gradient-text {
+    background-image: linear-gradient(135deg, var(--m-mint), var(--m-lilac), var(--m-peach), var(--m-silk));
+  }
+
+  /* ---- Section heading ---- */
+  .section-heading {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: var(--m-mist);
+    margin-bottom: 2rem;
+  }
+  .dark .section-heading {
+    color: var(--m-dusk);
+  }
+
+  /* ---- Card ---- */
+  .card-glow {
+    @apply relative py-4 px-2 overflow-hidden
+           border-t border-[#DDD6CC]/40
+           transition-all duration-300;
+  }
+  .dark .card-glow {
+    border-top-color: rgba(46, 44, 40, 0.4);
+  }
+  .card-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(139, 168, 154, 0.05), transparent 40%);
+  }
+  .card-glow:hover::before { opacity: 1; }
+  .card-glow:hover {
+    background-color: rgba(235, 230, 223, 0.4);
+  }
+  .dark .card-glow:hover {
+    background-color: rgba(46, 44, 40, 0.3);
+  }
+
+  /* ---- Pill ---- */
+  .pill {
+    @apply inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider;
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  }
+
+  /* ---- Link button ---- */
+  .link-btn {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs transition-colors duration-200;
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    color: var(--m-dusk);
+  }
+  .link-btn:hover {
+    color: var(--m-sage);
+  }
+  .dark .link-btn:hover {
+    color: var(--m-sage2);
+  }
+
+  /* ---- Filter pill ---- */
+  .filter-pill {
+    @apply px-3 py-1 rounded-full text-xs font-medium cursor-pointer transition-colors duration-200;
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    color: var(--m-mist);
+  }
+  .dark .filter-pill {
+    color: var(--m-dusk);
+  }
+  .filter-pill:hover {
+    color: var(--m-sage);
+  }
+  .dark .filter-pill:hover {
+    color: var(--m-sage2);
+  }
+  .filter-pill.active {
+    color: var(--m-sage);
+  }
+  .dark .filter-pill.active {
+    color: var(--m-sage2);
+  }
+
+  /* ---- Animations ---- */
+  .animate-on-scroll {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+  .stagger-item {
+    opacity: 0; transform: translateY(12px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .stagger-item.visible { opacity: 1; transform: translateY(0); }
+}
+
+#neural-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}

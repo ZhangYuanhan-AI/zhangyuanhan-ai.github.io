@@ -1,0 +1,52 @@
+---
+const latestNews = [
+  { date: '2025.07', html: 'We release <a href="https://zhangyuanhan-ai.github.io/video-tt/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Video-TT</a>, a holistic benchmark for advanced video reasoning between MLLMs and humans.' },
+];
+
+const olderNews = [
+  { date: '2024.10', html: '<a href="https://llava-vl.github.io/blog/2024-09-30-llava-video/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">LLaVA-Video</a> updated with new <a href="https://huggingface.co/collections/lmms-lab/llava-video-661e86f5e8dabc3ff793c944" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">model</a> and <a href="https://huggingface.co/datasets/lmms-lab/LLaVA-Video-178K" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">data</a>.' },
+  { date: '2024.08', html: '<a href="https://llava-vl.github.io/blog/2024-08-05-llava-onevision/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">LLaVA-OneVision</a> released.' },
+  { date: '2024.07', html: 'IJCV Outstanding Reviewer Award 2023.' },
+  { date: '2024.07', html: '<a href="https://zhangyuanhan-ai.github.io/NOAH" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">NOAH</a> accepted by TPAMI.' },
+  { date: '2024.07', html: 'Three papers accepted at ECCV 2024.' },
+  { date: '2024.06', html: 'Organized CVPR 2024 workshop: <a href="https://prompting-in-vision.github.io/index_cvpr24.html" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Prompting in Vision</a>.' },
+  { date: '2024.05', html: '<a href="https://github.com/LLaVA-VL/LLaVA-NeXT" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">LLaVA-NeXT-Video</a> released.' },
+  { date: '2023.09', html: '<a href="https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Visual Prompt Retrieval</a> accepted to NeurIPS 2023.' },
+  { date: '2023.09', html: 'Talk at Alibaba DAMO Academy.' },
+  { date: '2023.07', html: 'Talk at HITSZ.' },
+  { date: '2023.06', html: '<a href="https://otter-ntu.github.io/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Otter</a> released.' },
+  { date: '2022.10', html: '1st place in <a href="https://computer-vision-in-the-wild.github.io/eccv-2022/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">CV in the Wild Challenge</a>.' },
+  { date: '2022.07', html: '<a href="https://zhangyuanhan-ai.github.io/OmniBenchmark" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">OmniBenchmark</a> accepted to ECCV 2022.' },
+  { date: '2022.03', html: '<a href="https://github.com/Davidzhangyuanhan/Bamboo" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Bamboo</a> dataset released.' },
+];
+---
+
+<section id="news" class="py-20 animate-on-scroll">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="section-heading">News</h2>
+
+    {latestNews.map(item => (
+      <div class="flex gap-4 items-baseline py-2">
+        <span class="shrink-0 font-mono text-[11px] text-[#8BA89A] dark:text-[#A3BDAE] w-16 tabular-nums">{item.date}</span>
+        <p class="text-sm text-[#6B6460] dark:text-[#9B948E] leading-relaxed" set:html={item.html} />
+      </div>
+    ))}
+
+    <details class="mt-1 group">
+      <summary class="cursor-pointer font-mono text-[11px] text-[#9B948E] dark:text-[#6B6460] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] inline-flex items-center gap-1 py-2 transition-colors">
+        <svg class="w-3 h-3 transition-transform duration-300 group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        Older
+      </summary>
+      <div class="mt-1">
+        {olderNews.map(item => (
+          <div class="flex gap-4 items-baseline py-2">
+            <span class="shrink-0 font-mono text-[11px] text-[#DDD6CC] dark:text-[#2E2C28] w-16 tabular-nums">{item.date}</span>
+            <p class="text-sm text-[#9B948E] dark:text-[#6B6460] leading-relaxed" set:html={item.html} />
+          </div>
+        ))}
+      </div>
+    </details>
+  </div>
+</section>
