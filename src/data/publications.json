@@ -41,7 +41,7 @@
         "url": "https://huggingface.co/datasets/lmms-lab/video-tt"
       }
     ],
-    "description": "A holistic benchmark to assess advanced reasoning and understanding correctness/robustness between MLLMs and humans.",
+    "description": "GPT-4o scores 36.6% vs. humans at 84.3% — bypasses frame sampling to test real video reasoning.",
     "topics": [
       "benchmark",
       "video"
@@ -96,11 +96,11 @@
       },
       {
         "label": "Dataset, Model and Code",
-        "url": "https://llava-vl.github.io/blog/2024-09-30-llava-video/"
+        "url": "https://huggingface.co/papers/2410.02713"
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "Fully open-sourced video LMM (code, model, and data) with competitive ability.",
+    "description": "1.2M+ HuggingFace downloads. Fully open-sourced video LMM (code, model, and data) with competitive ability.",
     "topics": [
       "multimodal",
       "video"
@@ -166,8 +166,8 @@
         "url": "https://llava-vl.github.io/blog/2024-08-05-llava-onevision/"
       },
       {
-        "label": "Dataset and Code",
-        "url": "https://llava-vl.github.io/blog/2024-08-05-llava-onevision/"
+        "label": "Dataset, Model and Code",
+        "url": "https://huggingface.co/papers/2408.03326"
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
@@ -299,16 +299,16 @@
     "year": 2024,
     "venueNote": "",
     "image": "/images/otter_brand.png",
-    "projectUrl": "https://otter-ntu.github.io/",
+    "projectUrl": "https://github.com/EvolvingLMMs-Lab/Otter",
     "pdfUrl": "https://arxiv.org/abs/2306.05425",
     "links": [
       {
         "label": "Project",
-        "url": "https://otter-ntu.github.io/"
+        "url": "https://github.com/EvolvingLMMs-Lab/Otter"
       },
       {
         "label": "Dataset and Code",
-        "url": "https://otter-ntu.github.io/"
+        "url": "https://github.com/EvolvingLMMs-Lab/Otter"
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/Luodian/Otter?style=social",
