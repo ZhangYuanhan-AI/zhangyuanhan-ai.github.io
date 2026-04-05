@@ -20,7 +20,7 @@ const venueColors: Record<string, string> = {
   'ECCV': 'text-[#8DA0B2] bg-[#8DA0B2]/10',
   'TPAMI': 'text-[#C4A6A0] bg-[#C4A6A0]/10',
   'NeurIPS': 'text-[#C2A67E] bg-[#C2A67E]/10',
-  'ICME': 'text-[#8BA89A] bg-[#8BA89A]/10',
+  'IJCV': 'text-[#8DA0B2] bg-[#8DA0B2]/10',
 };
 const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dark:bg-[#2E2C28]/30';
 ---
@@ -39,10 +39,10 @@ const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dar
 
   <div class="flex-1 min-w-0 relative z-10">
     <a href={pub.projectUrl} target="_blank" rel="noopener noreferrer">
-      <h3 class="text-sm font-semibold text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors leading-snug">{pub.title}</h3>
+      <h3 class="text-[15px] font-bold text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors leading-snug">{pub.title}</h3>
     </a>
 
-    <p class="mt-1 text-[11px] text-[#9B948E] dark:text-[#6B6460] leading-relaxed">
+    <p class="mt-1.5 text-xs text-[#9B948E] dark:text-[#7A746E] leading-relaxed">
       {pub.authors.map((author, i) => (
         <>
           {i > 0 && ', '}
@@ -57,11 +57,11 @@ const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dar
       ))}
     </p>
 
-    <p class="mt-1 text-[11px] text-[#9B948E] dark:text-[#6B6460] leading-relaxed">{pub.description}</p>
+    <p class="mt-1.5 text-[13px] text-[#6B6460] dark:text-[#A39D97] leading-relaxed italic">{pub.description}</p>
 
-    <div class="mt-1.5 flex items-center gap-2 flex-wrap">
+    <div class="mt-2.5 flex items-center gap-2.5 flex-wrap">
       <span class={`pill ${venueClass}`}>{pub.venue}{pub.venueNote ? ` ${pub.venueNote}` : ''} {pub.year}</span>
-      {pub.starsUrl && <img src={pub.starsUrl} alt="stars" class="h-3.5 opacity-40 hover:opacity-70 transition-opacity" loading="lazy" />}
+      {pub.starsUrl && <img src={pub.starsUrl} alt="GitHub stars" class="h-3.5 opacity-50 hover:opacity-80 transition-opacity" loading="lazy" />}
       <a href={pub.pdfUrl} target="_blank" rel="noopener noreferrer" class="link-btn">Paper</a>
       {pub.links.map(link => (
         <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-btn">{link.label}</a>

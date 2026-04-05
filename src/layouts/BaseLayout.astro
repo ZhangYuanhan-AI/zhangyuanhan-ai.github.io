@@ -73,95 +73,9 @@ const {
       @import '../styles/global.css';
     </style>
   </head>
-  <body class="bg-[#F3EFEA] dark:bg-[#1C1B19] text-[#6B6460] dark:text-[#9B948E] font-sans antialiased overflow-x-hidden transition-colors duration-300">
-    <canvas id="neural-canvas"></canvas>
+  <body class="bg-[#F3EFEA] dark:bg-[#1C1B19] text-[#6B6460] dark:text-[#A39D97] font-sans antialiased overflow-x-hidden transition-colors duration-300">
 
-    <div class="relative z-10">
-      <slot />
-    </div>
-
-    <!-- Neural network canvas -->
-    <script is:inline>
-    (function() {
-      var c = document.getElementById('neural-canvas');
-      if (!c) return;
-      var ctx = c.getContext('2d');
-      var particles = [];
-      var mouse = { x: -1000, y: -1000 };
-      var W, H;
-      var PARTICLE_COUNT = window.innerWidth < 768 ? 30 : 60;
-      var MAX_DIST = 140;
-      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      function isDark() { return document.documentElement.classList.contains('dark'); }
-
-      function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
-
-      function Particle() {
-        this.x = Math.random() * W;
-        this.y = Math.random() * H;
-        this.vx = (Math.random() - 0.5) * 0.3;
-        this.vy = (Math.random() - 0.5) * 0.3;
-        this.r = Math.random() * 1.5 + 0.5;
-      }
-
-      function init() { resize(); particles = []; for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle()); }
-
-      function draw() {
-        if (prefersReduced) return;
-        ctx.clearRect(0, 0, W, H);
-        var dark = isDark();
-        // Morandi sage in dark, morandi slate in light
-        var color = dark ? '139, 168, 154' : '141, 160, 178';
-        var pAlpha = dark ? 0.2 : 0.12;
-        var lAlpha = dark ? 0.05 : 0.035;
-        var mAlpha = dark ? 0.07 : 0.05;
-
-        for (var i = 0; i < particles.length; i++) {
-          var p = particles[i];
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > W) p.vx *= -1;
-          if (p.y < 0 || p.y > H) p.vy *= -1;
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(' + color + ',' + pAlpha + ')';
-          ctx.fill();
-
-          var dx = mouse.x - p.x, dy = mouse.y - p.y;
-          var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 200) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = 'rgba(' + color + ',' + (mAlpha * (1 - dist / 200)) + ')';
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-
-          for (var j = i + 1; j < particles.length; j++) {
-            var p2 = particles[j];
-            var dx2 = p.x - p2.x, dy2 = p.y - p2.y;
-            var d = Math.sqrt(dx2 * dx2 + dy2 * dy2);
-            if (d < MAX_DIST) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = 'rgba(' + color + ',' + (lAlpha * (1 - d / MAX_DIST)) + ')';
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-        requestAnimationFrame(draw);
-      }
-
-      window.addEventListener('resize', resize, { passive: true });
-      window.addEventListener('mousemove', function(e) { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
-      init();
-      if (!prefersReduced) draw();
-    })();
-    </script>
+    <slot />
 
     <!-- Scroll observer -->
     <script is:inline>

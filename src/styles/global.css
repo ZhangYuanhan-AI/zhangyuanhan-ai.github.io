@@ -42,7 +42,6 @@
     .animate-on-scroll, .stagger-item {
       opacity: 1 !important; transform: none !important; transition: none !important;
     }
-    .glitch-text::before, .glitch-text::after { display: none !important; }
   }
 
   ::selection {
@@ -65,32 +64,6 @@
 
 @layer components {
 
-  /* ---- Glitch text (dark mode only, muted colors) ---- */
-  .glitch-text {
-    position: relative;
-    display: inline-block;
-  }
-  .dark .glitch-text::before,
-  .dark .glitch-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
-  }
-  .dark .glitch-text::before {
-    color: var(--m-mint);
-    animation: glitch-1 4s infinite linear alternate-reverse;
-    text-shadow: -2px 0 var(--m-lilac);
-    left: 2px;
-  }
-  .dark .glitch-text::after {
-    color: var(--m-lilac);
-    animation: glitch-2 3s infinite linear alternate-reverse;
-    text-shadow: 2px 0 var(--m-mint);
-    left: -2px;
-  }
-
   /* ---- Gradient text ---- */
   .gradient-text {
     -webkit-background-clip: text;
@@ -101,7 +74,7 @@
     animation: gradient-x 6s ease infinite;
   }
   .dark .gradient-text {
-    background-image: linear-gradient(135deg, var(--m-mint), var(--m-lilac), var(--m-peach), var(--m-silk));
+    background-image: linear-gradient(135deg, var(--m-sage2), var(--m-slate), var(--m-mauve), var(--m-rose));
   }
 
   /* ---- Section heading ---- */
@@ -120,7 +93,7 @@
 
   /* ---- Card ---- */
   .card-glow {
-    @apply relative py-4 px-2 overflow-hidden
+    @apply relative py-5 px-2 overflow-hidden
            border-t border-[#DDD6CC]/40
            transition-all duration-300;
   }
@@ -194,12 +167,4 @@
     transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .stagger-item.visible { opacity: 1; transform: translateY(0); }
-}
-
-#neural-canvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  pointer-events: none;
 }

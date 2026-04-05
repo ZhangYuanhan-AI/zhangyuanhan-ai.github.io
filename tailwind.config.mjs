@@ -33,35 +33,12 @@ export default {
         },
       },
       animation: {
-        'blink': 'blink 1s step-end infinite',
         'gradient-x': 'gradient-x 6s ease infinite',
-        'glitch-1': 'glitch-1 4s infinite linear alternate-reverse',
-        'glitch-2': 'glitch-2 3s infinite linear alternate-reverse',
       },
       keyframes: {
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
-        },
         'gradient-x': {
           '0%, 100%': { 'background-position': '0% 50%' },
           '50%': { 'background-position': '100% 50%' },
-        },
-        'glitch-1': {
-          '0%': { 'clip-path': 'inset(40% 0 61% 0)' },
-          '20%': { 'clip-path': 'inset(92% 0 1% 0)' },
-          '40%': { 'clip-path': 'inset(43% 0 1% 0)' },
-          '60%': { 'clip-path': 'inset(25% 0 58% 0)' },
-          '80%': { 'clip-path': 'inset(54% 0 7% 0)' },
-          '100%': { 'clip-path': 'inset(58% 0 43% 0)' },
-        },
-        'glitch-2': {
-          '0%': { 'clip-path': 'inset(65% 0 13% 0)' },
-          '20%': { 'clip-path': 'inset(79% 0 14% 0)' },
-          '40%': { 'clip-path': 'inset(20% 0 52% 0)' },
-          '60%': { 'clip-path': 'inset(48% 0 29% 0)' },
-          '80%': { 'clip-path': 'inset(70% 0 8% 0)' },
-          '100%': { 'clip-path': 'inset(10% 0 63% 0)' },
         },
       },
     },
