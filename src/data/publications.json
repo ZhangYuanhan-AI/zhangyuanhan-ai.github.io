@@ -41,7 +41,7 @@
         "url": "https://huggingface.co/datasets/lmms-lab/video-tt"
       }
     ],
-    "description": "GPT-4o scores 36.6% vs. humans at 84.3% — bypasses frame sampling to test real video reasoning.",
+    "description": "GPT-4o: 36.6%. Humans: 84.3%. Benchmarks video reasoning without key-frame sampling bias.",
     "topics": [
       "benchmark",
       "video"
@@ -100,7 +100,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "1.2M+ HuggingFace downloads. Fully open-sourced video LMM (code, model, and data) with competitive ability.",
+    "description": "1.2M+ HuggingFace downloads. Fully open-sourced video LMM.",
     "topics": [
       "multimodal",
       "video"
@@ -171,7 +171,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "A family of LMMs consolidating insights into data, models, and visual representations.",
+    "description": "One model, three scenarios — SOTA on single-image, multi-image, and video.",
     "topics": [
       "multimodal"
     ],
@@ -249,7 +249,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/open-compass/MMBench?style=social",
-    "description": "Benchmarking 20 abilities of vision-language models.",
+    "description": "The go-to benchmark for evaluating multimodal models — adopted by Qwen-VL, InternVL, LLaVA, and more.",
     "topics": [
       "benchmark",
       "multimodal"
@@ -312,9 +312,52 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/Luodian/Otter?style=social",
-    "description": "A vision-language model with in-context instruction tuning.",
+    "description": "Pioneered in-context learning for multimodal understanding. 2.8M instruction-response pairs.",
     "topics": [
       "multimodal"
+    ],
+    "categories": [
+      "post-training"
+    ]
+  },
+  {
+    "id": "visual-prompt-retrieval",
+    "title": "What Makes Good Examples for Visual In-Context Learning?",
+    "authors": [
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Kaiyang Zhou",
+        "url": "https://kaiyangzhou.github.io/"
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "NeurIPS",
+    "year": 2023,
+    "venueNote": "",
+    "image": "/images/visual_prompt_retrieval.png",
+    "lightBg": true,
+    "projectUrl": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval",
+    "pdfUrl": "https://arxiv.org/abs/2301.13670",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
+      },
+      {
+        "label": "Model and Code",
+        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
+      }
+    ],
+    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/visual_prompt_retrieval?style=social",
+    "description": "Pioneered in-context learning for multimodal generation. Retrieval beats random by a large margin.",
+    "topics": [
+      "adaptation"
     ],
     "categories": [
       "post-training"
@@ -338,7 +381,7 @@
       }
     ],
     "venue": "TPAMI",
-    "year": 2024,
+    "year": 2022,
     "venueNote": "",
     "image": "/images/NOAH_teaser.png",
     "lightBg": true,
@@ -350,12 +393,12 @@
         "url": "https://zhangyuanhan-ai.github.io/NOAH"
       },
       {
-        "label": "Code",
+        "label": "Model and Code",
         "url": "https://github.com/Davidzhangyuanhan/NOAH"
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/Davidzhangyuanhan/NOAH?style=social",
-    "description": "Searching prompt modules for parameter-efficient transfer learning.",
+    "description": "Where to insert LoRA, VPT, or Adapter? Let search decide.",
     "topics": [
       "adaptation"
     ],
@@ -405,7 +448,7 @@
       }
     ],
     "venue": "IJCV",
-    "year": 2024,
+    "year": 2022,
     "venueNote": "",
     "image": "/images/bamboo_teaser_new.png",
     "projectUrl": "https://github.com/ZhangYuanhan-AI/Bamboo",
@@ -416,61 +459,18 @@
         "url": "https://github.com/ZhangYuanhan-AI/Bamboo"
       },
       {
-        "label": "Code",
+        "label": "Dataset and Code",
         "url": "https://github.com/ZhangYuanhan-AI/Bamboo"
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/Bamboo?style=social",
-    "description": "4x larger than ImageNet, 2x larger than Object365 — built by active learning.",
+    "description": "4x ImageNet, 2x Object365. Model pre-trained on it won 1st place at ECCV 2022 CV-in-the-Wild Challenge.",
     "topics": [
       "benchmark"
     ],
     "categories": [
       "post-training",
       "benchmarking"
-    ]
-  },
-  {
-    "id": "visual-prompt-retrieval",
-    "title": "What Makes Good Examples for Visual In-Context Learning?",
-    "authors": [
-      {
-        "name": "Yuanhan Zhang",
-        "self": true
-      },
-      {
-        "name": "Kaiyang Zhou",
-        "url": "https://kaiyangzhou.github.io/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      }
-    ],
-    "venue": "NeurIPS",
-    "year": 2023,
-    "venueNote": "",
-    "image": "/images/visual_prompt_retrieval.png",
-    "lightBg": true,
-    "projectUrl": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval",
-    "pdfUrl": "https://arxiv.org/abs/2301.13670",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
-      },
-      {
-        "label": "Code",
-        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/visual_prompt_retrieval?style=social",
-    "description": "Retrieving prompts for visual in-context learning.",
-    "topics": [
-      "adaptation"
-    ],
-    "categories": [
-      "post-training"
     ]
   },
   {
@@ -507,16 +507,12 @@
         "url": "https://zhangyuanhan-ai.github.io/OmniBenchmark"
       },
       {
-        "label": "Leaderboard",
-        "url": "https://paperswithcode.com/sota/image-classification-on-omnibenchmark"
-      },
-      {
         "label": "Dataset and Code",
         "url": "https://github.com/ZhangYuanhan-AI/OmniBenchmark"
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/OmniBenchmark?style=social",
-    "description": "New benchmark for evaluating vision foundation models; supervised contrastive learning framework.",
+    "description": "21 realms, zero overlap. No more cherry-picking benchmarks for your CLIP-like model.",
     "topics": [
       "benchmark"
     ],
