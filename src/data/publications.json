@@ -41,7 +41,7 @@
         "url": "https://huggingface.co/datasets/lmms-lab/video-tt"
       }
     ],
-    "description": "GPT-4o: 36.6%. Humans: 84.3%. Benchmarks video reasoning without key-frame sampling bias.",
+    "description": "A video reasoning benchmark that eliminates key-frame sampling bias — exposes a 48-point gap between GPT-4o (36.6%) and humans (84.3%).",
     "topics": [
       "benchmark",
       "video"
@@ -100,7 +100,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "1.2M+ HuggingFace downloads. Fully open-sourced video LMM.",
+    "description": "An open video LMM trained on synthetic data — fully reproducible, with 1.2M+ HuggingFace downloads.",
     "topics": [
       "multimodal",
       "video"
@@ -171,7 +171,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "One model, three scenarios — SOTA on single-image, multi-image, and video.",
+    "description": "A unified multimodal model that transfers across visual tasks — SOTA on single-image, multi-image, and video.",
     "topics": [
       "multimodal"
     ],
@@ -249,272 +249,10 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/open-compass/MMBench?style=social",
-    "description": "The go-to benchmark for evaluating multimodal models — adopted by Qwen-VL, InternVL, LLaVA, and more.",
+    "description": "A systematic benchmark for multimodal model evaluation — adopted by Qwen-VL, InternVL, LLaVA, and more.",
     "topics": [
       "benchmark",
       "multimodal"
-    ],
-    "categories": [
-      "benchmarking"
-    ]
-  },
-  {
-    "id": "otter",
-    "title": "Otter: A Multi-modal Model with In-context Instruction Tuning",
-    "authors": [
-      {
-        "name": "Bo Li*",
-        "url": "https://brianboli.com/"
-      },
-      {
-        "name": "Yuanhan Zhang*",
-        "self": true
-      },
-      {
-        "name": "Liangyu Chen",
-        "url": "https://cliangyu.com/"
-      },
-      {
-        "name": "Jinghao Wan",
-        "url": "https://king159.github.io/"
-      },
-      {
-        "name": "Fanyi Pu",
-        "url": "https://pufanyi.github.io/"
-      },
-      {
-        "name": "Jingkang Yang",
-        "url": "https://jingkang50.github.io/"
-      },
-      {
-        "name": "Chunyuan Li",
-        "url": "https://chunyuan.li/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      }
-    ],
-    "venue": "TPAMI",
-    "year": 2024,
-    "venueNote": "",
-    "image": "/images/otter_brand.png",
-    "projectUrl": "https://github.com/EvolvingLMMs-Lab/Otter",
-    "pdfUrl": "https://arxiv.org/abs/2306.05425",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://github.com/EvolvingLMMs-Lab/Otter"
-      },
-      {
-        "label": "Dataset and Code",
-        "url": "https://github.com/EvolvingLMMs-Lab/Otter"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/Luodian/Otter?style=social",
-    "description": "Pioneered in-context learning for multimodal understanding. 2.8M instruction-response pairs.",
-    "topics": [
-      "multimodal"
-    ],
-    "categories": [
-      "post-training"
-    ]
-  },
-  {
-    "id": "visual-prompt-retrieval",
-    "title": "What Makes Good Examples for Visual In-Context Learning?",
-    "authors": [
-      {
-        "name": "Yuanhan Zhang",
-        "self": true
-      },
-      {
-        "name": "Kaiyang Zhou",
-        "url": "https://kaiyangzhou.github.io/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      }
-    ],
-    "venue": "NeurIPS",
-    "year": 2023,
-    "venueNote": "",
-    "image": "/images/visual_prompt_retrieval.png",
-    "lightBg": true,
-    "projectUrl": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval",
-    "pdfUrl": "https://arxiv.org/abs/2301.13670",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
-      },
-      {
-        "label": "Model and Code",
-        "url": "https://github.com/ZhangYuanhan-AI/visual_prompt_retrieval"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/visual_prompt_retrieval?style=social",
-    "description": "Pioneered in-context learning for multimodal generation. Retrieval beats random by a large margin.",
-    "topics": [
-      "adaptation"
-    ],
-    "categories": [
-      "post-training"
-    ]
-  },
-  {
-    "id": "noah",
-    "title": "Neural Prompt Search",
-    "authors": [
-      {
-        "name": "Yuanhan Zhang",
-        "self": true
-      },
-      {
-        "name": "Kaiyang Zhou",
-        "url": "https://kaiyangzhou.github.io/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      }
-    ],
-    "venue": "TPAMI",
-    "year": 2022,
-    "venueNote": "",
-    "image": "/images/NOAH_teaser.png",
-    "lightBg": true,
-    "projectUrl": "https://zhangyuanhan-ai.github.io/NOAH",
-    "pdfUrl": "https://arxiv.org/abs/2206.04673",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://zhangyuanhan-ai.github.io/NOAH"
-      },
-      {
-        "label": "Model and Code",
-        "url": "https://github.com/Davidzhangyuanhan/NOAH"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/Davidzhangyuanhan/NOAH?style=social",
-    "description": "Where to insert LoRA, VPT, or Adapter? Let search decide.",
-    "topics": [
-      "adaptation"
-    ],
-    "categories": [
-      "post-training"
-    ]
-  },
-  {
-    "id": "bamboo",
-    "title": "Bamboo: Building Mega-Scale Vision Dataset Continually with Human-Machine Synergy",
-    "authors": [
-      {
-        "name": "Yuanhan Zhang",
-        "self": true
-      },
-      {
-        "name": "Qinghong Sun"
-      },
-      {
-        "name": "Yichun Zhou"
-      },
-      {
-        "name": "Zexin He"
-      },
-      {
-        "name": "Zhenfei Yin",
-        "url": "https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN"
-      },
-      {
-        "name": "Kun Wang"
-      },
-      {
-        "name": "Lv Sheng",
-        "url": "https://lucassheng.github.io/"
-      },
-      {
-        "name": "Yu Qiao",
-        "url": "http://mmlab.siat.ac.cn/yuqiao"
-      },
-      {
-        "name": "Jing Shao",
-        "url": "https://amandajshao.github.io/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      }
-    ],
-    "venue": "IJCV",
-    "year": 2022,
-    "venueNote": "",
-    "image": "/images/bamboo_teaser_new.png",
-    "projectUrl": "https://github.com/ZhangYuanhan-AI/Bamboo",
-    "pdfUrl": "https://arxiv.org/abs/2203.07845",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://github.com/ZhangYuanhan-AI/Bamboo"
-      },
-      {
-        "label": "Dataset and Code",
-        "url": "https://github.com/ZhangYuanhan-AI/Bamboo"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/Bamboo?style=social",
-    "description": "4x ImageNet, 2x Object365. Model pre-trained on it won 1st place at ECCV 2022 CV-in-the-Wild Challenge.",
-    "topics": [
-      "benchmark"
-    ],
-    "categories": [
-      "post-training",
-      "benchmarking"
-    ]
-  },
-  {
-    "id": "omnibenchmark",
-    "title": "Benchmarking Omni-Vision Representation through the Lens of Visual Realms",
-    "authors": [
-      {
-        "name": "Yuanhan Zhang",
-        "self": true
-      },
-      {
-        "name": "Zhenfei Yin",
-        "url": "https://yinzhenfei.github.io/"
-      },
-      {
-        "name": "Jing Shao",
-        "url": "https://amandajshao.github.io/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      }
-    ],
-    "venue": "ECCV",
-    "year": 2022,
-    "venueNote": "",
-    "image": "/images/OmniBenchmark.png",
-    "lightBg": true,
-    "projectUrl": "https://zhangyuanhan-ai.github.io/OmniBenchmark",
-    "pdfUrl": "https://arxiv.org/abs/2207.07106",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://zhangyuanhan-ai.github.io/OmniBenchmark"
-      },
-      {
-        "label": "Dataset and Code",
-        "url": "https://github.com/ZhangYuanhan-AI/OmniBenchmark"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/ZhangYuanhan-AI/OmniBenchmark?style=social",
-    "description": "21 realms, zero overlap. No more cherry-picking benchmarks for your CLIP-like model.",
-    "topics": [
-      "benchmark"
     ],
     "categories": [
       "benchmarking"
