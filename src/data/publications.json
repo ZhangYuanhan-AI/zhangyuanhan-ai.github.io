@@ -100,7 +100,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "An open video LMM trained on synthetic data — fully reproducible, with 1.2M+ HuggingFace downloads.",
+    "description": "An open video LMM built entirely on synthetic data — 1.2M+ HuggingFace downloads.",
     "topics": [
       "multimodal",
       "video"
@@ -171,7 +171,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/LLaVA-VL/LLaVA-NeXT?style=social",
-    "description": "A unified multimodal model that transfers across visual tasks — SOTA on single-image, multi-image, and video.",
+    "description": "One model for image, multi-image, and video — SOTA across all three.",
     "topics": [
       "multimodal"
     ],
@@ -249,7 +249,7 @@
       }
     ],
     "starsUrl": "https://img.shields.io/github/stars/open-compass/MMBench?style=social",
-    "description": "A systematic benchmark for multimodal model evaluation — adopted by Qwen-VL, InternVL, LLaVA, and more.",
+    "description": "The go-to multimodal evaluation benchmark — adopted by Qwen-VL, InternVL, LLaVA, and more.",
     "topics": [
       "benchmark",
       "multimodal"
