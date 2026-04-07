@@ -1,5 +1,66 @@
 [
   {
+    "id": "video-mmmu",
+    "title": "Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos",
+    "authors": [
+      {
+        "name": "Kairui Hu",
+        "url": "https://kairuihu.github.io/"
+      },
+      {
+        "name": "Penghao Wu",
+        "url": "https://penghao-wu.github.io/"
+      },
+      {
+        "name": "Fanyi Pu",
+        "url": "https://github.com/pufanyi"
+      },
+      {
+        "name": "Wang Xiao"
+      },
+      {
+        "name": "Xiang Yue",
+        "url": "https://xiangyue9607.github.io/"
+      },
+      {
+        "name": "Bo Li",
+        "url": "https://brianboli.com/"
+      },
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Ziwei Liu",
+        "url": "https://liuziwei7.github.io/"
+      }
+    ],
+    "venue": "ACL",
+    "year": 2026,
+    "venueNote": "",
+    "image": "/images/video-mmmu.png",
+    "projectUrl": "https://videommmu.github.io/",
+    "pdfUrl": "https://arxiv.org/abs/2501.13826",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://videommmu.github.io/"
+      },
+      {
+        "label": "Dataset and Code",
+        "url": "https://huggingface.co/datasets/lmms-lab/VideoMMMU"
+      }
+    ],
+    "description": "A multi-discipline video benchmark for knowledge acquisition — adopted by Gemini-3 as part of their evaluation suite.",
+    "topics": [
+      "benchmark",
+      "video"
+    ],
+    "categories": [
+      "benchmarking"
+    ]
+  },
+  {
     "id": "video-tt",
     "title": "Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding",
     "authors": [
@@ -177,85 +238,6 @@
     ],
     "categories": [
       "post-training"
-    ]
-  },
-  {
-    "id": "mmbench",
-    "title": "MMBench: Is Your Multi-modal Model an All-around Player?",
-    "authors": [
-      {
-        "name": "Yuan Liu*",
-        "url": "https://yuanliuuuuuu.github.io/"
-      },
-      {
-        "name": "Haodong Duan*",
-        "url": "https://kennymckormick.github.io/"
-      },
-      {
-        "name": "Yuanhan Zhang*",
-        "self": true
-      },
-      {
-        "name": "Bo Li*",
-        "url": "https://brianboli.com/"
-      },
-      {
-        "name": "Songyang Zhang*",
-        "url": "https://tonysy.github.io/"
-      },
-      {
-        "name": "Wangbo Zhao",
-        "url": "https://scholar.google.com.hk/citations?user=aocj89kAAAAJ&hl=zh-CN"
-      },
-      {
-        "name": "Yike Yuan",
-        "url": "https://github.com/yyk-wew"
-      },
-      {
-        "name": "Jiaqi Wang",
-        "url": "https://myownskyw7.github.io/"
-      },
-      {
-        "name": "Conghui He",
-        "url": "https://conghui.github.io/"
-      },
-      {
-        "name": "Ziwei Liu",
-        "url": "https://liuziwei7.github.io/"
-      },
-      {
-        "name": "Kai Chen",
-        "url": "https://chenkai.site/"
-      },
-      {
-        "name": "Dahua Lin",
-        "url": "http://dahua.site/"
-      }
-    ],
-    "venue": "ECCV",
-    "year": 2024,
-    "venueNote": "Oral",
-    "image": "/images/mmbench.png",
-    "projectUrl": "https://mmbench.opencompass.org.cn/home",
-    "pdfUrl": "https://arxiv.org/abs/2307.06281",
-    "links": [
-      {
-        "label": "Project",
-        "url": "https://mmbench.opencompass.org.cn/home"
-      },
-      {
-        "label": "Dataset and Code",
-        "url": "https://mmbench.opencompass.org.cn/home"
-      }
-    ],
-    "starsUrl": "https://img.shields.io/github/stars/open-compass/MMBench?style=social",
-    "description": "The go-to multimodal evaluation benchmark — adopted by Qwen-VL, InternVL, LLaVA, and more.",
-    "topics": [
-      "benchmark",
-      "multimodal"
-    ],
-    "categories": [
-      "benchmarking"
     ]
   }
 ]

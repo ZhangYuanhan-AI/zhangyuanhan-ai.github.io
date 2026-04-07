@@ -25,22 +25,34 @@
           <span class="text-[#3D3835] dark:text-[#C4BCB4]">benchmarking</span>.
         </p>
 
-        <p class="mt-4 text-xs text-[#6B6460] dark:text-[#A39D97] flex items-center gap-2">
-          <span class="font-mono text-[10px] font-semibold text-[#8BA89A] dark:text-[#A3BDAE] border border-[#8BA89A]/30 dark:border-[#A3BDAE]/30 rounded px-1.5 py-0.5">New</span>
-          <span>
-            <a href="https://zhangyuanhan-ai.github.io/video-tt/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Video-TT</a> ICCV'25 &middot;
-            <a href="https://llava-vl.github.io/blog/2024-09-30-llava-video/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">LLaVA-Video</a> &amp;
-            <a href="https://llava-vl.github.io/blog/2024-08-05-llava-onevision/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">OneVision</a> TMLR'25
-          </span>
-        </p>
+        <!-- News — two-tier layout -->
+        <div class="mt-5 text-[11px]">
+          <!-- Primary news (latest, highlighted) -->
+          <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-2.5 gap-y-1.5">
+            <span class="inline-block rounded-full border border-[#8BA89A]/30 dark:border-[#A3BDAE]/20 px-2 py-px text-[9px] font-semibold uppercase tracking-wider text-[#8BA89A] dark:text-[#A3BDAE]" style="font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;">New</span>
+            <span class="text-[#6B6460] dark:text-[#A39D97]">
+              <a href="https://videommmu.github.io/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Video-MMMU</a>
+              <span class="text-[#3D3835] dark:text-[#C4BCB4]">ACL'26</span>
+            </span>
+          </div>
+          <!-- Secondary news (older, muted) -->
+          <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-1.5 mt-1 ml-0 md:ml-[46px] text-[#9B948E] dark:text-[#7A746E]">
+            <a href="https://zhangyuanhan-ai.github.io/video-tt/" target="_blank" rel="noopener noreferrer" class="hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] hover:underline underline-offset-2 transition-colors">Video-TT</a>
+            <span>ICCV'25</span>
+            <span class="mx-0.5">·</span>
+            <a href="https://llava-vl.github.io/blog/2024-09-30-llava-video/" target="_blank" rel="noopener noreferrer" class="hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] hover:underline underline-offset-2 transition-colors">LLaVA-Video</a>
+            <span>TMLR'25</span>
+          </div>
+        </div>
 
-        <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+        <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-4">
           <a href="mailto:yuanhan002@e.ntu.edu.sg" class="font-mono text-xs text-[#9B948E] dark:text-[#7A746E] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Email</a>
           <a href="https://scholar.google.com/citations?user=g6grFy0AAAAJ&hl" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#9B948E] dark:text-[#7A746E] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Scholar</a>
           <a href="https://twitter.com/zhang_yuanhan" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#9B948E] dark:text-[#7A746E] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Twitter</a>
           <a href="https://github.com/ZhangYuanhan-AI" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#9B948E] dark:text-[#7A746E] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">GitHub</a>
           <a href="https://www.linkedin.com/in/yuanhan-zhang-b09a95b5/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#9B948E] dark:text-[#7A746E] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">LinkedIn</a>
         </div>
+
       </div>
 
       <div class="flex-shrink-0 relative group">
@@ -64,7 +76,7 @@
         <p class="text-[#6B6460] dark:text-[#A39D97]">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#8BA89A] dark:bg-[#A3BDAE] mr-1.5 relative top-[-1px]"></span>
           <span class="text-[#3D3835] dark:text-[#C4BCB4] font-medium">Harness-centric LLM Systems:</span>
-          Designing harnesses that structure memory for effective in-context comprehension and encode success criteria as executable checks that test for correctness, not mere plausibility.
+          Designing harnesses that structure memory for effective in-context comprehension and encode success criteria as robust executable checks.
         </p>
         <p class="text-[#6B6460] dark:text-[#A39D97]">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#8BA89A] dark:bg-[#A3BDAE] mr-1.5 relative top-[-1px]"></span>
@@ -73,5 +85,7 @@
         </p>
       </div>
     </div>
+
+
   </div>
 </section>

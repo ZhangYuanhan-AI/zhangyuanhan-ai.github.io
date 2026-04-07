@@ -4,9 +4,9 @@
 
 /* ---- Morandi color tokens as CSS variables ---- */
 :root {
-  --m-cream:    #F3EFEA;
-  --m-paper:    #EBE6DF;
-  --m-sand:     #DDD6CC;
+  --m-cream:    #EAE4DC;
+  --m-paper:    #E2DBD2;
+  --m-sand:     #D8D0C6;
   --m-charcoal: #1C1B19;
   --m-ash:      #242320;
   --m-stone:    #2E2C28;
@@ -108,7 +108,7 @@
   }
   .card-glow:hover::before { opacity: 1; }
   .card-glow:hover {
-    background-color: rgba(235, 230, 223, 0.4);
+    background-color: rgba(226, 219, 210, 0.4);
   }
   .dark .card-glow:hover {
     background-color: rgba(46, 44, 40, 0.3);
