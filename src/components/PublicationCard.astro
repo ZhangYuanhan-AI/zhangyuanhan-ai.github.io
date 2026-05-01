@@ -40,10 +40,10 @@ const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dar
 
   <div class="flex-1 min-w-0 relative z-10">
     <a href={pub.projectUrl} target="_blank" rel="noopener noreferrer">
-      <h3 class="text-[15px] font-bold text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors leading-snug">{pub.title}</h3>
+      <h3 class="text-base font-bold text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors leading-snug">{pub.title}</h3>
     </a>
 
-    <p class="mt-1.5 text-xs text-[#9B948E] dark:text-[#7A746E] leading-relaxed">
+    <p class="mt-1.5 text-[13px] text-[#9B948E] dark:text-[#7A746E] leading-relaxed">
       {pub.authors.map((author, i) => (
         <>
           {i > 0 && ', '}
@@ -58,7 +58,7 @@ const venueClass = venueColors[pub.venue] || 'text-[#9B948E] bg-[#DDD6CC]/30 dar
       ))}
     </p>
 
-    <p class="mt-1.5 text-[13px] text-[#6B6460] dark:text-[#A39D97] leading-relaxed italic">{pub.description}</p>
+    <p class="mt-1.5 text-[15px] text-[#6B6460] dark:text-[#A39D97] leading-relaxed italic">{pub.description}</p>
 
     <div class="mt-2.5 flex items-center gap-2.5 flex-wrap">
       <span class={`pill ${venueClass}`}>{pub.venue}{pub.venueNote ? ` ${pub.venueNote}` : ''} {pub.year}</span>
