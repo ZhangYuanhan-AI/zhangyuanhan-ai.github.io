@@ -1,4 +1,22 @@
 ---
+const shipped = [
+  {
+    name: 'Muse',
+    tag: 'Product',
+    tagClass: 'text-[#8BA89A] bg-[#8BA89A]/10',
+    url: 'https://muse.ai/',
+    linkLabel: 'muse.ai',
+    description: "Meta's new AI product.",
+  },
+  {
+    name: 'Muse Spark 1.3',
+    tag: 'Model',
+    tagClass: 'text-[#C2A67E] bg-[#C2A67E]/10',
+    url: 'https://research.meta.ai/blog/introducing-muse-spark-1-3',
+    linkLabel: 'Blog',
+    description: "The latest version of Meta's Muse Spark model.",
+  },
+];
 ---
 
 <section class="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-14">
@@ -23,30 +41,12 @@
           PhD from <a href="https://www.mmlab-ntu.com/" target="_blank" rel="noopener noreferrer" class="text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">MMLab@NTU</a>, advised by Prof. <a href="https://liuziwei7.github.io/" target="_blank" rel="noopener noreferrer" class="text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Ziwei Liu</a>.
         </p>
         <p class="mt-2 text-[15px] text-[#6B6460] dark:text-[#A39D97] max-w-sm leading-relaxed">
-          I build and evaluate multimodal large language models, with a focus on
-          <span class="text-[#3D3835] dark:text-[#C4BCB4]">post-training</span> and
-          <span class="text-[#3D3835] dark:text-[#C4BCB4]">benchmarking</span>.
+          I'm fortunate to work with talented people on frontier large language models, where I focus on
+          <span class="text-[#3D3835] dark:text-[#C4BCB4]">post-training</span>.
+          Recently, I contributed to
+          <a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener noreferrer" class="text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Muse Spark 1.3</a> and
+          <a href="https://muse.ai/" target="_blank" rel="noopener noreferrer" class="text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Muse</a>.
         </p>
-
-        <!-- News — two-tier layout -->
-        <div class="mt-5 text-[11px]">
-          <!-- Primary news (latest, highlighted) -->
-          <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-2.5 gap-y-1.5">
-            <span class="inline-block rounded-full border border-[#8BA89A]/30 dark:border-[#A3BDAE]/20 px-2 py-px text-[9px] font-semibold uppercase tracking-wider text-[#8BA89A] dark:text-[#A3BDAE]" style="font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;">New</span>
-            <span class="text-[#6B6460] dark:text-[#A39D97]">
-              <a href="https://videommmu.github.io/" target="_blank" rel="noopener noreferrer" class="text-[#8BA89A] dark:text-[#A3BDAE] hover:underline underline-offset-2">Video-MMMU</a>
-              <span class="text-[#3D3835] dark:text-[#C4BCB4]">ACL'26</span>
-            </span>
-          </div>
-          <!-- Secondary news (older, muted) -->
-          <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-1.5 mt-1 ml-0 md:ml-[46px] text-[#9B948E] dark:text-[#7A746E]">
-            <a href="https://zhangyuanhan-ai.github.io/video-tt/" target="_blank" rel="noopener noreferrer" class="hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] hover:underline underline-offset-2 transition-colors">Video-TT</a>
-            <span>ICCV'25</span>
-            <span class="mx-0.5">·</span>
-            <a href="https://llava-vl.github.io/blog/2024-09-30-llava-video/" target="_blank" rel="noopener noreferrer" class="hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] hover:underline underline-offset-2 transition-colors">LLaVA-Video</a>
-            <span>TMLR'25</span>
-          </div>
-        </div>
 
         <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-4">
           <a href="mailto:yuanhan002@e.ntu.edu.sg" class="font-mono text-xs text-[#9B948E] dark:text-[#7A746E] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors">Email</a>
@@ -67,19 +67,38 @@
       </div>
     </div>
 
+    <!-- Shipped — products and models I contributed to -->
+    <div class="mt-10 pt-8 border-t border-[#DDD6CC]/40 dark:border-[#2E2C28]/60">
+      <p class="section-heading !mb-3">Shipped</p>
+      <div class="space-y-4">
+        {shipped.map(item => (
+          <div class="flex items-start gap-3.5">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-base font-bold text-[#3D3835] dark:text-[#C4BCB4] hover:text-[#8BA89A] dark:hover:text-[#A3BDAE] transition-colors leading-snug">{item.name}</a>
+                <span class={`pill ${item.tagClass}`}>{item.tag}</span>
+              </div>
+              <p class="mt-0.5 text-[15px] text-[#6B6460] dark:text-[#A39D97] leading-relaxed">{item.description}</p>
+            </div>
+            <a href={item.url} target="_blank" rel="noopener noreferrer" class="link-btn shrink-0">{item.linkLabel}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <!-- Current Interests — between hero and Featured Work -->
     <div class="mt-10 pt-8 border-t border-[#DDD6CC]/40 dark:border-[#2E2C28]/60">
       <p class="section-heading !mb-3">Current Interests</p>
       <div class="space-y-2 text-[15px] leading-relaxed">
         <p class="text-[#6B6460] dark:text-[#A39D97]">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#8BA89A] dark:bg-[#A3BDAE] mr-1.5 relative top-[-1px]"></span>
-          <span class="text-[#3D3835] dark:text-[#C4BCB4] font-medium">Information-dense Video Reasoning:</span>
-          Building models that identify salient details, connect dispersed evidence, and infer causal structure in complex visual narratives.
+          <span class="text-[#3D3835] dark:text-[#C4BCB4] font-medium">Agentic LLM Ability:</span>
+          Training models that plan over long horizons, use tools reliably, and learn from environment feedback to correct their own mistakes.
         </p>
         <p class="text-[#6B6460] dark:text-[#A39D97]">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#8BA89A] dark:bg-[#A3BDAE] mr-1.5 relative top-[-1px]"></span>
-          <span class="text-[#3D3835] dark:text-[#C4BCB4] font-medium">Harness-centric LLM Systems:</span>
-          Designing harnesses that structure memory for effective in-context comprehension and encode success criteria as robust executable checks.
+          <span class="text-[#3D3835] dark:text-[#C4BCB4] font-medium">Information-dense Video Reasoning:</span>
+          Building models that identify salient details, connect dispersed evidence, and infer causal structure in complex visual narratives.
         </p>
         <p class="text-[#6B6460] dark:text-[#A39D97]">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#8BA89A] dark:bg-[#A3BDAE] mr-1.5 relative top-[-1px]"></span>
