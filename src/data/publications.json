@@ -1,5 +1,50 @@
 [
   {
+    "id": "videoodyssey",
+    "title": "VideoOdyssey: A Benchmark for Ultra-Long-Context and Omni-Modal Video Understanding",
+    "authors": [
+      {
+        "name": "Haichen He*"
+      },
+      {
+        "name": "Jiayi Zhou*"
+      },
+      {
+        "name": "Sifeng Shang"
+      },
+      {
+        "name": "Yihan Hu"
+      },
+      {
+        "name": "Yuanhan Zhang",
+        "self": true
+      },
+      {
+        "name": "Kaiyang Zhou"
+      }
+    ],
+    "venue": "NeurIPS",
+    "year": 2026,
+    "venueNote": "D&B",
+    "image": "",
+    "projectUrl": "https://videoodyssey-project.github.io/",
+    "pdfUrl": "https://arxiv.org/abs/2605.22907",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://videoodyssey-project.github.io/"
+      }
+    ],
+    "description": "An omni-modal benchmark on videos averaging 109 minutes, with questions that require continuous long-span viewing — Gemini-3.1-Pro scores 56.3% vs. 84.4% for humans.",
+    "topics": [
+      "benchmark",
+      "video"
+    ],
+    "categories": [
+      "benchmarking"
+    ]
+  },
+  {
     "id": "video-mmmu",
     "title": "Video-MMMU: Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos",
     "authors": [
